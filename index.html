@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piano Studio — Online Microtonal Piano, 135+ World Scales &amp; DAW | MaqAmir</title>
+  <link rel="stylesheet" href="/assets/css/studio-realms-DeBrkYk-.css" />
+  <link rel="stylesheet" href="/assets/css/index-BZkcRNdG.css" />
+  <link rel="stylesheet" href="/assets/css/PianoStudioImpl-BeuMAIfo.css" />
+  <link rel="stylesheet" href="/assets/css/CollectionScrollArea-BBWvZhgm.css" />
+  <style data-design-tokens="true">
+:root { --clone-bg: #FFFFFF; --clone-surface: #F8FAFC; --clone-text: #0F172A; --clone-text-muted: #64748B; --clone-accent: #2563EB; --clone-accent-contrast: #FFFFFF; --clone-border: #E2E8F0; --clone-font-display: Montserrat, sans-serif; --clone-font-body: system-ui, sans-serif; --clone-font-mono: monospace; --maq-radius-sm: 6px; --maq-radius-md: 10px; --maq-radius-lg: 16px; --maq-radius-full: 9999px; --maq-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05); --maq-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08); --maq-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12); --maq-space-1: 4px; --maq-space-2: 8px; --maq-space-3: 12px; --maq-space-4: 16px; --maq-space-6: 24px; --maq-space-8: 32px; --maq-space-12: 48px; } * { box-sizing: border-box; } body { margin: 0; background-color: var(--clone-bg); color: var(--clone-text); font-family: var(--clone-font-body); -webkit-font-smoothing: antialiased; } .maq-container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--maq-space-4); } .maq-display-h1-guides { font-family: var(--clone-font-display); font-size: 60px; font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; } .maq-h1-about { font-family: var(--clone-font-display); font-size: 48px; font-weight: 900; line-height: 1.1; } .maq-h1-pricing { font-family: var(--clone-font-display); font-size: 36px; font-weight: 800; line-height: 1.15; } .maq-h1-pro { font-family: var(--clone-font-display); font-size: 30px; font-weight: 800; line-height: 1.2; } .maq-h2-about { font-family: var(--clone-font-display); font-size: 30px; font-weight: 900; line-height: 1.2; } .maq-h2-guides { font-family: var(--clone-font-display); font-size: 24px; font-weight: 700; line-height: 1.25; } .maq-h2-standard { font-family: var(--clone-font-display); font-size: 18px; font-weight: 700; line-height: 1.3; } .maq-h3-about { font-family: var(--clone-font-display); font-size: 20px; font-weight: 900; line-height: 1.3; } .maq-h3-studio { font-family: var(--clone-font-display); font-size: 16px; font-weight: 700; line-height: 1.35; } .maq-body-nav { font-family: var(--clone-font-body); font-size: 16px; font-weight: 400; line-height: 1.5; } .maq-button-micro { font-family: var(--clone-font-display); font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; } .maq-card { background: var(--clone-surface); border: 1px solid var(--clone-border); border-radius: var(--maq-radius-lg); padding: var(--maq-space-6); box-shadow: var(--maq-shadow-sm); } .maq-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--maq-space-2); padding: 10px 18px; border-radius: var(--maq-radius-md); font-family: var(--clone-font-display); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.15s ease; border: 1px solid transparent; text-decoration: none; } .maq-btn-primary { background: var(--clone-accent); color: var(--clone-accent-contrast); } .maq-btn-primary:hover { filter: brightness(0.92); } .maq-btn-outline { background: var(--clone-bg); color: var(--clone-text); border-color: var(--clone-border); } .maq-btn-outline:hover { background: var(--clone-surface); } .maq-nav { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--clone-border); } .maq-footer { background: var(--clone-surface); border-top: 1px solid var(--clone-border); padding: var(--maq-space-8) 0; color: var(--clone-text-muted); } @media (max-width: 768px) { .maq-display-h1-guides { font-size: 36px; } .maq-h1-about { font-size: 32px; } .maq-h1-pricing { font-size: 28px; } }
+  </style>
+  <style data-page-styles="true">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0D0D0D;
+  color: #F6F4EE;
+  font-family: Inter, "Inter Fallback", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#maqamir-studio-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0D0D0D;
+  color: #F6F4EE;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.studio-header {
+  height: 53px;
+  min-height: 53px;
+  max-height: 53px;
+  padding: 0 16px;
+  background-color: #0D0D0D;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.studio-header-left,
+.studio-header-center,
+.studio-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.brand-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D4B235;
+  display: inline-block;
+}
+
+.studio-top-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 8px;
+}
+
+.studio-top-nav .nav-link {
+  color: #A6A6A6;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.studio-top-nav .nav-link:hover,
+.studio-top-nav .nav-link.active {
+  color: #F6F4EE;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #F6F4EE;
+  font-family: Inter, "Inter Fallback", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pill-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(212, 178, 53, 0.45);
+}
+
+.maqam-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D4B235;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #E8EAED;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 210px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65);
+  z-index: 60;
+}
+
+.dropdown-header {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #A6A6A6;
+  padding: 6px 10px;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #F6F4EE;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background: rgba(212, 178, 53, 0.15);
+  color: #D4B235;
+}
+
+.maqam-panel {
+  background: #121212;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 24px;
+}
+
+.maqam-panel-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.maqam-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.maqam-panel-header h3 {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.maqam-search {
+  width: 260px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #0D0D0D;
+  color: #F6F4EE;
+  font-size: 13px;
+}
+
+.maqam-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.maqam-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #F6F4EE;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.maqam-chip.active,
+.maqam-chip:hover {
+  border-color: #D4B235;
+  background: rgba(212, 178, 53, 0.14);
+}
+
+.maqam-tag {
+  font-size: 10px;
+  color: #A6A6A6;
+  text-transform: uppercase;
+}
+
+.studio-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 20px;
+  background: #0D0D0D;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quick-actions-group,
+.transport-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qa-btn,
+.transport-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #E8EAED;
+  font-family: Inter, "Inter Fallback", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.qa-btn:hover,
+.transport-btn:hover,
+.qa-btn.active,
+.transport-btn.active {
+  background: rgba(212, 178, 53, 0.16);
+  border-color: rgba(212, 178, 53, 0.5);
+  color: #FFFFFF;
+}
+
+.qa-btn.recording {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.18);
+}
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.bpm-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 11px;
+  color: #A6A6A6;
+}
+
+.bpm-control input {
+  width: 44px;
+  background: transparent;
+  border: none;
+  color: #F6F4EE;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.piano-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  margin: 2px 0;
+  background: radial-gradient(circle at 50% 25%, rgba(212, 178, 53, 0.06), transparent 60%), #0D0D0D;
+}
+
+.stage-visualizer-bar {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.now-playing-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #D4B235;
+  background: rgba(212, 178, 53, 0.12);
+  border: 1px solid rgba(212, 178, 53, 0.3);
+  padding: 3px 9px;
+  border-radius: 9999px;
+}
+
+.note-readout {
+  font-size: 13px;
+  color: #A6A6A6;
+}
+
+.octave-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.oct-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #A6A6A6;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.oct-btn.active,
+.oct-btn:hover {
+  background: #D4B235;
+  color: #0D0D0D;
+  border-color: #D4B235;
+}
+
+.piano-keyboard-wrapper {
+  width: 100%;
+  max-width: 980px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+}
+
+.piano-keyboard {
+  display: flex;
+  position: relative;
+  height: 210px;
+  width: 100%;
+  user-select: none;
+}
+
+.piano-key {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-family: Inter, "Inter Fallback", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  transition: transform 0.06s ease, background-color 0.08s ease;
+}
+
+.piano-key.white-key {
+  flex: 1;
+  height: 100%;
+  background: linear-gradient(180deg, #F6F4EE 0%, #E5E1D6 100%);
+  color: #555;
+  border: 1px solid #262626;
+  border-radius: 0 0 6px 6px;
+  z-index: 1;
+}
+
+.piano-key.white-key:hover {
+  background: #FFFFFF;
+}
+
+.piano-key.white-key.active {
+  background: #D4B235;
+  color: #0D0D0D;
+  transform: translateY(2px);
+}
+
+.piano-key.black-key {
+  width: 28px;
+  min-width: 24px;
+  height: 62%;
+  margin-left: -14px;
+  margin-right: -14px;
+  background: linear-gradient(180deg, #2A2A2A 0%, #0A0A0A 100%);
+  color: #9CA4B0;
+  border: 1px solid #000000;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+  align-self: flex-start;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.piano-key.black-key:hover {
+  background: #333333;
+}
+
+.piano-key.black-key.active {
+  background: #D4B235;
+  color: #0D0D0D;
+  transform: translateY(2px);
+}
+
+.studio-realms-section {
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 20px 36px;
+}
+
+.realms-header {
+  margin-bottom: 18px;
+}
+
+.realms-header h2 {
+  margin: 0 0 6px 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.36px;
+  color: #F6F4EE;
+  text-transform: uppercase;
+}
+
+.realms-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #A6A6A6;
+}
+
+.realms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.realm-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.realm-card h3 {
+  margin: 0 0 8px 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.48px;
+  color: #FFFFFF;
+}
+
+.realm-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: #A6A6A6;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px;
+  color: #F6F4EE;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.close-modal-btn {
+  background: transparent;
+  border: none;
+  color: #A6A6A6;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item-link {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: #F6F4EE;
+}
+
+.menu-item-link:hover {
+  border-color: #D4B235;
+}
+
+.menu-item-link span {
+  font-size: 12px;
+  color: #A6A6A6;
+}
+
+.modal-body-text {
+  font-size: 14px;
+  line-height: 22px;
+  color: #E8EAED;
+  margin: 0 0 18px 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-secondary,
+.btn-primary {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #F6F4EE;
+}
+
+.btn-primary {
+  background: #D4B235;
+  border: 1px solid #D4B235;
+  color: #0D0D0D;
+}
+
+.studio-footer.consent-banner {
+  height: 53px;
+  min-height: 53px;
+  padding: 0 20px;
+  background: #0D0D0D;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.consent-text {
+  margin: 0;
+  font-size: 12px;
+  color: #A6A6A6;
+}
+
+.consent-link {
+  color: #F6F4EE;
+  text-decoration: underline;
+}
+
+.consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consent-btn-decline,
+.consent-btn-accept {
+  height: 28px;
+  padding: 0 14px;
+  border-radius: 6px;
+  font-family: Inter, "Inter Fallback", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.consent-btn-decline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E2E2E2;
+}
+
+.consent-btn-accept {
+  background: #F6F4EE;
+  border: 1px solid #F6F4EE;
+  color: #0D0D0D;
+}
+
+@media (max-width: 768px) {
+  .studio-top-nav {
+    display: none;
+  }
+  .realms-grid {
+    grid-template-columns: 1fr;
+  }
+  .piano-keyboard {
+    height: 160px;
+  }
+}
+  </style>
+</head>
+<body>
+<div id="maqamir-studio-root" data-piano-skin="midnight">
+  <header class="studio-header">
+    <div class="studio-header-left">
+      <button type="button" class="brand-btn" id="brand-menu-btn" aria-expanded="false" aria-controls="studio-main-menu">
+        <span class="brand-dot"></span>
+        <span class="brand-text">MaqAmir.</span>
+        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+
+      <nav class="studio-top-nav" aria-label="Primary Navigation">
+        <a href="/pages/guides.html" class="nav-link" title="The complete MaqAmir handbook">Guides</a>
+        <a href="/pages/piano.html" class="nav-link active">Studio</a>
+        <a href="/pages/pro.html" class="nav-link">Pro</a>
+        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+        <a href="/pages/about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+
+    <div class="studio-header-center">
+      <button type="button" class="pill-btn instrument-btn" id="instrument-selector-btn">
+        <span class="pill-icon">🎹</span>
+        <span id="active-instrument-label">Grand Piano</span>
+      </button>
+
+      <button type="button" class="pill-btn maqam-btn" id="maqam-selector-btn" aria-expanded="false" aria-controls="sound-maqam-panel">
+        <span class="maqam-dot"></span>
+        <span id="active-maqam-label">Rast · C</span>
+        <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="studio-header-right">
+      <div class="dropdown-wrapper">
+        <button type="button" class="icon-btn dropdown-0" id="app-switcher-btn" aria-expanded="false" aria-controls="radix-:r1:" title="App Switcher">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        </button>
+        <div id="radix-:r1:" class="dropdown-menu hidden" role="menu">
+          <div class="dropdown-header">App Switcher</div>
+          <a href="/pages/piano.html" class="dropdown-item active">🎹 Piano Studio</a>
+          <a href="/pages/guides.html" class="dropdown-item">📖 Guides &amp; Handbook</a>
+          <a href="/pages/pro.html" class="dropdown-item">⚡ MaqAmir Pro</a>
+          <a href="/pages/pricing.html" class="dropdown-item">💎 Pricing</a>
+        </div>
+      </div>
+
+      <button type="button" class="icon-btn" id="fullscreen-btn" title="Enter Fullscreen Mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+
+      <button type="button" class="icon-btn" id="help-guide-btn" title="Open Help & Guide">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section id="sound-maqam-panel" class="maqam-panel hidden" aria-label="Scale and Maqam Selector">
+    <div class="maqam-panel-inner">
+      <div class="maqam-panel-header">
+        <h3>135+ World Scales &amp; Microtonal Maqams</h3>
+        <input type="search" id="maqam-search-input" class="maqam-search" placeholder="Search Maqam, Makam, Raga, Scale..." aria-label="Search scales">
+      </div>
+      <div class="maqam-grid" id="maqam-grid">
+        <button type="button" class="maqam-chip active" data-maqam="Rast · C" data-cents="0,0,-50,0,0,0,-50">Rast · C <span class="maqam-tag">Arabic</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Bayati · D" data-cents="0,-50,0,0,0,0,0">Bayati · D <span class="maqam-tag">Arabic</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Hijaz · D" data-cents="0,0,0,0,0,0,0">Hijaz · D <span class="maqam-tag">Arabic</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Saba · D" data-cents="0,-50,0,0,0,0,0">Saba · D <span class="maqam-tag">Arabic</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Nahawand · C" data-cents="0,0,0,0,0,0,0">Nahawand · C <span class="maqam-tag">Minor</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Ussak · A" data-cents="0,-30,0,0,0,0,0">Ussak · A <span class="maqam-tag">Turkish</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Shur · D" data-cents="0,-50,0,0,0,0,0">Shur · D <span class="maqam-tag">Persian</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Bhairav · C" data-cents="0,0,0,0,0,0,0">Bhairav · C <span class="maqam-tag">Raga</span></button>
+        <button type="button" class="maqam-chip" data-maqam="Equal 12-TET · C" data-cents="0,0,0,0,0,0,0">Equal 12-TET · C <span class="maqam-tag">Western</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-toolbar" aria-label="Studio Quick Actions">
+    <div class="quick-actions-group">
+      <button type="button" class="qa-btn active dropdown-1" id="qa-piano-btn" title="Piano: tap for Grand Piano, hold for presets">
+        <span>🎹</span><span>Piano</span>
+      </button>
+      <button type="button" class="qa-btn dropdown-2" id="qa-magic-btn" title="Magic: tap to shuffle a new sound">
+        <span>✨</span><span>Magic</span>
+      </button>
+      <button type="button" class="qa-btn dropdown-3" id="qa-record-btn" title="Start recording">
+        <span class="rec-dot"></span><span id="record-btn-label">Record</span>
+      </button>
+      <button type="button" class="qa-btn dropdown-4" id="qa-realm-btn" title="Tap: Piano Realm">
+        <span>🌌</span><span>Realms</span>
+      </button>
+      <button type="button" class="qa-btn dropdown-5" id="qa-amir-btn" title="Ask Amir: tap to ask, hold for guides">
+        <span>🤖</span><span>Ask Amir</span>
+      </button>
+    </div>
+
+    <div class="transport-group">
+      <button type="button" class="transport-btn" id="transport-play-btn" aria-label="Play Loop">▶ Play</button>
+      <div class="bpm-control">
+        <label for="bpm-input">BPM</label>
+        <input type="number" id="bpm-input" value="120" min="40" max="240">
+      </div>
+      <button type="button" class="transport-btn" id="metronome-btn">🥁 Metro</button>
+    </div>
+  </section>
+
+  <main class="piano-stage">
+    <div class="stage-visualizer-bar">
+      <div class="now-playing-info">
+        <span class="status-badge" id="audio-status-badge">Ready · Web Audio</span>
+        <span class="note-readout" id="note-readout">Press any key or use A–L on your keyboard</span>
+      </div>
+      <div class="octave-bar" aria-label="Octave Selector">
+        <button type="button" class="oct-btn" data-octave="2">2</button>
+        <button type="button" class="oct-btn" data-octave="3">3</button>
+        <button type="button" class="oct-btn active" data-octave="4">4</button>
+        <button type="button" class="oct-btn" data-octave="5">5</button>
+        <button type="button" class="oct-btn" data-octave="6">6</button>
+      </div>
+    </div>
+
+    <div class="piano-keyboard-wrapper">
+      <div class="piano-keyboard" id="piano-keyboard" role="group" aria-label="Microtonal Piano Keyboard"></div>
+    </div>
+  </main>
+
+  <section class="studio-realms-section">
+    <div class="realms-header">
+      <h2>Realms</h2>
+      <p class="realms-subtitle">Explore 25+ Visualizer &amp; DJ Realms, AKFA touch dynamics, MIDI/MPE support, and multitrack looping.</p>
+    </div>
+
+    <div class="realms-grid">
+      <article class="realm-card">
+        <h3>1 · Grand Piano &amp; Touch Velocity 🎹</h3>
+        <p>Expressive AKFA touch dynamics with polyphonic response, sustain pedal simulation, and studio-grade acoustic resonance.</p>
+      </article>
+      <article class="realm-card">
+        <h3>2 · 135+ Microtonal World Scales 🌍</h3>
+        <p>Instant quarter-tone &amp; comma tuning for Arabic Maqam, Turkish Makam, Persian Dastgah, and Indian Ragas.</p>
+      </article>
+      <article class="realm-card">
+        <h3>3 · Multitrack Loop Machine 🔁</h3>
+        <p>Layer rhythms, basslines, and microtonal melodies in real time with quantized BPM sync and instant export.</p>
+      </article>
+      <article class="realm-card">
+        <h3>4 · MIDI / MPE &amp; Browser DAW 🎛️</h3>
+        <p>Connect hardware MIDI controllers directly in your browser with zero-latency Web Audio synthesis.</p>
+      </article>
+    </div>
+  </section>
+
+  <div id="studio-main-menu" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Menu</h3>
+        <button type="button" class="close-modal-btn" data-close="studio-main-menu">✕</button>
+      </div>
+      <div class="menu-links-list">
+        <a href="/pages/guides.html" class="menu-item-link">
+          <strong>Guides</strong>
+          <span>The complete MaqAmir handbook</span>
+        </a>
+        <a href="/pages/piano.html" class="menu-item-link">
+          <strong>Studio</strong>
+          <span>Command Center &amp; Microtonal Piano</span>
+        </a>
+        <a href="/pages/pro.html" class="menu-item-link">
+          <strong>MaqAmir Pro</strong>
+          <span>25+ Realms, MPE &amp; Multitrack DAW</span>
+        </a>
+        <a href="/pages/pricing.html" class="menu-item-link">
+          <strong>Pricing</strong>
+          <span>Plans for musicians &amp; educators</span>
+        </a>
+        <a href="/pages/about.html" class="menu-item-link">
+          <strong>About</strong>
+          <span>Music With No Boundaries</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="help-guide-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Studio Guide">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="guide-step-title">Welcome to MaqAmir Piano Studio</h3>
+        <button type="button" class="close-modal-btn" id="close-guide-btn" aria-label="Close guide">✕</button>
+      </div>
+      <p id="guide-step-body" class="modal-body-text">Play notes using your mouse, touch screen, or computer keyboard (keys A through L for white keys, W/E/T/Y/U for black keys).</p>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="guide-back-btn">Back</button>
+        <button type="button" class="btn-primary" id="guide-next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="cookie-consent-banner" class="studio-footer consent-banner" role="region" aria-label="Analytics consent">
+    <p class="consent-text">We use analytics to improve your experience. <a href="/pages/about.html" class="consent-link">Learn more</a></p>
+    <div class="consent-actions">
+      <button type="button" class="consent-btn-decline" id="consent-decline-btn">Decline</button>
+      <button type="button" class="consent-btn-accept" id="consent-accept-btn">Accept</button>
+    </div>
+  </footer>
+</div>
+<script data-reconstructed-interactions="true">
+document.addEventListener('DOMContentLoaded', () => {
+  let audioCtx = null;
+  let activeMaqamCents = [0, 0, -50, 0, 0, 0, -50];
+  let currentOctave = 4;
+  let isRecording = false;
+  let isPlaying = false;
+  let metroInterval = null;
+
+  function ensureAudioContext() {
+    if (!audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContext();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function midiToFreq(midi, centsOffset = 0) {
+    return 440 * Math.pow(2, (midi - 69 + centsOffset / 100) / 12);
+  }
+
+  function playNote(midi, label) {
+    ensureAudioContext();
+    const scaleDegree = midi % 12;
+    const diatonicMap = { 0: 0, 2: 1, 4: 2, 5: 3, 7: 4, 9: 5, 11: 6 };
+    const cents = diatonicMap[scaleDegree] !== undefined ? activeMaqamCents[diatonicMap[scaleDegree]] : 0;
+    const freq = midiToFreq(midi, cents);
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+    gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.32, audioCtx.currentTime + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0008, audioCtx.currentTime + 1.1);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 1.15);
+
+    const readout = document.getElementById('note-readout');
+    if (readout) {
+      readout.textContent = `Playing: ${label} (${freq.toFixed(1)} Hz${cents ? `, ${cents}¢` : ''})`;
+    }
+  }
+
+  const keyboardEl = document.getElementById('piano-keyboard');
+  const noteNames = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const blackSet = new Set([1, 3, 6, 8, 10]);
+
+  function renderKeyboard() {
+    if (!keyboardEl) return;
+    keyboardEl.innerHTML = '';
+    const startMidi = (currentOctave + 1) * 12;
+    const totalKeys = 24;
+
+    for (let i = 0; i < totalKeys; i++) {
+      const midi = startMidi + i;
+      const noteIndex = midi % 12;
+      const oct = Math.floor(midi / 12) - 1;
+      const label = `${noteNames[noteIndex]}${oct}`;
+      const isBlack = blackSet.has(noteIndex);
+
+      const keyBtn = document.createElement('button');
+      keyBtn.type = 'button';
+      keyBtn.className = isBlack ? 'piano-key black-key' : 'piano-key white-key';
+      keyBtn.dataset.midi = String(midi);
+      keyBtn.dataset.label = label;
+      keyBtn.setAttribute('aria-label', label);
+      keyBtn.innerHTML = `<span class="key-label">${label}</span>`;
+
+      const trigger = (e) => {
+        e.preventDefault();
+        keyBtn.classList.add('active');
+        playNote(midi, label);
+        setTimeout(() => keyBtn.classList.remove('active'), 180);
+      };
+
+      keyBtn.addEventListener('mousedown', trigger);
+      keyBtn.addEventListener('touchstart', trigger, { passive: false });
+      keyboardEl.appendChild(keyBtn);
+    }
+  }
+
+  renderKeyboard();
+
+  const keyMap = {
+    'a': 0, 'w': 1, 's': 2, 'e': 3, 'd': 4, 'f': 5,
+    't': 6, 'g': 7, 'y': 8, 'h': 9, 'u': 10, 'j': 11, 'k': 12, 'l': 14
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.repeat || e.target.tagName === 'INPUT') return;
+    const offset = keyMap[e.key.toLowerCase()];
+    if (offset !== undefined) {
+      const midi = (currentOctave + 1) * 12 + offset;
+      const keyEl = keyboardEl?.querySelector(`[data-midi="${midi}"]`);
+      if (keyEl) {
+        keyEl.classList.add('active');
+        playNote(midi, keyEl.dataset.label || '');
+        setTimeout(() => keyEl.classList.remove('active'), 180);
+      }
+    }
+  });
+
+  document.querySelectorAll('.oct-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.oct-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentOctave = parseInt(btn.dataset.octave, 10) || 4;
+      renderKeyboard();
+    });
+  });
+
+  const maqamBtn = document.getElementById('maqam-selector-btn');
+  const maqamPanel = document.getElementById('sound-maqam-panel');
+  const maqamLabel = document.getElementById('active-maqam-label');
+  const maqamSearch = document.getElementById('maqam-search-input');
+
+  maqamBtn?.addEventListener('click', () => {
+    const isHidden = maqamPanel.classList.toggle('hidden');
+    maqamBtn.setAttribute('aria-expanded', String(!isHidden));
+  });
+
+  document.querySelectorAll('.maqam-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.maqam-chip').forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+      if (maqamLabel) maqamLabel.textContent = chip.dataset.maqam;
+      activeMaqamCents = (chip.dataset.cents || '0,0,0,0,0,0,0').split(',').map(Number);
+      maqamPanel?.classList.add('hidden');
+      maqamBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  maqamSearch?.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('.maqam-chip').forEach((chip) => {
+      chip.style.display = chip.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+
+  const appSwitcherBtn = document.getElementById('app-switcher-btn');
+  const appSwitcherMenu = document.getElementById('radix-:r1:');
+  appSwitcherBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isHidden = appSwitcherMenu.classList.toggle('hidden');
+    appSwitcherBtn.setAttribute('aria-expanded', String(!isHidden));
+  });
+  document.addEventListener('click', () => {
+    appSwitcherMenu?.classList.add('hidden');
+    appSwitcherBtn?.setAttribute('aria-expanded', 'false');
+  });
+
+  const brandBtn = document.getElementById('brand-menu-btn');
+  const mainMenuModal = document.getElementById('studio-main-menu');
+  brandBtn?.addEventListener('click', () => mainMenuModal?.classList.remove('hidden'));
+
+  document.querySelectorAll('.close-modal-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.close || btn.closest('.modal-backdrop')?.id;
+      if (targetId) document.getElementById(targetId)?.classList.add('hidden');
+    });
+  });
+
+  const helpBtn = document.getElementById('help-guide-btn');
+  const helpModal = document.getElementById('help-guide-modal');
+  const guideSteps = [
+    { title: 'Welcome to MaqAmir Piano Studio', body: 'Play notes using your mouse, touch screen, or computer keyboard (keys A through L for white keys, W/E/T/Y/U for black keys).' },
+    { title: 'Microtonal Maqam Tuning', body: 'Click "Rast · C" in the top bar to switch between 135+ Arabic Maqams, Turkish Makams, Persian Dastgahs, and Indian Ragas.' },
+    { title: 'Transport & Loop Machine', body: 'Use the Play, BPM, and Metronome controls to practice in time or record your own multitrack ideas.' }
+  ];
+  let guideIndex = 0;
+
+  function updateGuideStep() {
+    const step = guideSteps[guideIndex];
+    document.getElementById('guide-step-title').textContent = step.title;
+    document.getElementById('guide-step-body').textContent = step.body;
+  }
+
+  helpBtn?.addEventListener('click', () => {
+    guideIndex = 0;
+    updateGuideStep();
+    helpModal?.classList.remove('hidden');
+  });
+  document.getElementById('guide-next-btn')?.addEventListener('click', () => {
+    if (guideIndex < guideSteps.length - 1) { guideIndex++; updateGuideStep(); }
+    else { helpModal?.classList.add('hidden'); }
+  });
+  document.getElementById('guide-back-btn')?.addEventListener('click', () => {
+    if (guideIndex > 0) { guideIndex--; updateGuideStep(); }
+  });
+
+  document.getElementById('qa-magic-btn')?.addEventListener('click', () => {
+    const instruments = ['Grand Piano', 'Warm Oud', 'Electric Rhodes', 'Analog Synth', 'Ney Flute'];
+    const next = instruments[Math.floor(Math.random() * instruments.length)];
+    document.getElementById('active-instrument-label').textContent = next;
+  });
+
+  document.getElementById('qa-record-btn')?.addEventListener('click', (e) => {
+    isRecording = !isRecording;
+    e.currentTarget.classList.toggle('recording', isRecording);
+    document.getElementById('record-btn-label').textContent = isRecording ? 'Recording...' : 'Record';
+  });
+
+  document.getElementById('transport-play-btn')?.addEventListener('click', (e) => {
+    isPlaying = !isPlaying;
+    e.currentTarget.textContent = isPlaying ? '⏹ Stop' : '▶ Play';
+  });
+
+  document.getElementById('metronome-btn')?.addEventListener('click', (e) => {
+    if (metroInterval) {
+      clearInterval(metroInterval);
+      metroInterval = null;
+      e.currentTarget.classList.remove('active');
+    } else {
+      const bpm = parseInt(document.getElementById('bpm-input')?.value || '120', 10);
+      e.currentTarget.classList.add('active');
+      metroInterval = setInterval(() => {
+        ensureAudioContext();
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.frequency.value = 880;
+        g.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        osc.connect(g); g.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.06);
+      }, (60 / bpm) * 1000);
+    }
+  });
+
+  document.getElementById('fullscreen-btn')?.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.().catch(() => {});
+    } else {
+      document.exitFullscreen?.().catch(() => {});
+    }
+  });
+
+  const consentBanner = document.getElementById('cookie-consent-banner');
+  document.getElementById('consent-accept-btn')?.addEventListener('click', () => {
+    consentBanner?.classList.add('hidden');
+  });
+  document.getElementById('consent-decline-btn')?.addEventListener('click', () => {
+    consentBanner?.classList.add('hidden');
+  });
+});
+</script>
+</body>
+</html>

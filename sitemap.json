@@ -1,0 +1,198 @@
+{
+  "pages": [
+    {
+      "canonicalPath": "/piano",
+      "url": "https://maqamir.tech/piano",
+      "title": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+      "depth": 0,
+      "status": 200,
+      "templateSignature": "script>script>script>div>canvas.pointer-events-none",
+      "isPagination": false,
+      "internalLinks": [
+        "https://maqamir.tech/about#privacy",
+        "https://maqamir.tech/guides",
+        "https://maqamir.tech/pro",
+        "https://maqamir.tech/pricing",
+        "https://maqamir.tech/contact",
+        "https://maqamir.tech/about",
+        "https://maqamir.tech/",
+        "https://maqamir.tech/privacy",
+        "https://maqamir.tech/terms",
+        "https://maqamir.tech/legal/ip-claims"
+      ],
+      "paginationLinks": []
+    },
+    {
+      "canonicalPath": "/about",
+      "url": "https://maqamir.tech/about",
+      "title": "About MaqAmir — A Studio in Your Pocket",
+      "depth": 1,
+      "status": 200,
+      "templateSignature": "script>script>script>div",
+      "isPagination": false,
+      "internalLinks": [
+        "https://maqamir.tech/about#privacy",
+        "https://maqamir.tech/LandingPage",
+        "https://maqamir.tech/contact",
+        "https://maqamir.tech/privacy",
+        "https://maqamir.tech/terms",
+        "https://maqamir.tech/guides",
+        "https://maqamir.tech/pro",
+        "https://maqamir.tech/pricing",
+        "https://maqamir.tech/about",
+        "https://maqamir.tech/legal/ip-claims"
+      ],
+      "paginationLinks": []
+    },
+    {
+      "canonicalPath": "/guides",
+      "url": "https://maqamir.tech/guides",
+      "title": "Guides | MaqAmir",
+      "depth": 1,
+      "status": 200,
+      "templateSignature": "script>script>script>div",
+      "isPagination": false,
+      "internalLinks": [
+        "https://maqamir.tech/about#privacy",
+        "https://maqamir.tech/",
+        "https://maqamir.tech/piano",
+        "https://maqamir.tech/whats-new",
+        "https://maqamir.tech/guides",
+        "https://maqamir.tech/guides/music-creation",
+        "https://maqamir.tech/guides/dj-live-looping",
+        "https://maqamir.tech/guides/sound-design",
+        "https://maqamir.tech/guides/world-innovation",
+        "https://maqamir.tech/guides/realms-skins",
+        "https://maqamir.tech/piano?scale=rast",
+        "https://maqamir.tech/dj",
+        "https://maqamir.tech/synth",
+        "https://maqamir.tech/piano?scale=nahawand&realm=aura_bowls",
+        "https://maqamir.tech/guides/sound-design#synth-lab",
+        "https://maqamir.tech/guides/music-creation#piano-studio",
+        "https://maqamir.tech/guides/music-creation#ai-studio",
+        "https://maqamir.tech/guides/world-innovation#adapters",
+        "https://maqamir.tech/piano?scale=hijaz&realm=oudora",
+        "https://maqamir.tech/piano?scale=bayati",
+        "https://maqamir.tech/piano?realm=piano_keys",
+        "https://maqamir.tech/pro",
+        "https://maqamir.tech/pricing",
+        "https://maqamir.tech/contact",
+        "https://maqamir.tech/about",
+        "https://maqamir.tech/privacy",
+        "https://maqamir.tech/terms",
+        "https://maqamir.tech/legal/ip-claims"
+      ],
+      "paginationLinks": []
+    },
+    {
+      "canonicalPath": "/pro",
+      "url": "https://maqamir.tech/pro",
+      "title": "PianoCreator Pro — Unlock the full microtonal studio | MaqAmir",
+      "depth": 1,
+      "status": 200,
+      "templateSignature": "script>script>script>div",
+      "isPagination": false,
+      "internalLinks": [
+        "https://maqamir.tech/about#privacy",
+        "https://maqamir.tech/LandingPage",
+        "https://maqamir.tech/guides",
+        "https://maqamir.tech/pro",
+        "https://maqamir.tech/pricing",
+        "https://maqamir.tech/contact",
+        "https://maqamir.tech/about",
+        "https://maqamir.tech/privacy",
+        "https://maqamir.tech/terms",
+        "https://maqamir.tech/legal/ip-claims"
+      ],
+      "paginationLinks": []
+    },
+    {
+      "canonicalPath": "/pricing",
+      "url": "https://maqamir.tech/pricing",
+      "title": "Pricing — Free for Everyone | MaqAmir",
+      "depth": 1,
+      "status": 200,
+      "templateSignature": "script>script>script>div",
+      "isPagination": false,
+      "internalLinks": [
+        "https://maqamir.tech/about#privacy",
+        "https://maqamir.tech/LandingPage",
+        "https://maqamir.tech/guides",
+        "https://maqamir.tech/pro",
+        "https://maqamir.tech/pricing",
+        "https://maqamir.tech/contact",
+        "https://maqamir.tech/about",
+        "https://maqamir.tech/privacy",
+        "https://maqamir.tech/terms",
+        "https://maqamir.tech/legal/ip-claims"
+      ],
+      "paginationLinks": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "/piano",
+      "to": "/about",
+      "label": "About & Credits"
+    },
+    {
+      "from": "/piano",
+      "to": "/guides",
+      "label": "GuidesThe complete MaqAmir handbook"
+    },
+    {
+      "from": "/piano",
+      "to": "/pro",
+      "label": "PianoCreator Pro"
+    },
+    {
+      "from": "/piano",
+      "to": "/pricing",
+      "label": "Credits & Licensing"
+    },
+    {
+      "from": "/piano",
+      "to": "/contact",
+      "label": "Contact Us"
+    },
+    {
+      "from": "/piano",
+      "to": "/",
+      "label": "Exit Studio"
+    },
+    {
+      "from": "/piano",
+      "to": "/privacy",
+      "label": "Privacy"
+    },
+    {
+      "from": "/piano",
+      "to": "/terms",
+      "label": "Terms"
+    },
+    {
+      "from": "/piano",
+      "to": "/legal/ip-claims",
+      "label": "IP Claims & DMCA"
+    }
+  ],
+  "templates": [
+    {
+      "signature": "script>script>script>div>canvas.pointer-events-none",
+      "pattern": "Unique Layout (/piano)",
+      "paths": [
+        "/piano"
+      ]
+    },
+    {
+      "signature": "script>script>script>div",
+      "pattern": "Shared Template #2 (4 pages)",
+      "paths": [
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    }
+  ]
+}

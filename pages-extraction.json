@@ -1,0 +1,6099 @@
+[
+  {
+    "url": "https://maqamir.tech/piano",
+    "canonicalPath": "/piano",
+    "depth": 0,
+    "title": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+    "status": 200,
+    "statusText": "OK",
+    "latencyMs": 12048,
+    "templateSignature": "script>script>script>div>canvas.pointer-events-none",
+    "isPagination": false,
+    "metaTags": {
+      "app-build-time": "2026-11-16T09:35:00.000Z",
+      "google": "notranslate",
+      "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "description": "Play, record, and share music in MaqAmir Piano Studio. Features 135+ microtonal scales (Arabic Maqam, Turkish Makam, Persian Dastgah, Indian Ragas), 25+ Visualizer & DJ Realms, AKFA touch dynamics, MIDI/MPE support, and multitrack looping.",
+      "og:type": "website",
+      "og:site_name": "MaqAmir",
+      "og:title": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+      "og:description": "Play, record, and share music in MaqAmir Piano Studio. Features 135+ microtonal scales (Arabic Maqam, Turkish Makam, Persian Dastgah, Indian Ragas), 25+ Visualizer & DJ Realms, AKFA touch dynamics, MIDI/MPE support, and multitrack looping.",
+      "og:image": "https://maqamir.tech/images/multicultural-piano.png",
+      "og:url": "https://maqamir.tech/piano",
+      "og:locale": "en",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+      "twitter:description": "Play, record, and share music in MaqAmir Piano Studio. Features 135+ microtonal scales (Arabic Maqam, Turkish Makam, Persian Dastgah, Indian Ragas), 25+ Visualizer & DJ Realms, AKFA touch dynamics, MIDI/MPE support, and multitrack looping.",
+      "twitter:image": "https://maqamir.tech/images/multicultural-piano.png",
+      "base44-analytics": "consent",
+      "base44-visitor-tracking": "consent",
+      "twitter:url": "https://maqamir.tech/piano",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-title": "MaqAmir - Music With No Boundaries",
+      "robots": "index, follow",
+      "keywords": "online piano studio, microtonal piano, arabic maqam keyboard, virtual synthesizer, browser DAW, MIDI keyboard online, web audio piano"
+    },
+    "domTree": {
+      "tag": "body",
+      "classes": [
+        "theme-dark",
+        "theme-gold",
+        "interaction-shield-active",
+        "piano-performance-idle"
+      ],
+      "childrenCount": 2,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1213
+      },
+      "children": [
+        {
+          "tag": "div",
+          "id": "root",
+          "classes": [],
+          "childrenCount": 4,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 1213
+          },
+          "children": [
+            {
+              "tag": "div",
+              "classes": [
+                "fixed",
+                "bottom-0",
+                "left-0",
+                "right-0",
+                "z-[9990]"
+              ],
+              "role": "dialog",
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 817,
+                "width": 1425,
+                "height": 83
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "classes": [
+                    "max-w-2xl",
+                    "mx-auto",
+                    "flex",
+                    "flex-col",
+                    "sm:flex-row"
+                  ],
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 377,
+                    "y": 817,
+                    "width": 672,
+                    "height": 67
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-3",
+                        "text-center",
+                        "sm:text-left"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 398,
+                        "y": 841,
+                        "width": 430,
+                        "height": 20
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-2",
+                        "shrink-0"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 843,
+                        "y": 834,
+                        "width": 185,
+                        "height": 33
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "svg",
+              "classes": [],
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "children": [
+                {
+                  "tag": "defs",
+                  "classes": [],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "children": [
+                    {
+                      "tag": "filter",
+                      "id": "asset-icon-alpha",
+                      "classes": [],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "app-root",
+              "classes": [
+                "min-h-screen",
+                "bg-background",
+                "text-foreground",
+                "pb-safe",
+                "select-none"
+              ],
+              "childrenCount": 6,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 1213
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "classes": [
+                    "sr-only",
+                    "focus:not-sr-only",
+                    "focus:absolute",
+                    "focus:z-[10000]",
+                    "focus:p-4"
+                  ],
+                  "textPreview": "Skip to main content",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": -1,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "header",
+                  "classes": [
+                    "w-full",
+                    "z-[500]",
+                    "transition-[background-color,border-color,opacity]",
+                    "duration-300",
+                    "bg-daw-surface"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 53
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "max-w-none",
+                        "mx-auto",
+                        "px-3",
+                        "sm:px-6",
+                        "flex"
+                      ],
+                      "childrenCount": 3,
+                      "rect": {
+                        "x": 0,
+                        "y": 2,
+                        "width": 1425,
+                        "height": 48
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "role": "status",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "main",
+                  "id": "main-content",
+                  "classes": [
+                    "pb-2",
+                    "relative"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 53,
+                    "width": 1425,
+                    "height": 1160
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "studio-root",
+                        "pb-32",
+                        "md:pb-24"
+                      ],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 53,
+                        "width": 1425,
+                        "height": 1152
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "classes": [
+                    "fixed",
+                    "inset-0",
+                    "z-[var(--z-nav-drawer,10050)]",
+                    "flex",
+                    "transition-[visibility,opacity]"
+                  ],
+                  "role": "dialog",
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 900
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "absolute",
+                        "inset-0",
+                        "bg-black/40"
+                      ],
+                      "childrenCount": 0,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1425,
+                        "height": 900
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "relative",
+                        "w-64",
+                        "max-w-[80vw]",
+                        "bg-background",
+                        "h-full"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": -256,
+                        "y": 0,
+                        "width": 256,
+                        "height": 900
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "section",
+              "classes": [],
+              "childrenCount": 0,
+              "rect": {
+                "x": 0,
+                "y": 1213,
+                "width": 1425,
+                "height": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "tag": "canvas",
+          "classes": [
+            "pointer-events-none",
+            "fixed",
+            "inset-0",
+            "z-[510]"
+          ],
+          "childrenCount": 0,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900
+          },
+          "children": []
+        }
+      ]
+    },
+    "headings": [
+      {
+        "level": 3,
+        "text": "1 · Grand Piano & Touch Velocity 🎹"
+      },
+      {
+        "level": 3,
+        "text": "Sonic Engine"
+      },
+      {
+        "level": 2,
+        "text": "Realms"
+      },
+      {
+        "level": 2,
+        "text": "Menu"
+      }
+    ],
+    "navLinks": [
+      {
+        "text": "GuidesThe complete MaqAmir handbook",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "PianoCreator Pro",
+        "href": "https://maqamir.tech/pro",
+        "isExternal": false
+      },
+      {
+        "text": "Credits & Licensing",
+        "href": "https://maqamir.tech/pricing",
+        "isExternal": false
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://maqamir.tech/contact",
+        "isExternal": false
+      },
+      {
+        "text": "About & Credits",
+        "href": "https://maqamir.tech/about",
+        "isExternal": false
+      },
+      {
+        "text": "Exit Studio",
+        "href": "https://maqamir.tech/",
+        "isExternal": false
+      },
+      {
+        "text": "Privacy",
+        "href": "https://maqamir.tech/privacy",
+        "isExternal": false
+      },
+      {
+        "text": "Terms",
+        "href": "https://maqamir.tech/terms",
+        "isExternal": false
+      },
+      {
+        "text": "IP Claims & DMCA",
+        "href": "https://maqamir.tech/legal/ip-claims",
+        "isExternal": false
+      }
+    ],
+    "internalLinks": [
+      "https://maqamir.tech/about#privacy",
+      "https://maqamir.tech/guides",
+      "https://maqamir.tech/pro",
+      "https://maqamir.tech/pricing",
+      "https://maqamir.tech/contact",
+      "https://maqamir.tech/about",
+      "https://maqamir.tech/",
+      "https://maqamir.tech/privacy",
+      "https://maqamir.tech/terms",
+      "https://maqamir.tech/legal/ip-claims"
+    ],
+    "paginationLinks": [],
+    "typography": [
+      {
+        "role": "h2",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "lineHeight": "16px",
+        "letterSpacing": "-0.36px",
+        "color": "#F6F4EE",
+        "sampleText": "Realms"
+      },
+      {
+        "role": "h3",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.48px",
+        "color": "#FFFFFF",
+        "sampleText": "1 · Grand Piano & Touch Velocity 🎹"
+      },
+      {
+        "role": "body",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "(function () {\n      var origAdd = EventTarget.prototype.add"
+      },
+      {
+        "role": "nav",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "GuidesThe complete MaqAmir handbook"
+      },
+      {
+        "role": "button",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "900",
+        "lineHeight": "15px",
+        "letterSpacing": "1.5px",
+        "color": "#E2E2E2",
+        "sampleText": "Decline"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#F6F4EE",
+        "rgb": "rgb(246, 244, 238)",
+        "usage": "text",
+        "count": 87
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255, 255, 255)",
+        "usage": "text",
+        "count": 26
+      },
+      {
+        "hex": "#E8EAED",
+        "rgb": "rgb(232, 234, 237)",
+        "usage": "text",
+        "count": 12
+      },
+      {
+        "hex": "#A6A6A6",
+        "rgb": "rgb(166, 166, 166)",
+        "usage": "text",
+        "count": 11
+      },
+      {
+        "hex": "#0D0D0D",
+        "rgb": "rgb(13, 13, 13)",
+        "usage": "background",
+        "count": 6
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "text",
+        "count": 5
+      },
+      {
+        "hex": "#322C1B",
+        "rgb": "rgba(50, 44, 27, 0.15)",
+        "usage": "border",
+        "count": 4
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "border",
+        "count": 3
+      },
+      {
+        "hex": "#9CA4B0",
+        "rgb": "rgb(156, 164, 176)",
+        "usage": "text",
+        "count": 3
+      },
+      {
+        "hex": "#A1A1AA",
+        "rgb": "rgb(161, 161, 170)",
+        "usage": "text",
+        "count": 3
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "background",
+        "count": 2
+      },
+      {
+        "hex": "#E2E2E2",
+        "rgb": "rgb(226, 226, 226)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#14181F",
+        "rgb": "rgb(20, 24, 31)",
+        "usage": "background",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "border",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "accent",
+        "count": 2
+      },
+      {
+        "hex": "#000000",
+        "rgb": "rgb(0, 0, 0)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#447A9C",
+        "rgb": "rgb(68, 122, 156)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.05)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgb(5, 5, 5)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#2A313C",
+        "rgb": "rgb(42, 49, 60)",
+        "usage": "border",
+        "count": 1
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "background",
+        "count": 1
+      }
+    ],
+    "gradients": [
+      "linear-gradient(to right bottom, rgba(245, 158, 11, 0.15), rgb(13, 13, 13), rgba(168, 85, 247, 0.15))",
+      "linear-gradient(rgba(0, 0, 0, 0), rgba(212, 178, 53, 0.4), rgba(0, 0, 0, 0))",
+      "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(212, 175, 55, 0) 25%, rgb(255, 255, 255) 50%, rgba(212, 175, 55, 0) 75%, rgba(0, 0, 0, 0) 100%)",
+      "radial-gradient(at 50% -18%, color(display-p3 0.52 0.58 1 / 0.34), rgba(0, 0, 0, 0) 48%), linear-gradient(125deg, rgb(19, 25, 56) 0%, rgb(4, 6, 18) 42%, rgb(11, 15, 36) 76%, rgb(3,",
+      "linear-gradient(rgba(255, 255, 255, 0.067), rgba(0, 0, 0, 0) 20%), linear-gradient(rgb(14, 19, 43) 0%, rgb(4, 6, 18) 100%)",
+      "linear-gradient(rgb(19, 25, 56) 0%, rgb(11, 15, 36) 55%, rgb(5, 7, 19) 100%)",
+      "linear-gradient(90deg, rgba(250, 252, 255, 0.95) 0%, rgba(248, 250, 255, 0.3) 3%, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 0) 80%, rgba(66, 82, 138, 0.11) 94%, rgba(48, 62, 112, 0.22) 1",
+      "linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(5, 5, 5, 0.16) 100%), linear-gradient(100deg, rgba(224, 231, 255, 0.48), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 80%, rgba(129, 140, 248, "
+    ],
+    "spacings": {
+      "containerMaxWidths": [
+        "672px",
+        "100%",
+        "340px",
+        "calc(100% - 8px)"
+      ],
+      "sectionPaddings": [
+        "2px 0px"
+      ],
+      "gaps": [
+        "16px",
+        "12px",
+        "8px",
+        "20px",
+        "4px",
+        "6px",
+        "10px",
+        "2px"
+      ],
+      "borderRadii": [
+        "8px",
+        "6px",
+        "9999px",
+        "12px",
+        "5px",
+        "9px",
+        "0px 0px 13px 13px"
+      ],
+      "boxShadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+        "rgba(5, 5, 5, 0.7) 0px 0px 0px 9999px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(212, 175, 55, 0.3) 0px 0px 15px 0px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.",
+        "rgba(13, 13, 13, 0.45) 0px -2px 14px 0px, rgba(50, 44, 27, 0.08) 0px -1px 0px 0px",
+        "rgba(0, 0, 0, 0.6) 0px -8px 8px -4px",
+        "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(212, 178, 53, 0.3) 0px 0px 0px 4px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba"
+      ]
+    },
+    "breakpoints": [
+      "(max-width: 640px)",
+      "(max-width: 640px), (max-height: 520px)",
+      "(prefers-reduced-motion: reduce)",
+      "(orientation: landscape)",
+      "(min-width: 640px)",
+      "(min-width: 768px)",
+      "(min-width: 1024px)",
+      "(min-width: 1280px)",
+      "(min-width: 1536px)",
+      "(max-width: 768px)",
+      "(orientation: portrait)",
+      "not all and (min-width: 640px)",
+      "(hover: hover)",
+      "(pointer: coarse)",
+      "(hover: none) and (pointer: coarse)",
+      "(max-width: 600px)"
+    ],
+    "animations": [
+      {
+        "name": "slideUpConsent",
+        "property": "animation",
+        "duration": "0.4s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "transform, background-color, border-color",
+        "duration": "0.26s, 0.3s, 0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, transform",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "border-color, background-color, transform",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "transform",
+        "duration": "0.26s"
+      },
+      {
+        "name": "transition",
+        "property": "grid-template-rows",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, transform",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "transform, opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "background-color, border-color, box-shadow, transform",
+        "duration": "0.15s"
+      }
+    ],
+    "forms": [],
+    "interactiveElements": [
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(1)",
+        "label": "GuidesThe complete MaqAmir handbookStudioCommand CenterFulls"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-0",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r1:"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-1",
+        "label": "Piano: tap for Grand Piano, hold for presets",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-2",
+        "label": "Magic: tap to shuffle a new sound, hold for presets and AI b",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-3",
+        "label": "Start recording",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-4",
+        "label": "Tap: Piano Realm · Hold: last realm",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-5",
+        "label": "Ask Amir: tap to ask, hold for guides and tour",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-6",
+        "label": "Customize quick actions",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:rg:"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-7",
+        "label": "A0—",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-8",
+        "label": "1Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-9",
+        "label": "2Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-10",
+        "label": "3Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-11",
+        "label": "4Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-12",
+        "label": "5Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-13",
+        "label": "6Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-14",
+        "label": "7Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-15",
+        "label": "C8Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-0",
+        "label": "We use analytics to improve your experience. Learn moreDecli"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-1",
+        "label": "MenuGuidesThe complete MaqAmir handbookStudioCommand CenterF"
+      },
+      {
+        "kind": "button",
+        "selector": "button-0",
+        "label": "Decline"
+      },
+      {
+        "kind": "button",
+        "selector": "button-1",
+        "label": "Accept"
+      },
+      {
+        "kind": "button",
+        "selector": "button-2",
+        "label": "MaqAmir.",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-3",
+        "label": "Grand Piano"
+      },
+      {
+        "kind": "button",
+        "selector": "button-4",
+        "label": "Rast·C",
+        "ariaExpanded": "false",
+        "ariaControls": "sound-maqam-panel"
+      },
+      {
+        "kind": "button",
+        "selector": "button-5",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r1:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-6",
+        "label": "Enter Fullscreen Mode"
+      },
+      {
+        "kind": "button",
+        "selector": "button-7",
+        "label": "Open Help & Guide"
+      },
+      {
+        "kind": "button",
+        "selector": "button-8",
+        "label": "Close guide"
+      },
+      {
+        "kind": "button",
+        "selector": "button-9",
+        "label": "Back"
+      },
+      {
+        "kind": "button",
+        "selector": "button-10",
+        "label": "Next"
+      },
+      {
+        "kind": "button",
+        "selector": "button-11",
+        "label": "120BPM"
+      },
+      {
+        "kind": "button",
+        "selector": "button-12",
+        "label": "Start rhythm playback"
+      },
+      {
+        "kind": "button",
+        "selector": "button-13",
+        "label": "Beat"
+      },
+      {
+        "kind": "button",
+        "selector": "button-14",
+        "label": "Beat"
+      },
+      {
+        "kind": "button",
+        "selector": "button-15",
+        "label": "Loop"
+      },
+      {
+        "kind": "button",
+        "selector": "button-16",
+        "label": "INST"
+      },
+      {
+        "kind": "button",
+        "selector": "button-17",
+        "label": "SOUNDS"
+      },
+      {
+        "kind": "button",
+        "selector": "button-18",
+        "label": "REC"
+      },
+      {
+        "kind": "button",
+        "selector": "button-19",
+        "label": "Library"
+      },
+      {
+        "kind": "button",
+        "selector": "button-20",
+        "label": "PRO"
+      },
+      {
+        "kind": "button",
+        "selector": "button-21",
+        "label": "Undo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-22",
+        "label": "Redo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-23",
+        "label": "Piano: tap for Grand Piano, hold for presets",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-24",
+        "label": "Magic: tap to shuffle a new sound, hold for presets and AI b",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-25",
+        "label": "Start recording",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-26",
+        "label": "Tap: Piano Realm · Hold: last realm",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-27",
+        "label": "Ask Amir: tap to ask, hold for guides and tour",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-28",
+        "label": "Sustain pedal"
+      },
+      {
+        "kind": "button",
+        "selector": "button-29",
+        "label": "Customize quick actions",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:rg:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-30",
+        "label": "Previous Octave"
+      },
+      {
+        "kind": "button",
+        "selector": "button-31",
+        "label": "Next Octave"
+      },
+      {
+        "kind": "button",
+        "selector": "button-32",
+        "label": "A0—",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-33",
+        "label": "1Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-34",
+        "label": "2Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-35",
+        "label": "3Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-36",
+        "label": "4Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-37",
+        "label": "5Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-38",
+        "label": "6Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-39",
+        "label": "7Grand Piano",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-40",
+        "label": "C8Grand Piano",
+        "ariaExpanded": "false"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://maqamir.tech/logo-dark.webp",
+        "alt": "MaqAmir",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 36,
+        "renderedHeight": 36,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      },
+      {
+        "src": "https://media.base44.com/images/public/691d6562ab74cee186822662/945678a22_generated_image.png",
+        "alt": "",
+        "naturalWidth": 1024,
+        "naturalHeight": 1024,
+        "renderedWidth": 136,
+        "renderedHeight": 136,
+        "isLazy": false,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/art/sm/945678a22.png",
+        "alt": "",
+        "naturalWidth": 96,
+        "naturalHeight": 96,
+        "renderedWidth": 14,
+        "renderedHeight": 14,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/play_pads.webp",
+        "alt": "Play",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/piano_keys.webp",
+        "alt": "Piano",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/dj_pads.webp",
+        "alt": "DJ",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/qiano.webp",
+        "alt": "Qiano",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/mandala.webp",
+        "alt": "Mandala",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/guitouch.webp",
+        "alt": "Guitouch",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/cellomir.webp",
+        "alt": "Cellomir",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/silk_river.webp",
+        "alt": "Silk River",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/sitabla.webp",
+        "alt": "Sitabla",
+        "naturalWidth": 280,
+        "naturalHeight": 160,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/vortex.webp",
+        "alt": "Vortex",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/arabesque.webp",
+        "alt": "Arabesque",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/realms/meend_spiral.webp",
+        "alt": "Meend Spiral",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "renderedWidth": 146,
+        "renderedHeight": 92,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/logo.webp",
+        "alt": "",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 32,
+        "renderedHeight": 32,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      }
+    ],
+    "stylesheets": [
+      "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css",
+      "https://maqamir.tech/assets/CollectionScrollArea-BBWvZhgm.css"
+    ],
+    "scripts": [
+      "https://maqamir.tech/assets/index-BfslubSs.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-1YFHYV2L73"
+    ],
+    "fonts": [
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff"
+    ],
+    "videos": [],
+    "backgroundImages": [],
+    "inlineSvgsCount": 30,
+    "layoutMetrics": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "scrollHeight": 1213,
+        "horizontalOverflow": false,
+        "headerHeight": 53,
+        "footerHeight": 53,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 5,
+        "flexCount": 495
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "scrollHeight": 1285,
+        "horizontalOverflow": false,
+        "headerHeight": 49,
+        "footerHeight": 53,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 5,
+        "flexCount": 491
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scrollHeight": 1288,
+        "horizontalOverflow": false,
+        "headerHeight": 45,
+        "footerHeight": 49,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 5,
+        "flexCount": 488
+      }
+    },
+    "screenshots": {
+      "desktop": "/screenshots/page_0_desktop.png",
+      "tablet": "/screenshots/page_0_tablet.png",
+      "mobile": "/screenshots/page_0_mobile.png"
+    }
+  },
+  {
+    "url": "https://maqamir.tech/about",
+    "canonicalPath": "/about",
+    "depth": 1,
+    "title": "About MaqAmir — A Studio in Your Pocket",
+    "status": 200,
+    "statusText": "OK",
+    "latencyMs": 7217,
+    "templateSignature": "script>script>script>div",
+    "isPagination": false,
+    "metaTags": {
+      "app-build-time": "2026-11-16T09:35:00.000Z",
+      "google": "notranslate",
+      "viewport": "width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "description": "About MaqAmir, the pocket studio with cloud and AI production, minimum latency, studio-grade fidelity, and limitless microtonality — plus acknowledgements for the open-source packages, sample libraries, and musical traditions it is built on.",
+      "og:type": "website",
+      "og:site_name": "MaqAmir",
+      "og:title": "About MaqAmir — A Studio in Your Pocket",
+      "og:description": "About MaqAmir, the pocket studio with cloud and AI production, minimum latency, studio-grade fidelity, and limitless microtonality — plus acknowledgements for the open-source packages, sample libraries, and musical traditions it is built on.",
+      "og:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "og:url": "https://maqamir.tech/about",
+      "og:locale": "en",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "About MaqAmir — A Studio in Your Pocket",
+      "twitter:description": "About MaqAmir, the pocket studio with cloud and AI production, minimum latency, studio-grade fidelity, and limitless microtonality — plus acknowledgements for the open-source packages, sample libraries, and musical traditions it is built on.",
+      "twitter:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "base44-analytics": "consent",
+      "base44-visitor-tracking": "consent",
+      "twitter:url": "https://maqamir.tech/about",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-title": "MaqAmir - Music With No Boundaries",
+      "robots": "index, follow"
+    },
+    "domTree": {
+      "tag": "body",
+      "classes": [
+        "theme-dark",
+        "theme-gold"
+      ],
+      "childrenCount": 1,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 4495
+      },
+      "children": [
+        {
+          "tag": "div",
+          "id": "root",
+          "classes": [],
+          "childrenCount": 4,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 4495
+          },
+          "children": [
+            {
+              "tag": "div",
+              "classes": [
+                "fixed",
+                "bottom-0",
+                "left-0",
+                "right-0",
+                "z-[9990]"
+              ],
+              "role": "dialog",
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 817,
+                "width": 1425,
+                "height": 83
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "classes": [
+                    "max-w-2xl",
+                    "mx-auto",
+                    "flex",
+                    "flex-col",
+                    "sm:flex-row"
+                  ],
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 377,
+                    "y": 817,
+                    "width": 672,
+                    "height": 67
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-3",
+                        "text-center",
+                        "sm:text-left"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 398,
+                        "y": 841,
+                        "width": 430,
+                        "height": 20
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-2",
+                        "shrink-0"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 843,
+                        "y": 834,
+                        "width": 185,
+                        "height": 33
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "svg",
+              "classes": [],
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "children": [
+                {
+                  "tag": "defs",
+                  "classes": [],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "children": [
+                    {
+                      "tag": "filter",
+                      "id": "asset-icon-alpha",
+                      "classes": [],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "app-root",
+              "classes": [
+                "min-h-screen",
+                "bg-background",
+                "text-foreground",
+                "pb-safe",
+                "select-none"
+              ],
+              "childrenCount": 6,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 4495
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "classes": [
+                    "sr-only",
+                    "focus:not-sr-only",
+                    "focus:absolute",
+                    "focus:z-[10000]",
+                    "focus:p-4"
+                  ],
+                  "textPreview": "Skip to main content",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": -1,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "header",
+                  "classes": [
+                    "w-full",
+                    "z-[500]",
+                    "transition-[background-color,border-color,opacity]",
+                    "duration-300",
+                    "bg-background/15"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 53
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "max-w-7xl",
+                        "mx-auto",
+                        "px-3",
+                        "sm:px-6",
+                        "flex"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 73,
+                        "y": 2,
+                        "width": 1280,
+                        "height": 48
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "role": "status",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "main",
+                  "id": "main-content",
+                  "classes": [
+                    "pb-2",
+                    "relative"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 53,
+                    "width": 1425,
+                    "height": 4442
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "min-h-screen",
+                        "bg-background",
+                        "text-foreground"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 0,
+                        "y": 53,
+                        "width": 1425,
+                        "height": 4434
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "classes": [
+                    "fixed",
+                    "inset-0",
+                    "z-[var(--z-nav-drawer,10050)]",
+                    "flex",
+                    "transition-[visibility,opacity]"
+                  ],
+                  "role": "dialog",
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 900
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "absolute",
+                        "inset-0",
+                        "bg-black/40"
+                      ],
+                      "childrenCount": 0,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1425,
+                        "height": 900
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "relative",
+                        "w-64",
+                        "max-w-[80vw]",
+                        "bg-background",
+                        "h-full"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": -256,
+                        "y": 0,
+                        "width": 256,
+                        "height": 900
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "section",
+              "classes": [],
+              "childrenCount": 0,
+              "rect": {
+                "x": 0,
+                "y": 4495,
+                "width": 1425,
+                "height": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "About MaqAmir"
+      },
+      {
+        "level": 2,
+        "text": "Acknowledgements"
+      },
+      {
+        "level": 2,
+        "text": "Audio Samples & Sound Libraries"
+      },
+      {
+        "level": 2,
+        "text": "Core React Ecosystem"
+      },
+      {
+        "level": 2,
+        "text": "UI, Styling & Components"
+      },
+      {
+        "level": 2,
+        "text": "Audio, MIDI & DSP"
+      },
+      {
+        "level": 2,
+        "text": "Data, Charts & Visualization"
+      },
+      {
+        "level": 2,
+        "text": "Markdown, PDF & File I/O"
+      },
+      {
+        "level": 2,
+        "text": "Infrastructure & Delivery"
+      },
+      {
+        "level": 2,
+        "text": "Cultural & Musical Heritage"
+      },
+      {
+        "level": 3,
+        "text": "Trademark Notice"
+      },
+      {
+        "level": 2,
+        "text": "Menu"
+      }
+    ],
+    "navLinks": [
+      {
+        "text": "MaqAmir.",
+        "href": "https://maqamir.tech/LandingPage",
+        "isExternal": false
+      },
+      {
+        "text": "GuidesThe complete MaqAmir handbook",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "PianoCreator Pro",
+        "href": "https://maqamir.tech/pro",
+        "isExternal": false
+      },
+      {
+        "text": "Credits & Licensing",
+        "href": "https://maqamir.tech/pricing",
+        "isExternal": false
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://maqamir.tech/contact",
+        "isExternal": false
+      },
+      {
+        "text": "About & Credits",
+        "href": "https://maqamir.tech/about",
+        "isExternal": false
+      },
+      {
+        "text": "Privacy",
+        "href": "https://maqamir.tech/privacy",
+        "isExternal": false
+      },
+      {
+        "text": "Terms",
+        "href": "https://maqamir.tech/terms",
+        "isExternal": false
+      },
+      {
+        "text": "IP Claims & DMCA",
+        "href": "https://maqamir.tech/legal/ip-claims",
+        "isExternal": false
+      }
+    ],
+    "internalLinks": [
+      "https://maqamir.tech/about#privacy",
+      "https://maqamir.tech/LandingPage",
+      "https://maqamir.tech/contact",
+      "https://maqamir.tech/privacy",
+      "https://maqamir.tech/terms",
+      "https://maqamir.tech/guides",
+      "https://maqamir.tech/pro",
+      "https://maqamir.tech/pricing",
+      "https://maqamir.tech/about",
+      "https://maqamir.tech/legal/ip-claims"
+    ],
+    "paginationLinks": [],
+    "typography": [
+      {
+        "role": "h1",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "900",
+        "lineHeight": "48px",
+        "letterSpacing": "-1.44px",
+        "color": "#F6F4EE",
+        "sampleText": "About MaqAmir"
+      },
+      {
+        "role": "h2",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "30px",
+        "fontWeight": "900",
+        "lineHeight": "36px",
+        "letterSpacing": "-0.9px",
+        "color": "#F6F4EE",
+        "sampleText": "Acknowledgements"
+      },
+      {
+        "role": "h3",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "900",
+        "lineHeight": "28px",
+        "letterSpacing": "-0.6px",
+        "color": "#F6F4EE",
+        "sampleText": "Trademark Notice"
+      },
+      {
+        "role": "body",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "(function () {\n      var origAdd = EventTarget.prototype.add"
+      },
+      {
+        "role": "nav",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "MaqAmir."
+      },
+      {
+        "role": "button",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "900",
+        "lineHeight": "15px",
+        "letterSpacing": "1.5px",
+        "color": "#E2E2E2",
+        "sampleText": "Decline"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#F6F4EE",
+        "rgb": "rgb(246, 244, 238)",
+        "usage": "text",
+        "count": 132
+      },
+      {
+        "hex": "#A6A6A6",
+        "rgb": "rgb(166, 166, 166)",
+        "usage": "text",
+        "count": 18
+      },
+      {
+        "hex": "#0D0D0D",
+        "rgb": "rgb(13, 13, 13)",
+        "usage": "background",
+        "count": 6
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "text",
+        "count": 5
+      },
+      {
+        "hex": "#322C1B",
+        "rgb": "rgb(50, 44, 27)",
+        "usage": "border",
+        "count": 3
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "border",
+        "count": 2
+      },
+      {
+        "hex": "#E2E2E2",
+        "rgb": "rgb(226, 226, 226)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.1)",
+        "usage": "background",
+        "count": 2
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.05)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgb(5, 5, 5)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#141414",
+        "rgb": "rgb(20, 20, 20)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4D4D8",
+        "rgb": "rgb(212, 212, 216)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#000000",
+        "rgb": "rgba(0, 0, 0, 0.4)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.4)",
+        "usage": "border",
+        "count": 1
+      }
+    ],
+    "gradients": [],
+    "spacings": {
+      "containerMaxWidths": [
+        "672px",
+        "1280px",
+        "768px",
+        "1152px"
+      ],
+      "sectionPaddings": [
+        "2px 0px",
+        "32px 0px"
+      ],
+      "gaps": [
+        "16px",
+        "12px",
+        "8px",
+        "20px",
+        "6px"
+      ],
+      "borderRadii": [
+        "8px",
+        "6px",
+        "16px"
+      ],
+      "boxShadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px"
+      ]
+    },
+    "breakpoints": [
+      "(max-width: 640px)",
+      "(max-width: 640px), (max-height: 520px)",
+      "(prefers-reduced-motion: reduce)",
+      "(orientation: landscape)",
+      "(min-width: 640px)",
+      "(min-width: 768px)",
+      "(min-width: 1024px)",
+      "(min-width: 1280px)",
+      "(min-width: 1536px)",
+      "(max-width: 768px)",
+      "(orientation: portrait)",
+      "not all and (min-width: 640px)",
+      "(hover: hover)",
+      "(pointer: coarse)",
+      "(hover: none) and (pointer: coarse)",
+      "(max-width: 600px)"
+    ],
+    "animations": [
+      {
+        "name": "slideUpConsent",
+        "property": "animation",
+        "duration": "0.4s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "background-color, border-color, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      }
+    ],
+    "forms": [],
+    "interactiveElements": [
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(1)",
+        "label": "GuidesThe complete MaqAmir handbookPianoCreator ProSupport &"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-0",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-1",
+        "label": "English",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-0",
+        "label": "We use analytics to improve your experience. Learn moreDecli"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-1",
+        "label": "MenuGuidesThe complete MaqAmir handbookPianoCreator ProSuppo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-0",
+        "label": "Decline"
+      },
+      {
+        "kind": "button",
+        "selector": "button-1",
+        "label": "Accept"
+      },
+      {
+        "kind": "button",
+        "selector": "button-2",
+        "label": "Open navigation menu",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-3",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-4",
+        "label": "English",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-5",
+        "label": "Menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-6",
+        "label": "Close menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-7",
+        "label": "Sign In"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://maqamir.tech/logo-dark.webp",
+        "alt": "MaqAmir Logo",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 40,
+        "renderedHeight": 40,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/logo.webp",
+        "alt": "",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 32,
+        "renderedHeight": 32,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      }
+    ],
+    "stylesheets": [
+      "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css"
+    ],
+    "scripts": [
+      "https://maqamir.tech/assets/index-BfslubSs.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-1YFHYV2L73"
+    ],
+    "fonts": [
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff"
+    ],
+    "videos": [],
+    "backgroundImages": [],
+    "inlineSvgsCount": 15,
+    "layoutMetrics": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "scrollHeight": 4495,
+        "horizontalOverflow": false,
+        "headerHeight": 53,
+        "footerHeight": 81,
+        "navLinkCount": 9,
+        "sectionCount": 12,
+        "gridCount": 0,
+        "flexCount": 13
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "scrollHeight": 4517,
+        "horizontalOverflow": false,
+        "headerHeight": 49,
+        "footerHeight": 81,
+        "navLinkCount": 9,
+        "sectionCount": 12,
+        "gridCount": 0,
+        "flexCount": 13
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scrollHeight": 6771,
+        "horizontalOverflow": false,
+        "headerHeight": 45,
+        "footerHeight": 101,
+        "navLinkCount": 9,
+        "sectionCount": 12,
+        "gridCount": 0,
+        "flexCount": 12
+      }
+    },
+    "screenshots": {
+      "desktop": "/screenshots/page_1_desktop.png",
+      "tablet": "/screenshots/page_1_tablet.png",
+      "mobile": "/screenshots/page_1_mobile.png"
+    }
+  },
+  {
+    "url": "https://maqamir.tech/guides",
+    "canonicalPath": "/guides",
+    "depth": 1,
+    "title": "Guides | MaqAmir",
+    "status": 200,
+    "statusText": "OK",
+    "latencyMs": 7075,
+    "templateSignature": "script>script>script>div",
+    "isPagination": false,
+    "metaTags": {
+      "app-build-time": "2026-11-16T09:35:00.000Z",
+      "google": "notranslate",
+      "viewport": "width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "description": "Explore the 6-part MaqAmir Handbook in 14 languages: expressive touch, 8-layer looping, DJ dual vinyl turntables, Synth Lab sound design, 135+ world scales, clip-on acoustic piano string adapters, and 27 musical worlds.",
+      "og:type": "website",
+      "og:site_name": "MaqAmir",
+      "og:title": "Guides | MaqAmir",
+      "og:description": "Explore the 6-part MaqAmir Handbook in 14 languages: expressive touch, 8-layer looping, DJ dual vinyl turntables, Synth Lab sound design, 135+ world scales, clip-on acoustic piano string adapters, and 27 musical worlds.",
+      "og:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "og:url": "https://maqamir.tech/guides",
+      "og:locale": "en",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Guides | MaqAmir",
+      "twitter:description": "Explore the 6-part MaqAmir Handbook in 14 languages: expressive touch, 8-layer looping, DJ dual vinyl turntables, Synth Lab sound design, 135+ world scales, clip-on acoustic piano string adapters, and 27 musical worlds.",
+      "twitter:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "base44-analytics": "consent",
+      "base44-visitor-tracking": "consent",
+      "twitter:url": "https://maqamir.tech/guides",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-title": "MaqAmir - Music With No Boundaries",
+      "robots": "index, follow",
+      "keywords": "maqamir guides, world music piano handbook, arabic maqam guide, dj dual vinyl turntables, 8-layer looper, synth lab sound design, qiano microtonal, acoustic piano quarter tone adapters"
+    },
+    "domTree": {
+      "tag": "body",
+      "classes": [
+        "theme-dark",
+        "theme-gold"
+      ],
+      "childrenCount": 1,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 5812
+      },
+      "children": [
+        {
+          "tag": "div",
+          "id": "root",
+          "classes": [],
+          "childrenCount": 4,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 5812
+          },
+          "children": [
+            {
+              "tag": "div",
+              "classes": [
+                "fixed",
+                "bottom-0",
+                "left-0",
+                "right-0",
+                "z-[9990]"
+              ],
+              "role": "dialog",
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 817,
+                "width": 1425,
+                "height": 83
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "classes": [
+                    "max-w-2xl",
+                    "mx-auto",
+                    "flex",
+                    "flex-col",
+                    "sm:flex-row"
+                  ],
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 377,
+                    "y": 817,
+                    "width": 672,
+                    "height": 67
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-3",
+                        "text-center",
+                        "sm:text-left"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 398,
+                        "y": 841,
+                        "width": 430,
+                        "height": 20
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-2",
+                        "shrink-0"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 843,
+                        "y": 834,
+                        "width": 185,
+                        "height": 33
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "svg",
+              "classes": [],
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "children": [
+                {
+                  "tag": "defs",
+                  "classes": [],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "children": [
+                    {
+                      "tag": "filter",
+                      "id": "asset-icon-alpha",
+                      "classes": [],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "app-root",
+              "classes": [
+                "min-h-screen",
+                "bg-background",
+                "text-foreground",
+                "pb-safe",
+                "select-none"
+              ],
+              "childrenCount": 6,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 5812
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "classes": [
+                    "sr-only",
+                    "focus:not-sr-only",
+                    "focus:absolute",
+                    "focus:z-[10000]",
+                    "focus:p-4"
+                  ],
+                  "textPreview": "Skip to main content",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": -1,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "header",
+                  "classes": [
+                    "w-full",
+                    "z-[500]",
+                    "transition-[background-color,border-color,opacity]",
+                    "duration-300",
+                    "bg-background/15"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 53
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "max-w-7xl",
+                        "mx-auto",
+                        "px-3",
+                        "sm:px-6",
+                        "flex"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 73,
+                        "y": 2,
+                        "width": 1280,
+                        "height": 48
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "role": "status",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "main",
+                  "id": "main-content",
+                  "classes": [
+                    "pb-2",
+                    "relative"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 53,
+                    "width": 1425,
+                    "height": 5759
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "min-h-screen",
+                        "bg-[#050505]",
+                        "text-white"
+                      ],
+                      "childrenCount": 3,
+                      "rect": {
+                        "x": 0,
+                        "y": 53,
+                        "width": 1425,
+                        "height": 5751
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "classes": [
+                    "fixed",
+                    "inset-0",
+                    "z-[var(--z-nav-drawer,10050)]",
+                    "flex",
+                    "transition-[visibility,opacity]"
+                  ],
+                  "role": "dialog",
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 900
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "absolute",
+                        "inset-0",
+                        "bg-black/40"
+                      ],
+                      "childrenCount": 0,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1425,
+                        "height": 900
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "relative",
+                        "w-64",
+                        "max-w-[80vw]",
+                        "bg-background",
+                        "h-full"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": -256,
+                        "y": 0,
+                        "width": 256,
+                        "height": 900
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "section",
+              "classes": [],
+              "childrenCount": 0,
+              "rect": {
+                "x": 0,
+                "y": 5812,
+                "width": 1425,
+                "height": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "The complete MaqAmir handbook."
+      },
+      {
+        "level": 2,
+        "text": "4 Curated Paths Through the Handbook"
+      },
+      {
+        "level": 3,
+        "text": "Music Creator & Songwriter"
+      },
+      {
+        "level": 3,
+        "text": "Beatmaker & Live DJ"
+      },
+      {
+        "level": 3,
+        "text": "Sound Designer & Sonic Innovator"
+      },
+      {
+        "level": 3,
+        "text": "World Music, Microtones & Healing"
+      },
+      {
+        "level": 2,
+        "text": "Feel Expressive Touch & Watch 30-Second Performances"
+      },
+      {
+        "level": 3,
+        "text": "Two-Finger Hold or Right-Click"
+      },
+      {
+        "level": 2,
+        "text": "Step-by-Step Walkthrough"
+      },
+      {
+        "level": 3,
+        "text": "Whisper-Soft Fingertips to Bold Chords & Instant MIDI Drop"
+      },
+      {
+        "level": 3,
+        "text": "Singing Chords: Bending One Melody Note Inside a Held Chord"
+      },
+      {
+        "level": 3,
+        "text": "Hands-Free Drones & Two-Finger Stereo Placement Lock"
+      },
+      {
+        "level": 3,
+        "text": "Physical Device Tilt, Dual Keyboards & Custom Key Sizing"
+      },
+      {
+        "level": 2,
+        "text": "Tap Any Numbered Pin to Explore the Controls"
+      },
+      {
+        "level": 2,
+        "text": "Ready to make your first sound?"
+      },
+      {
+        "level": 2,
+        "text": "Menu"
+      }
+    ],
+    "navLinks": [
+      {
+        "text": "MaqAmir.",
+        "href": "https://maqamir.tech/",
+        "isExternal": false
+      },
+      {
+        "text": "Part 010/4Start & Touch",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "Part 020/5Creation & Loops",
+        "href": "https://maqamir.tech/guides/music-creation",
+        "isExternal": false
+      },
+      {
+        "text": "Part 030/5DJ & Dual Vinyl",
+        "href": "https://maqamir.tech/guides/dj-live-looping",
+        "isExternal": false
+      },
+      {
+        "text": "Part 040/5Sound Design & Synth",
+        "href": "https://maqamir.tech/guides/sound-design",
+        "isExternal": false
+      },
+      {
+        "text": "Part 050/5World Scales & Adapters",
+        "href": "https://maqamir.tech/guides/world-innovation",
+        "isExternal": false
+      },
+      {
+        "text": "Part 060/427 Worlds & 135 Skins",
+        "href": "https://maqamir.tech/guides/realms-skins",
+        "isExternal": false
+      },
+      {
+        "text": "Next PartPart 02 · Music Creation, Beats, 8-Layer Looper & L",
+        "href": "https://maqamir.tech/guides/music-creation",
+        "isExternal": false
+      },
+      {
+        "text": "GuidesThe complete MaqAmir handbook",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "PianoCreator Pro",
+        "href": "https://maqamir.tech/pro",
+        "isExternal": false
+      },
+      {
+        "text": "Credits & Licensing",
+        "href": "https://maqamir.tech/pricing",
+        "isExternal": false
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://maqamir.tech/contact",
+        "isExternal": false
+      },
+      {
+        "text": "About & Credits",
+        "href": "https://maqamir.tech/about",
+        "isExternal": false
+      },
+      {
+        "text": "Privacy",
+        "href": "https://maqamir.tech/privacy",
+        "isExternal": false
+      },
+      {
+        "text": "Terms",
+        "href": "https://maqamir.tech/terms",
+        "isExternal": false
+      },
+      {
+        "text": "IP Claims & DMCA",
+        "href": "https://maqamir.tech/legal/ip-claims",
+        "isExternal": false
+      }
+    ],
+    "internalLinks": [
+      "https://maqamir.tech/about#privacy",
+      "https://maqamir.tech/",
+      "https://maqamir.tech/piano",
+      "https://maqamir.tech/whats-new",
+      "https://maqamir.tech/guides",
+      "https://maqamir.tech/guides/music-creation",
+      "https://maqamir.tech/guides/dj-live-looping",
+      "https://maqamir.tech/guides/sound-design",
+      "https://maqamir.tech/guides/world-innovation",
+      "https://maqamir.tech/guides/realms-skins",
+      "https://maqamir.tech/piano?scale=rast",
+      "https://maqamir.tech/dj",
+      "https://maqamir.tech/synth",
+      "https://maqamir.tech/piano?scale=nahawand&realm=aura_bowls",
+      "https://maqamir.tech/guides/sound-design#synth-lab",
+      "https://maqamir.tech/guides/music-creation#piano-studio",
+      "https://maqamir.tech/guides/music-creation#ai-studio",
+      "https://maqamir.tech/guides/world-innovation#adapters",
+      "https://maqamir.tech/piano?scale=hijaz&realm=oudora",
+      "https://maqamir.tech/piano?scale=bayati",
+      "https://maqamir.tech/piano?realm=piano_keys",
+      "https://maqamir.tech/pro",
+      "https://maqamir.tech/pricing",
+      "https://maqamir.tech/contact",
+      "https://maqamir.tech/about",
+      "https://maqamir.tech/privacy",
+      "https://maqamir.tech/terms",
+      "https://maqamir.tech/legal/ip-claims"
+    ],
+    "paginationLinks": [],
+    "typography": [
+      {
+        "role": "h1",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "60px",
+        "fontWeight": "900",
+        "lineHeight": "60px",
+        "letterSpacing": "-1.8px",
+        "color": "#FFFFFF",
+        "sampleText": "The complete MaqAmir handbook."
+      },
+      {
+        "role": "h2",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.72px",
+        "color": "#FFFFFF",
+        "sampleText": "4 Curated Paths Through the Handbook"
+      },
+      {
+        "role": "h3",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "lineHeight": "20px",
+        "letterSpacing": "-0.42px",
+        "color": "#FFFFFF",
+        "sampleText": "Music Creator & Songwriter"
+      },
+      {
+        "role": "body",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "(function () {\n      var origAdd = EventTarget.prototype.add"
+      },
+      {
+        "role": "nav",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "MaqAmir."
+      },
+      {
+        "role": "button",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "900",
+        "lineHeight": "15px",
+        "letterSpacing": "1.5px",
+        "color": "#E2E2E2",
+        "sampleText": "Decline"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255, 255, 255)",
+        "usage": "text",
+        "count": 75
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "border",
+        "count": 50
+      },
+      {
+        "hex": "#E2E2E2",
+        "rgb": "rgb(226, 226, 226)",
+        "usage": "text",
+        "count": 47
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.03)",
+        "usage": "background",
+        "count": 17
+      },
+      {
+        "hex": "#F6F4EE",
+        "rgb": "rgb(246, 244, 238)",
+        "usage": "text",
+        "count": 16
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.05)",
+        "usage": "accent",
+        "count": 16
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "text",
+        "count": 13
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "background",
+        "count": 9
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgb(5, 5, 5)",
+        "usage": "text",
+        "count": 8
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "background",
+        "count": 7
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgba(212, 175, 55, 0.4)",
+        "usage": "border",
+        "count": 7
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "accent",
+        "count": 4
+      },
+      {
+        "hex": "#000000",
+        "rgb": "rgb(0, 0, 0)",
+        "usage": "background",
+        "count": 4
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "accent",
+        "count": 4
+      },
+      {
+        "hex": "#0D0D0D",
+        "rgb": "rgb(13, 13, 13)",
+        "usage": "background",
+        "count": 3
+      },
+      {
+        "hex": "#A6A6A6",
+        "rgb": "rgb(166, 166, 166)",
+        "usage": "text",
+        "count": 1
+      }
+    ],
+    "gradients": [
+      "radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.14), rgba(0, 0, 0, 0) 38%), linear-gradient(rgba(0, 0, 0, 0), rgba(212, 175, 55, 0.03))"
+    ],
+    "spacings": {
+      "containerMaxWidths": [
+        "672px",
+        "1280px",
+        "896px",
+        "768px"
+      ],
+      "sectionPaddings": [
+        "2px 0px",
+        "64px 24px",
+        "56px 24px",
+        "24px 24px"
+      ],
+      "gaps": [
+        "16px",
+        "12px",
+        "8px",
+        "20px",
+        "6px",
+        "4px",
+        "14px",
+        "24px"
+      ],
+      "borderRadii": [
+        "8px",
+        "6px"
+      ],
+      "boxShadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(212, 175, 55, 0.35) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      ]
+    },
+    "breakpoints": [
+      "(max-width: 640px)",
+      "(max-width: 640px), (max-height: 520px)",
+      "(prefers-reduced-motion: reduce)",
+      "(orientation: landscape)",
+      "(min-width: 640px)",
+      "(min-width: 768px)",
+      "(min-width: 1024px)",
+      "(min-width: 1280px)",
+      "(min-width: 1536px)",
+      "(max-width: 768px)",
+      "(orientation: portrait)",
+      "not all and (min-width: 640px)",
+      "(hover: hover)",
+      "(pointer: coarse)",
+      "(hover: none) and (pointer: coarse)",
+      "(max-width: 600px)"
+    ],
+    "animations": [
+      {
+        "name": "slideUpConsent",
+        "property": "animation",
+        "duration": "0.4s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "background-color, border-color, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      }
+    ],
+    "forms": [],
+    "interactiveElements": [
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(1)",
+        "label": "Part 010/4Start & TouchPart 020/5Creation & LoopsPart 030/5D"
+      },
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(2)",
+        "label": "Next PartPart 02 · Music Creation, Beats, 8-Layer Looper & L"
+      },
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(3)",
+        "label": "GuidesThe complete MaqAmir handbookPianoCreator ProSupport &"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-0",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "tab",
+        "selector": "[role='tab']-0",
+        "label": "Expressive Touch Gestures",
+        "ariaControls": "demo-panel-touch"
+      },
+      {
+        "kind": "tab",
+        "selector": "[role='tab']-1",
+        "label": "Short Performance Videos",
+        "ariaControls": "demo-panel-cinema"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-0",
+        "label": "We use analytics to improve your experience. Learn moreDecli"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-1",
+        "label": "MenuGuidesThe complete MaqAmir handbookPianoCreator ProSuppo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-0",
+        "label": "Decline"
+      },
+      {
+        "kind": "button",
+        "selector": "button-1",
+        "label": "Accept"
+      },
+      {
+        "kind": "button",
+        "selector": "button-2",
+        "label": "Open navigation menu",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-3",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-4",
+        "label": "English"
+      },
+      {
+        "kind": "button",
+        "selector": "button-5",
+        "label": "עברית"
+      },
+      {
+        "kind": "button",
+        "selector": "button-6",
+        "label": "العربية"
+      },
+      {
+        "kind": "button",
+        "selector": "button-7",
+        "label": "Русский"
+      },
+      {
+        "kind": "button",
+        "selector": "button-8",
+        "label": "Français"
+      },
+      {
+        "kind": "button",
+        "selector": "button-9",
+        "label": "Deutsch"
+      },
+      {
+        "kind": "button",
+        "selector": "button-10",
+        "label": "Nederlands"
+      },
+      {
+        "kind": "button",
+        "selector": "button-11",
+        "label": "فارسی"
+      },
+      {
+        "kind": "button",
+        "selector": "button-12",
+        "label": "Türkçe"
+      },
+      {
+        "kind": "button",
+        "selector": "button-13",
+        "label": "中文"
+      },
+      {
+        "kind": "button",
+        "selector": "button-14",
+        "label": "日本語"
+      },
+      {
+        "kind": "button",
+        "selector": "button-15",
+        "label": "Tiếng Việt"
+      },
+      {
+        "kind": "button",
+        "selector": "button-16",
+        "label": "Español"
+      },
+      {
+        "kind": "button",
+        "selector": "button-17",
+        "label": "हिन्दी"
+      },
+      {
+        "kind": "button",
+        "selector": "button-18",
+        "label": "View full screen & zoom: Music Creator & Songwriter"
+      },
+      {
+        "kind": "button",
+        "selector": "button-19",
+        "label": "View full screen & zoom: Beatmaker & Live DJ"
+      },
+      {
+        "kind": "button",
+        "selector": "button-20",
+        "label": "View full screen & zoom: Sound Designer & Sonic Innovator"
+      },
+      {
+        "kind": "button",
+        "selector": "button-21",
+        "label": "View full screen & zoom: World Music, Microtones & Healing"
+      },
+      {
+        "kind": "button",
+        "selector": "button-22",
+        "label": "Expressive Touch Gestures",
+        "ariaControls": "demo-panel-touch"
+      },
+      {
+        "kind": "button",
+        "selector": "button-23",
+        "label": "Short Performance Videos",
+        "ariaControls": "demo-panel-cinema"
+      },
+      {
+        "kind": "button",
+        "selector": "button-24",
+        "label": "Soft vs. Bold TouchFingertip Tap vs. Flat Finger Pad"
+      },
+      {
+        "kind": "button",
+        "selector": "button-25",
+        "label": "1-Finger Hold & SlideBend One Note Inside a Chord"
+      },
+      {
+        "kind": "button",
+        "selector": "button-26",
+        "label": "Hands-Free Note HoldTwo-Finger Hold or Right-Click"
+      },
+      {
+        "kind": "button",
+        "selector": "button-27",
+        "label": "Stereo & Warmth LockTwo-Finger Slide & Snapshot Lock"
+      },
+      {
+        "kind": "button",
+        "selector": "button-28",
+        "label": "Hear Gesture Example"
+      },
+      {
+        "kind": "button",
+        "selector": "button-29",
+        "label": "Mark Done"
+      },
+      {
+        "kind": "button",
+        "selector": "button-30",
+        "label": "View full screen & zoom: Whisper-Soft Fingertips to Bold Cho"
+      },
+      {
+        "kind": "button",
+        "selector": "button-31",
+        "label": "Mark Done"
+      },
+      {
+        "kind": "button",
+        "selector": "button-32",
+        "label": "View full screen & zoom: Singing Chords: Bending One Melody "
+      },
+      {
+        "kind": "button",
+        "selector": "button-33",
+        "label": "Mark Done"
+      },
+      {
+        "kind": "button",
+        "selector": "button-34",
+        "label": "View full screen & zoom: Hands-Free Drones & Two-Finger Ster"
+      },
+      {
+        "kind": "button",
+        "selector": "button-35",
+        "label": "Mark Done"
+      },
+      {
+        "kind": "button",
+        "selector": "button-36",
+        "label": "View full screen & zoom: Physical Device Tilt, Dual Keyboard"
+      },
+      {
+        "kind": "button",
+        "selector": "button-37",
+        "label": "View full screen & zoom: Piano Studio"
+      },
+      {
+        "kind": "button",
+        "selector": "button-38",
+        "label": "1"
+      },
+      {
+        "kind": "button",
+        "selector": "button-39",
+        "label": "2"
+      },
+      {
+        "kind": "button",
+        "selector": "button-40",
+        "label": "3"
+      },
+      {
+        "kind": "button",
+        "selector": "button-41",
+        "label": "4"
+      },
+      {
+        "kind": "button",
+        "selector": "button-42",
+        "label": "5"
+      },
+      {
+        "kind": "button",
+        "selector": "button-43",
+        "label": "1World Scale & Root Bar135+ ScalesRetune the entire keyboard"
+      },
+      {
+        "kind": "button",
+        "selector": "button-44",
+        "label": "2Magic, Record, Realms & QraftTop Action BarRoll a Magic AI "
+      },
+      {
+        "kind": "button",
+        "selector": "button-45",
+        "label": "3Octave Split & Arp PillsPer-Octave SetupTap any octave badg"
+      },
+      {
+        "kind": "button",
+        "selector": "button-46",
+        "label": "4Expressive Keys & Glissando StripTouch & LatchFingertip vs."
+      },
+      {
+        "kind": "button",
+        "selector": "button-47",
+        "label": "5Instruments, Sounds, Looper & Skins DockUnified DrawersOpen"
+      },
+      {
+        "kind": "button",
+        "selector": "button-48",
+        "label": "Ask Amir Guide"
+      },
+      {
+        "kind": "button",
+        "selector": "button-49",
+        "label": "Menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-50",
+        "label": "Close navigation menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-51",
+        "label": "Sign In"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://maqamir.tech/logo-dark.webp",
+        "alt": "MaqAmir Logo",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 40,
+        "renderedHeight": 40,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+        "alt": "Music Creator & Songwriter",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 261,
+        "renderedHeight": 146,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/dj-realm-vinyl.webp",
+        "alt": "Beatmaker & Live DJ",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 261,
+        "renderedHeight": 146,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/synth-lab.webp",
+        "alt": "Sound Designer & Sonic Innovator",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 261,
+        "renderedHeight": 146,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/aura-bowls-heal.webp",
+        "alt": "World Music, Microtones & Healing",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 261,
+        "renderedHeight": 146,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+        "alt": "Whisper-Soft Fingertips to Bold Chords & Instant MIDI Drop (Computer)",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 499,
+        "renderedHeight": 281,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+        "alt": "Singing Chords: Bending One Melody Note Inside a Held Chord (Computer)",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 499,
+        "renderedHeight": 281,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+        "alt": "Hands-Free Drones & Two-Finger Stereo Placement Lock (Computer)",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 499,
+        "renderedHeight": 281,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-realm-dual.webp",
+        "alt": "Physical Device Tilt, Dual Keyboards & Custom Key Sizing (Computer)",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 499,
+        "renderedHeight": 281,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+        "alt": "Piano Studio (Computer)",
+        "naturalWidth": 1200,
+        "naturalHeight": 750,
+        "renderedWidth": 813,
+        "renderedHeight": 457,
+        "isLazy": true,
+        "isLogo": false,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/logo.webp",
+        "alt": "",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 32,
+        "renderedHeight": 32,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      }
+    ],
+    "stylesheets": [
+      "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css"
+    ],
+    "scripts": [
+      "https://maqamir.tech/assets/index-BfslubSs.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-1YFHYV2L73"
+    ],
+    "fonts": [
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff"
+    ],
+    "videos": [],
+    "backgroundImages": [],
+    "inlineSvgsCount": 30,
+    "layoutMetrics": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "scrollHeight": 5812,
+        "horizontalOverflow": false,
+        "headerHeight": 53,
+        "footerHeight": 0,
+        "navLinkCount": 16,
+        "sectionCount": 11,
+        "gridCount": 12,
+        "flexCount": 83
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "scrollHeight": 9202,
+        "horizontalOverflow": false,
+        "headerHeight": 49,
+        "footerHeight": 0,
+        "navLinkCount": 16,
+        "sectionCount": 11,
+        "gridCount": 12,
+        "flexCount": 83
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scrollHeight": 12326,
+        "horizontalOverflow": false,
+        "headerHeight": 45,
+        "footerHeight": 0,
+        "navLinkCount": 16,
+        "sectionCount": 11,
+        "gridCount": 13,
+        "flexCount": 87
+      }
+    },
+    "screenshots": {
+      "desktop": "/screenshots/page_2_desktop.png",
+      "tablet": "/screenshots/page_2_tablet.png",
+      "mobile": "/screenshots/page_2_mobile.png"
+    }
+  },
+  {
+    "url": "https://maqamir.tech/pro",
+    "canonicalPath": "/pro",
+    "depth": 1,
+    "title": "PianoCreator Pro — Unlock the full microtonal studio | MaqAmir",
+    "status": 200,
+    "statusText": "OK",
+    "latencyMs": 7193,
+    "templateSignature": "script>script>script>div",
+    "isPagination": false,
+    "metaTags": {
+      "app-build-time": "2026-11-16T09:35:00.000Z",
+      "google": "notranslate",
+      "viewport": "width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "description": "Unlock every scale, instrument, effect and realm in PianoCreator. Unlimited recordings and exports. Monthly or annual plans, cancel any time.",
+      "og:type": "website",
+      "og:site_name": "MaqAmir",
+      "og:title": "PianoCreator Pro — Unlock the full microtonal studio | MaqAmir",
+      "og:description": "Unlock every scale, instrument, effect and realm in PianoCreator. Unlimited recordings and exports. Monthly or annual plans, cancel any time.",
+      "og:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "og:url": "https://maqamir.tech/pro",
+      "og:locale": "en",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "PianoCreator Pro — Unlock the full microtonal studio | MaqAmir",
+      "twitter:description": "Unlock every scale, instrument, effect and realm in PianoCreator. Unlimited recordings and exports. Monthly or annual plans, cancel any time.",
+      "twitter:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "base44-analytics": "consent",
+      "base44-visitor-tracking": "consent",
+      "twitter:url": "https://maqamir.tech/pro",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-title": "MaqAmir - Music With No Boundaries",
+      "robots": "index, follow"
+    },
+    "domTree": {
+      "tag": "body",
+      "classes": [
+        "theme-dark",
+        "theme-gold"
+      ],
+      "childrenCount": 1,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 900
+      },
+      "children": [
+        {
+          "tag": "div",
+          "id": "root",
+          "classes": [],
+          "childrenCount": 4,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 900
+          },
+          "children": [
+            {
+              "tag": "div",
+              "classes": [
+                "fixed",
+                "bottom-0",
+                "left-0",
+                "right-0",
+                "z-[9990]"
+              ],
+              "role": "dialog",
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 817,
+                "width": 1425,
+                "height": 83
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "classes": [
+                    "max-w-2xl",
+                    "mx-auto",
+                    "flex",
+                    "flex-col",
+                    "sm:flex-row"
+                  ],
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 377,
+                    "y": 817,
+                    "width": 672,
+                    "height": 67
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-3",
+                        "text-center",
+                        "sm:text-left"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 398,
+                        "y": 841,
+                        "width": 430,
+                        "height": 20
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-2",
+                        "shrink-0"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 843,
+                        "y": 834,
+                        "width": 185,
+                        "height": 33
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "svg",
+              "classes": [],
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "children": [
+                {
+                  "tag": "defs",
+                  "classes": [],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "children": [
+                    {
+                      "tag": "filter",
+                      "id": "asset-icon-alpha",
+                      "classes": [],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "app-root",
+              "classes": [
+                "min-h-screen",
+                "bg-background",
+                "text-foreground",
+                "pb-safe",
+                "select-none"
+              ],
+              "childrenCount": 6,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 900
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "classes": [
+                    "sr-only",
+                    "focus:not-sr-only",
+                    "focus:absolute",
+                    "focus:z-[10000]",
+                    "focus:p-4"
+                  ],
+                  "textPreview": "Skip to main content",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": -1,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "header",
+                  "classes": [
+                    "w-full",
+                    "z-[500]",
+                    "transition-[background-color,border-color,opacity]",
+                    "duration-300",
+                    "bg-background/15"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 53
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "max-w-7xl",
+                        "mx-auto",
+                        "px-3",
+                        "sm:px-6",
+                        "flex"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 73,
+                        "y": 2,
+                        "width": 1280,
+                        "height": 48
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "role": "status",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "main",
+                  "id": "main-content",
+                  "classes": [
+                    "pb-2",
+                    "relative"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 53,
+                    "width": 1425,
+                    "height": 725
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 0,
+                        "y": 53,
+                        "width": 1425,
+                        "height": 717
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "classes": [
+                    "fixed",
+                    "inset-0",
+                    "z-[var(--z-nav-drawer,10050)]",
+                    "flex",
+                    "transition-[visibility,opacity]"
+                  ],
+                  "role": "dialog",
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 900
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "absolute",
+                        "inset-0",
+                        "bg-black/40"
+                      ],
+                      "childrenCount": 0,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1425,
+                        "height": 900
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "relative",
+                        "w-64",
+                        "max-w-[80vw]",
+                        "bg-background",
+                        "h-full"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": -256,
+                        "y": 0,
+                        "width": 256,
+                        "height": 900
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "section",
+              "classes": [],
+              "childrenCount": 0,
+              "rect": {
+                "x": 0,
+                "y": 900,
+                "width": 1425,
+                "height": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "PianoCreator Pro"
+      },
+      {
+        "level": 2,
+        "text": "Menu"
+      }
+    ],
+    "navLinks": [
+      {
+        "text": "MaqAmir.",
+        "href": "https://maqamir.tech/LandingPage",
+        "isExternal": false
+      },
+      {
+        "text": "GuidesThe complete MaqAmir handbook",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "PianoCreator Pro",
+        "href": "https://maqamir.tech/pro",
+        "isExternal": false
+      },
+      {
+        "text": "Credits & Licensing",
+        "href": "https://maqamir.tech/pricing",
+        "isExternal": false
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://maqamir.tech/contact",
+        "isExternal": false
+      },
+      {
+        "text": "About & Credits",
+        "href": "https://maqamir.tech/about",
+        "isExternal": false
+      },
+      {
+        "text": "Privacy",
+        "href": "https://maqamir.tech/privacy",
+        "isExternal": false
+      },
+      {
+        "text": "Terms",
+        "href": "https://maqamir.tech/terms",
+        "isExternal": false
+      },
+      {
+        "text": "IP Claims & DMCA",
+        "href": "https://maqamir.tech/legal/ip-claims",
+        "isExternal": false
+      }
+    ],
+    "internalLinks": [
+      "https://maqamir.tech/about#privacy",
+      "https://maqamir.tech/LandingPage",
+      "https://maqamir.tech/guides",
+      "https://maqamir.tech/pro",
+      "https://maqamir.tech/pricing",
+      "https://maqamir.tech/contact",
+      "https://maqamir.tech/about",
+      "https://maqamir.tech/privacy",
+      "https://maqamir.tech/terms",
+      "https://maqamir.tech/legal/ip-claims"
+    ],
+    "paginationLinks": [],
+    "typography": [
+      {
+        "role": "h1",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "30px",
+        "fontWeight": "800",
+        "lineHeight": "36px",
+        "letterSpacing": "-0.75px",
+        "color": "#F6F4EE",
+        "sampleText": "PianoCreator Pro"
+      },
+      {
+        "role": "h2",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "lineHeight": "28px",
+        "letterSpacing": "-0.54px",
+        "color": "#F6F4EE",
+        "sampleText": "Menu"
+      },
+      {
+        "role": "body",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "(function () {\n      var origAdd = EventTarget.prototype.add"
+      },
+      {
+        "role": "nav",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "MaqAmir."
+      },
+      {
+        "role": "button",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "900",
+        "lineHeight": "15px",
+        "letterSpacing": "1.5px",
+        "color": "#E2E2E2",
+        "sampleText": "Decline"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#F6F4EE",
+        "rgb": "rgb(246, 244, 238)",
+        "usage": "text",
+        "count": 43
+      },
+      {
+        "hex": "#A6A6A6",
+        "rgb": "rgb(166, 166, 166)",
+        "usage": "text",
+        "count": 10
+      },
+      {
+        "hex": "#0D0D0D",
+        "rgb": "rgb(13, 13, 13)",
+        "usage": "background",
+        "count": 5
+      },
+      {
+        "hex": "#322C1B",
+        "rgb": "rgb(50, 44, 27)",
+        "usage": "border",
+        "count": 3
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "border",
+        "count": 2
+      },
+      {
+        "hex": "#E2E2E2",
+        "rgb": "rgb(226, 226, 226)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgb(5, 5, 5)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#141414",
+        "rgb": "rgb(20, 20, 20)",
+        "usage": "accent",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.15)",
+        "usage": "background",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.1)",
+        "usage": "accent",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "border",
+        "count": 2
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.05)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#000000",
+        "rgb": "rgba(0, 0, 0, 0.4)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "text",
+        "count": 1
+      }
+    ],
+    "gradients": [],
+    "spacings": {
+      "containerMaxWidths": [
+        "672px",
+        "1280px",
+        "448px",
+        "1152px"
+      ],
+      "sectionPaddings": [
+        "2px 0px"
+      ],
+      "gaps": [
+        "16px",
+        "12px",
+        "8px",
+        "20px",
+        "4px 12px"
+      ],
+      "borderRadii": [
+        "8px",
+        "6px",
+        "9999px",
+        "12px"
+      ],
+      "boxShadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0."
+      ]
+    },
+    "breakpoints": [
+      "(max-width: 640px)",
+      "(max-width: 640px), (max-height: 520px)",
+      "(prefers-reduced-motion: reduce)",
+      "(orientation: landscape)",
+      "(min-width: 640px)",
+      "(min-width: 768px)",
+      "(min-width: 1024px)",
+      "(min-width: 1280px)",
+      "(min-width: 1536px)",
+      "(max-width: 768px)",
+      "(orientation: portrait)",
+      "not all and (min-width: 640px)",
+      "(hover: hover)",
+      "(pointer: coarse)",
+      "(hover: none) and (pointer: coarse)",
+      "(max-width: 600px)"
+    ],
+    "animations": [
+      {
+        "name": "slideUpConsent",
+        "property": "animation",
+        "duration": "0.4s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "background-color, border-color, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "visibility, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "transform",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      }
+    ],
+    "forms": [],
+    "interactiveElements": [
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(1)",
+        "label": "GuidesThe complete MaqAmir handbookPianoCreator ProSupport &"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-0",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-1",
+        "label": "English",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-0",
+        "label": "We use analytics to improve your experience. Learn moreDecli"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-1",
+        "label": "MenuGuidesThe complete MaqAmir handbookPianoCreator ProSuppo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-0",
+        "label": "Decline"
+      },
+      {
+        "kind": "button",
+        "selector": "button-1",
+        "label": "Accept"
+      },
+      {
+        "kind": "button",
+        "selector": "button-2",
+        "label": "Open navigation menu",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-3",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-4",
+        "label": "English",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-5",
+        "label": "AnnualILS 39 / yearFounding price · ILS 20 off, locked for l"
+      },
+      {
+        "kind": "button",
+        "selector": "button-6",
+        "label": "MonthlyILS 9.90 / month"
+      },
+      {
+        "kind": "button",
+        "selector": "button-7",
+        "label": "Become a Founding Member"
+      },
+      {
+        "kind": "button",
+        "selector": "button-8",
+        "label": "Menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-9",
+        "label": "Close menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-10",
+        "label": "Sign In"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://maqamir.tech/logo-dark.webp",
+        "alt": "MaqAmir Logo",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 40,
+        "renderedHeight": 40,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/logo.webp",
+        "alt": "",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 32,
+        "renderedHeight": 32,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      }
+    ],
+    "stylesheets": [
+      "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css"
+    ],
+    "scripts": [
+      "https://maqamir.tech/assets/index-BfslubSs.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-1YFHYV2L73"
+    ],
+    "fonts": [
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff"
+    ],
+    "videos": [],
+    "backgroundImages": [],
+    "inlineSvgsCount": 19,
+    "layoutMetrics": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "scrollHeight": 900,
+        "horizontalOverflow": false,
+        "headerHeight": 53,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 1,
+        "flexCount": 13
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "scrollHeight": 1024,
+        "horizontalOverflow": false,
+        "headerHeight": 49,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 1,
+        "flexCount": 13
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scrollHeight": 844,
+        "horizontalOverflow": false,
+        "headerHeight": 45,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 3,
+        "gridCount": 1,
+        "flexCount": 12
+      }
+    },
+    "screenshots": {
+      "desktop": "/screenshots/page_3_desktop.png",
+      "tablet": "/screenshots/page_3_tablet.png",
+      "mobile": "/screenshots/page_3_mobile.png"
+    }
+  },
+  {
+    "url": "https://maqamir.tech/pricing",
+    "canonicalPath": "/pricing",
+    "depth": 1,
+    "title": "Pricing — Free for Everyone | MaqAmir",
+    "status": 200,
+    "statusText": "OK",
+    "latencyMs": 6186,
+    "templateSignature": "script>script>script>div",
+    "isPagination": false,
+    "metaTags": {
+      "app-build-time": "2026-11-16T09:35:00.000Z",
+      "google": "notranslate",
+      "viewport": "width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "description": "MaqAmir is free for everyone until further notice. Only AI actions use credits, available by contacting music@maqamir.tech. Institute & official usage by contact.",
+      "og:type": "website",
+      "og:site_name": "MaqAmir",
+      "og:title": "Pricing — Free for Everyone | MaqAmir",
+      "og:description": "MaqAmir is free for everyone until further notice. Only AI actions use credits, available by contacting music@maqamir.tech. Institute & official usage by contact.",
+      "og:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "og:url": "https://maqamir.tech/pricing",
+      "og:locale": "en",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Pricing — Free for Everyone | MaqAmir",
+      "twitter:description": "MaqAmir is free for everyone until further notice. Only AI actions use credits, available by contacting music@maqamir.tech. Institute & official usage by contact.",
+      "twitter:image": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "base44-analytics": "consent",
+      "base44-visitor-tracking": "consent",
+      "twitter:url": "https://maqamir.tech/pricing",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-title": "MaqAmir - Music With No Boundaries",
+      "robots": "index, follow"
+    },
+    "domTree": {
+      "tag": "body",
+      "classes": [
+        "theme-dark",
+        "theme-gold"
+      ],
+      "childrenCount": 1,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 1083
+      },
+      "children": [
+        {
+          "tag": "div",
+          "id": "root",
+          "classes": [],
+          "childrenCount": 4,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 1083
+          },
+          "children": [
+            {
+              "tag": "div",
+              "classes": [
+                "fixed",
+                "bottom-0",
+                "left-0",
+                "right-0",
+                "z-[9990]"
+              ],
+              "role": "dialog",
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 817,
+                "width": 1425,
+                "height": 83
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "classes": [
+                    "max-w-2xl",
+                    "mx-auto",
+                    "flex",
+                    "flex-col",
+                    "sm:flex-row"
+                  ],
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 377,
+                    "y": 817,
+                    "width": 672,
+                    "height": 67
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-3",
+                        "text-center",
+                        "sm:text-left"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 398,
+                        "y": 841,
+                        "width": 430,
+                        "height": 20
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "flex",
+                        "items-center",
+                        "gap-2",
+                        "shrink-0"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 843,
+                        "y": 834,
+                        "width": 185,
+                        "height": 33
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "svg",
+              "classes": [],
+              "childrenCount": 1,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0
+              },
+              "children": [
+                {
+                  "tag": "defs",
+                  "classes": [],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "children": [
+                    {
+                      "tag": "filter",
+                      "id": "asset-icon-alpha",
+                      "classes": [],
+                      "childrenCount": 5,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "id": "app-root",
+              "classes": [
+                "min-h-screen",
+                "bg-background",
+                "text-foreground",
+                "pb-safe",
+                "select-none"
+              ],
+              "childrenCount": 6,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 1083
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "classes": [
+                    "sr-only",
+                    "focus:not-sr-only",
+                    "focus:absolute",
+                    "focus:z-[10000]",
+                    "focus:p-4"
+                  ],
+                  "textPreview": "Skip to main content",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": -1,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "header",
+                  "classes": [
+                    "w-full",
+                    "z-[500]",
+                    "transition-[background-color,border-color,opacity]",
+                    "duration-300",
+                    "bg-background/15"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 53
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "max-w-7xl",
+                        "mx-auto",
+                        "px-3",
+                        "sm:px-6",
+                        "flex"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": 73,
+                        "y": 2,
+                        "width": 1280,
+                        "height": 48
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "span",
+                  "classes": [
+                    "sr-only"
+                  ],
+                  "role": "status",
+                  "childrenCount": 0,
+                  "rect": {
+                    "x": -1,
+                    "y": 52,
+                    "width": 1,
+                    "height": 1
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "main",
+                  "id": "main-content",
+                  "classes": [
+                    "pb-2",
+                    "relative"
+                  ],
+                  "childrenCount": 1,
+                  "rect": {
+                    "x": 0,
+                    "y": 53,
+                    "width": 1425,
+                    "height": 1030
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "min-h-screen",
+                        "bg-gradient-to-br",
+                        "from-slate-50",
+                        "to-slate-100",
+                        "dark:from-slate-950"
+                      ],
+                      "childrenCount": 1,
+                      "rect": {
+                        "x": 0,
+                        "y": 53,
+                        "width": 1425,
+                        "height": 1022
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "classes": [
+                    "fixed",
+                    "inset-0",
+                    "z-[var(--z-nav-drawer,10050)]",
+                    "flex",
+                    "transition-[visibility,opacity]"
+                  ],
+                  "role": "dialog",
+                  "childrenCount": 2,
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1425,
+                    "height": 900
+                  },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "absolute",
+                        "inset-0",
+                        "bg-black/40"
+                      ],
+                      "childrenCount": 0,
+                      "rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 1425,
+                        "height": 900
+                      }
+                    },
+                    {
+                      "tag": "div",
+                      "classes": [
+                        "relative",
+                        "w-64",
+                        "max-w-[80vw]",
+                        "bg-background",
+                        "h-full"
+                      ],
+                      "childrenCount": 2,
+                      "rect": {
+                        "x": -256,
+                        "y": 0,
+                        "width": 256,
+                        "height": 900
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "section",
+              "classes": [],
+              "childrenCount": 0,
+              "rect": {
+                "x": 0,
+                "y": 1083,
+                "width": 1425,
+                "height": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "The whole platform is free"
+      },
+      {
+        "level": 2,
+        "text": "Everything included"
+      },
+      {
+        "level": 2,
+        "text": "AI Magic Credits"
+      },
+      {
+        "level": 2,
+        "text": "Institutes & Official Usage"
+      },
+      {
+        "level": 2,
+        "text": "Menu"
+      }
+    ],
+    "navLinks": [
+      {
+        "text": "MaqAmir.",
+        "href": "https://maqamir.tech/LandingPage",
+        "isExternal": false
+      },
+      {
+        "text": "GuidesThe complete MaqAmir handbook",
+        "href": "https://maqamir.tech/guides",
+        "isExternal": false
+      },
+      {
+        "text": "PianoCreator Pro",
+        "href": "https://maqamir.tech/pro",
+        "isExternal": false
+      },
+      {
+        "text": "Credits & Licensing",
+        "href": "https://maqamir.tech/pricing",
+        "isExternal": false
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://maqamir.tech/contact",
+        "isExternal": false
+      },
+      {
+        "text": "About & Credits",
+        "href": "https://maqamir.tech/about",
+        "isExternal": false
+      },
+      {
+        "text": "Privacy",
+        "href": "https://maqamir.tech/privacy",
+        "isExternal": false
+      },
+      {
+        "text": "Terms",
+        "href": "https://maqamir.tech/terms",
+        "isExternal": false
+      },
+      {
+        "text": "IP Claims & DMCA",
+        "href": "https://maqamir.tech/legal/ip-claims",
+        "isExternal": false
+      }
+    ],
+    "internalLinks": [
+      "https://maqamir.tech/about#privacy",
+      "https://maqamir.tech/LandingPage",
+      "https://maqamir.tech/guides",
+      "https://maqamir.tech/pro",
+      "https://maqamir.tech/pricing",
+      "https://maqamir.tech/contact",
+      "https://maqamir.tech/about",
+      "https://maqamir.tech/privacy",
+      "https://maqamir.tech/terms",
+      "https://maqamir.tech/legal/ip-claims"
+    ],
+    "paginationLinks": [],
+    "typography": [
+      {
+        "role": "h1",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "36px",
+        "fontWeight": "800",
+        "lineHeight": "40px",
+        "letterSpacing": "-0.9px",
+        "color": "#F6F4EE",
+        "sampleText": "The whole platform is free"
+      },
+      {
+        "role": "h2",
+        "fontFamily": "Montserrat, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "lineHeight": "28px",
+        "letterSpacing": "-0.54px",
+        "color": "#F6F4EE",
+        "sampleText": "Everything included"
+      },
+      {
+        "role": "body",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "(function () {\n      var origAdd = EventTarget.prototype.add"
+      },
+      {
+        "role": "nav",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "color": "#F6F4EE",
+        "sampleText": "MaqAmir."
+      },
+      {
+        "role": "button",
+        "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "900",
+        "lineHeight": "15px",
+        "letterSpacing": "1.5px",
+        "color": "#E2E2E2",
+        "sampleText": "Decline"
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#F6F4EE",
+        "rgb": "rgb(246, 244, 238)",
+        "usage": "text",
+        "count": 46
+      },
+      {
+        "hex": "#A6A6A6",
+        "rgb": "rgb(166, 166, 166)",
+        "usage": "text",
+        "count": 11
+      },
+      {
+        "hex": "#0D0D0D",
+        "rgb": "rgb(13, 13, 13)",
+        "usage": "background",
+        "count": 9
+      },
+      {
+        "hex": "#322C1B",
+        "rgb": "rgb(50, 44, 27)",
+        "usage": "border",
+        "count": 5
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.1)",
+        "usage": "border",
+        "count": 2
+      },
+      {
+        "hex": "#E2E2E2",
+        "rgb": "rgb(226, 226, 226)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgb(5, 5, 5)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.1)",
+        "usage": "background",
+        "count": 2
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "text",
+        "count": 2
+      },
+      {
+        "hex": "#050505",
+        "rgb": "rgba(5, 5, 5, 0.8)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "text",
+        "count": 1
+      },
+      {
+        "hex": "#FFFFFF",
+        "rgb": "rgba(255, 255, 255, 0.05)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4AF37",
+        "rgb": "rgb(212, 175, 55)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgb(212, 178, 53)",
+        "usage": "accent",
+        "count": 1
+      },
+      {
+        "hex": "#A855F7",
+        "rgb": "rgba(168, 85, 247, 0.05)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#A855F7",
+        "rgb": "rgba(168, 85, 247, 0.2)",
+        "usage": "border",
+        "count": 1
+      },
+      {
+        "hex": "#000000",
+        "rgb": "rgba(0, 0, 0, 0.4)",
+        "usage": "background",
+        "count": 1
+      },
+      {
+        "hex": "#D4B235",
+        "rgb": "rgba(212, 178, 53, 0.4)",
+        "usage": "border",
+        "count": 1
+      },
+      {
+        "hex": "#FFBF00",
+        "rgb": "rgba(255, 191, 0, 0.1)",
+        "usage": "background",
+        "count": 1
+      }
+    ],
+    "gradients": [
+      "linear-gradient(to right bottom, rgb(2, 6, 23), rgb(15, 23, 42))"
+    ],
+    "spacings": {
+      "containerMaxWidths": [
+        "672px",
+        "1280px",
+        "768px",
+        "576px",
+        "448px",
+        "1152px"
+      ],
+      "sectionPaddings": [
+        "2px 0px"
+      ],
+      "gaps": [
+        "16px",
+        "12px",
+        "8px",
+        "20px",
+        "4px 12px"
+      ],
+      "borderRadii": [
+        "8px",
+        "6px",
+        "9999px",
+        "16px"
+      ],
+      "boxShadows": [
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.",
+        "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+      ]
+    },
+    "breakpoints": [
+      "(max-width: 640px)",
+      "(max-width: 640px), (max-height: 520px)",
+      "(prefers-reduced-motion: reduce)",
+      "(orientation: landscape)",
+      "(min-width: 640px)",
+      "(min-width: 768px)",
+      "(min-width: 1024px)",
+      "(min-width: 1280px)",
+      "(min-width: 1536px)",
+      "(max-width: 768px)",
+      "(orientation: portrait)",
+      "not all and (min-width: 640px)",
+      "(hover: hover)",
+      "(pointer: coarse)",
+      "(hover: none) and (pointer: coarse)",
+      "(max-width: 600px)"
+    ],
+    "animations": [
+      {
+        "name": "slideUpConsent",
+        "property": "animation",
+        "duration": "0.4s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "background-color, border-color, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "visibility, opacity",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "transform",
+        "duration": "0.3s"
+      },
+      {
+        "name": "transition",
+        "property": "opacity",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.15s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      },
+      {
+        "name": "transition",
+        "property": "color, background-color, border-color, text-decoration-color",
+        "duration": "0.2s"
+      }
+    ],
+    "forms": [],
+    "interactiveElements": [
+      {
+        "kind": "menu",
+        "selector": "nav:nth-of-type(1)",
+        "label": "GuidesThe complete MaqAmir handbookPianoCreator ProSupport &"
+      },
+      {
+        "kind": "dropdown",
+        "selector": ".dropdown-0",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-0",
+        "label": "We use analytics to improve your experience. Learn moreDecli"
+      },
+      {
+        "kind": "modal",
+        "selector": "modal-1",
+        "label": "MenuGuidesThe complete MaqAmir handbookPianoCreator ProSuppo"
+      },
+      {
+        "kind": "button",
+        "selector": "button-0",
+        "label": "Decline"
+      },
+      {
+        "kind": "button",
+        "selector": "button-1",
+        "label": "Accept"
+      },
+      {
+        "kind": "button",
+        "selector": "button-2",
+        "label": "Open navigation menu",
+        "ariaExpanded": "false"
+      },
+      {
+        "kind": "button",
+        "selector": "button-3",
+        "label": "App Switcher",
+        "ariaExpanded": "false",
+        "ariaControls": "radix-:r0:"
+      },
+      {
+        "kind": "button",
+        "selector": "button-4",
+        "label": "Start Playing"
+      },
+      {
+        "kind": "button",
+        "selector": "button-5",
+        "label": "Go Back"
+      },
+      {
+        "kind": "button",
+        "selector": "button-6",
+        "label": "Menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-7",
+        "label": "Close menu"
+      },
+      {
+        "kind": "button",
+        "selector": "button-8",
+        "label": "Sign In"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://maqamir.tech/logo-dark.webp",
+        "alt": "MaqAmir Logo",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 40,
+        "renderedHeight": 40,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      },
+      {
+        "src": "https://maqamir.tech/logo.webp",
+        "alt": "",
+        "naturalWidth": 400,
+        "naturalHeight": 400,
+        "renderedWidth": 32,
+        "renderedHeight": 32,
+        "isLazy": false,
+        "isLogo": true,
+        "isBackground": false
+      }
+    ],
+    "stylesheets": [
+      "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css"
+    ],
+    "scripts": [
+      "https://maqamir.tech/assets/index-BfslubSs.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-1YFHYV2L73"
+    ],
+    "fonts": [
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff"
+    ],
+    "videos": [],
+    "backgroundImages": [],
+    "inlineSvgsCount": 22,
+    "layoutMetrics": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "scrollHeight": 1083,
+        "horizontalOverflow": false,
+        "headerHeight": 53,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 2,
+        "gridCount": 1,
+        "flexCount": 15
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "scrollHeight": 1119,
+        "horizontalOverflow": false,
+        "headerHeight": 49,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 2,
+        "gridCount": 1,
+        "flexCount": 15
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "scrollHeight": 1235,
+        "horizontalOverflow": false,
+        "headerHeight": 45,
+        "footerHeight": 0,
+        "navLinkCount": 9,
+        "sectionCount": 2,
+        "gridCount": 1,
+        "flexCount": 14
+      }
+    },
+    "screenshots": {
+      "desktop": "/screenshots/page_4_desktop.png",
+      "tablet": "/screenshots/page_4_tablet.png",
+      "mobile": "/screenshots/page_4_mobile.png"
+    }
+  }
+]

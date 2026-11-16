@@ -1,0 +1,210 @@
+[
+  {
+    "id": "feat_295a73",
+    "name": "Global Navigation, App Switcher and Menu Modal",
+    "pagePaths": [
+      "/piano",
+      "/about",
+      "/guides",
+      "/pro",
+      "/pricing"
+    ],
+    "selectors": [
+      "nav:nth-of-type(1)",
+      ".dropdown-0",
+      "modal-1"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_d9bbcc",
+    "name": "Analytics Consent Banner Modal",
+    "pagePaths": [
+      "/piano",
+      "/about",
+      "/guides",
+      "/pro",
+      "/pricing"
+    ],
+    "selectors": [
+      "modal-0",
+      "button-0",
+      "button-1"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_255a3b",
+    "name": "Microtonal Piano Keyboard, Octave Controls and Scale Panel",
+    "pagePaths": [
+      "/piano"
+    ],
+    "selectors": [
+      ".dropdown-7",
+      ".dropdown-8",
+      ".dropdown-15",
+      "button-3",
+      "button-4"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_b8716a",
+    "name": "Multilingual Handbook Switcher and Interactive Guide Tabs",
+    "pagePaths": [
+      "/guides",
+      "/about",
+      "/pro"
+    ],
+    "selectors": [
+      "[role='tab']-0",
+      "[role='tab']-1",
+      "button-4"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_e51cf1",
+    "name": "Pro Membership Billing Cycle Toggle",
+    "pagePaths": [
+      "/pro"
+    ],
+    "selectors": [
+      "button-5",
+      "button-6"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_5dfc19",
+    "name": "Public App Settings and Preset Overrides",
+    "pagePaths": [
+      "/piano",
+      "/about",
+      "/guides",
+      "/pro",
+      "/pricing"
+    ],
+    "selectors": [
+      ".dropdown-1",
+      ".dropdown-2"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_01ecee",
+    "name": "User Authentication and Session State",
+    "pagePaths": [
+      "/piano",
+      "/about",
+      "/guides",
+      "/pro",
+      "/pricing"
+    ],
+    "selectors": [
+      "button-7",
+      "button-8",
+      "button-10"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_2d8391",
+    "name": "Pro Founding Member Subscription Checkout",
+    "pagePaths": [
+      "/pro"
+    ],
+    "selectors": [
+      "button-7"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_c486d8",
+    "name": "Piano Velocity Audio Sample Delivery",
+    "pagePaths": [
+      "/piano"
+    ],
+    "selectors": [
+      ".dropdown-1",
+      "button-3"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_865c99",
+    "name": "Google Analytics 4 Consent Mode Telemetry",
+    "pagePaths": [
+      "/piano",
+      "/about",
+      "/guides",
+      "/pro",
+      "/pricing"
+    ],
+    "selectors": [
+      "modal-0",
+      "button-1"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_eb1280",
+    "name": "AI Magic Sound Generation and Ask Amir Assistant",
+    "pagePaths": [
+      "/piano",
+      "/pricing"
+    ],
+    "selectors": [
+      ".dropdown-2",
+      ".dropdown-5"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  },
+  {
+    "id": "feat_7df0ee",
+    "name": "Cloud Multitrack Recording Vault",
+    "pagePaths": [
+      "/piano"
+    ],
+    "selectors": [
+      ".dropdown-3"
+    ],
+    "implementationStatus": "documented_only",
+    "requirements": [],
+    "envVarsRequired": [],
+    "endpointPattern": ""
+  }
+]

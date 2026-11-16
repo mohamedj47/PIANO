@@ -1,0 +1,13 @@
+{
+  "url": "https://maqamir.tech/piano",
+  "authorized": true,
+  "maxDepth": 1,
+  "maxPages": 5,
+  "captureViewports": [
+    "desktop",
+    "tablet",
+    "mobile"
+  ],
+  "waitForNetworkIdle": true,
+  "scrollForLazyLoad": true
+}

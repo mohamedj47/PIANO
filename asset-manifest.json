@@ -1,0 +1,2676 @@
+{
+  "projectId": "proj_1794845266233_f2bfdd",
+  "generatedAt": "2026-11-16T16:08:59.947Z",
+  "totalDiscovered": 160,
+  "downloadedCount": 160,
+  "failedCount": 0,
+  "skippedCount": 0,
+  "totalBytes": 3711510,
+  "byCategory": {
+    "images": 21,
+    "logos": 9,
+    "icons": 46,
+    "fonts": 80,
+    "backgrounds": 0,
+    "videos": 0,
+    "css": 4,
+    "other": 0
+  },
+  "items": [
+    {
+      "id": "asset_35737a41",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "filename": "inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-400-normal-BQZuk6qB.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 10232,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ce31bf07",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "filename": "inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-400-normal-DQukG94-.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 13336,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b0587c5e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "filename": "inter-cyrillic-400-normal-obahsSVq.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-400-normal-obahsSVq.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7712,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_77210df0",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "filename": "inter-cyrillic-400-normal-HOLc17fK.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-400-normal-HOLc17fK.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 9780,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_497bec00",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "filename": "inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-400-normal-DGGRlc-M.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 5264,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_adde3144",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-400-normal-KugGGMne.woff",
+      "filename": "inter-greek-ext-400-normal-KugGGMne.woff",
+      "localRelativePath": "assets/fonts/inter-greek-ext-400-normal-KugGGMne.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-400-normal-KugGGMne.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 7064,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_8a823302",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-400-normal-B4URO6DV.woff2",
+      "filename": "inter-greek-400-normal-B4URO6DV.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-400-normal-B4URO6DV.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-400-normal-B4URO6DV.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7776,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_07561d81",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-400-normal-q2sYcFCs.woff",
+      "filename": "inter-greek-400-normal-q2sYcFCs.woff",
+      "localRelativePath": "assets/fonts/inter-greek-400-normal-q2sYcFCs.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-400-normal-q2sYcFCs.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 9924,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_d9d718eb",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "filename": "inter-vietnamese-400-normal-DMkecbls.woff2",
+      "localRelativePath": "assets/fonts/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-400-normal-DMkecbls.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 4972,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_f7fcaf91",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "filename": "inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "localRelativePath": "assets/fonts/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-400-normal-Bbgyi5SW.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 6500,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_211ba827",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "filename": "inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-400-normal-C1nco2VV.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 35000,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_464a70a3",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "filename": "inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "localRelativePath": "assets/fonts/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-400-normal-77YHD8bZ.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 47560,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_00548e38",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-400-normal-C38fXH4l.woff2",
+      "filename": "inter-latin-400-normal-C38fXH4l.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-400-normal-C38fXH4l.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-400-normal-C38fXH4l.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 23664,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_fa2c5288",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-400-normal-CyCys3Eg.woff",
+      "filename": "inter-latin-400-normal-CyCys3Eg.woff",
+      "localRelativePath": "assets/fonts/inter-latin-400-normal-CyCys3Eg.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-400-normal-CyCys3Eg.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 30696,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_2f161f40",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "filename": "inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-500-normal-B0yAr1jD.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 10432,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_63fbb904",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "filename": "inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-500-normal-BmqWE9Dz.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 13452,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_35c54646",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "filename": "inter-cyrillic-500-normal-BasfLYem.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-500-normal-BasfLYem.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7900,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_f2575003",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "filename": "inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-500-normal-CxZf_p3X.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 9940,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_3f749f1c",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "filename": "inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-500-normal-C4iEst2y.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 5428,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_f1803b24",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "filename": "inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "localRelativePath": "assets/fonts/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-500-normal-2j5mBUwD.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 7192,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_156eecfd",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-500-normal-BIZE56-Y.woff2",
+      "filename": "inter-greek-500-normal-BIZE56-Y.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-500-normal-BIZE56-Y.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-500-normal-BIZE56-Y.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7920,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_dd459ec8",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-500-normal-Xzm54t5V.woff",
+      "filename": "inter-greek-500-normal-Xzm54t5V.woff",
+      "localRelativePath": "assets/fonts/inter-greek-500-normal-Xzm54t5V.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-500-normal-Xzm54t5V.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 9980,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_9c86c54e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "filename": "inter-vietnamese-500-normal-DOriooB6.woff2",
+      "localRelativePath": "assets/fonts/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-500-normal-DOriooB6.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 5112,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ce332e72",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "filename": "inter-vietnamese-500-normal-mJboJaSs.woff",
+      "localRelativePath": "assets/fonts/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-500-normal-mJboJaSs.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 6596,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_246a65a2",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "filename": "inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-500-normal-CV4jyFjo.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 36024,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b0c008ad",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "filename": "inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "localRelativePath": "assets/fonts/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-500-normal-BxGbmqWO.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 48492,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_7faedbfe",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-500-normal-Cerq10X2.woff2",
+      "filename": "inter-latin-500-normal-Cerq10X2.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-500-normal-Cerq10X2.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-500-normal-Cerq10X2.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 24272,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ad78b16b",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-500-normal-BL9OpVg8.woff",
+      "filename": "inter-latin-500-normal-BL9OpVg8.woff",
+      "localRelativePath": "assets/fonts/inter-latin-500-normal-BL9OpVg8.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-500-normal-BL9OpVg8.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 31284,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b18287fe",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "filename": "inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-600-normal-Dfes3d0z.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 10484,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_cecf6669",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "filename": "inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-ext-600-normal-Bcila6Z-.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 13464,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_44ab8c1e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "filename": "inter-cyrillic-600-normal-CWCymEST.woff2",
+      "localRelativePath": "assets/fonts/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-600-normal-CWCymEST.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7972,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_2cbe2db4",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "filename": "inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "localRelativePath": "assets/fonts/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-cyrillic-600-normal-4D_pXhcN.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 9936,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_fe4fc755",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "filename": "inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-600-normal-DRtmH8MT.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 5432,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_6bf28ce1",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "filename": "inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "localRelativePath": "assets/fonts/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-ext-600-normal-B8X0CLgF.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 7212,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_d3b64b97",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-600-normal-plRanbMR.woff2",
+      "filename": "inter-greek-600-normal-plRanbMR.woff2",
+      "localRelativePath": "assets/fonts/inter-greek-600-normal-plRanbMR.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-600-normal-plRanbMR.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7944,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b582d5a5",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-greek-600-normal-BZpKdvQh.woff",
+      "filename": "inter-greek-600-normal-BZpKdvQh.woff",
+      "localRelativePath": "assets/fonts/inter-greek-600-normal-BZpKdvQh.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-greek-600-normal-BZpKdvQh.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 10032,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_2037c3d1",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "filename": "inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "localRelativePath": "assets/fonts/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-600-normal-Cc8MFFhd.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 5100,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_2413a69c",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "filename": "inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "localRelativePath": "assets/fonts/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-vietnamese-600-normal-BuLX-rYi.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 6640,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ef399d05",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "filename": "inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-600-normal-D2bJ5OIk.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 36260,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_4703cb1a",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "filename": "inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "localRelativePath": "assets/fonts/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-ext-600-normal-CIVaiw4L.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 48668,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_88355e90",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-600-normal-LgqL8muc.woff2",
+      "filename": "inter-latin-600-normal-LgqL8muc.woff2",
+      "localRelativePath": "assets/fonts/inter-latin-600-normal-LgqL8muc.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-600-normal-LgqL8muc.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 24452,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ca7c5e8a",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/inter-latin-600-normal-CiBQ2DWP.woff",
+      "filename": "inter-latin-600-normal-CiBQ2DWP.woff",
+      "localRelativePath": "assets/fonts/inter-latin-600-normal-CiBQ2DWP.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/inter-latin-600-normal-CiBQ2DWP.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 31260,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_9f3941dc",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "filename": "montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-ext-700-normal-MyDreaeu.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 12060,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_24a493ed",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "filename": "montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-ext-700-normal-D-Mk2xRJ.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 12076,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_6a531539",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "filename": "montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-700-normal-D-Pqjtdp.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 11160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_dcfd72c6",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "filename": "montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-700-normal-BvLYcGP1.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 10928,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_6394ae61",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "filename": "montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "localRelativePath": "assets/fonts/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-vietnamese-700-normal-C0x1De3p.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7904,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_a6b5df7d",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "filename": "montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "localRelativePath": "assets/fonts/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-vietnamese-700-normal-DnwGT2D9.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 7304,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_5f68537c",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "filename": "montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "localRelativePath": "assets/fonts/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-ext-700-normal-BOP2Nhf0.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 33532,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_292aad4f",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "filename": "montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "localRelativePath": "assets/fonts/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-ext-700-normal-DdDFr05Z.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 41344,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_959c1d09",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "filename": "montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "localRelativePath": "assets/fonts/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-700-normal-BdjcYUrC.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 18824,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_456012f4",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-700-normal-BWkrl476.woff",
+      "filename": "montserrat-latin-700-normal-BWkrl476.woff",
+      "localRelativePath": "assets/fonts/montserrat-latin-700-normal-BWkrl476.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-700-normal-BWkrl476.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 20672,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_1cc07644",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "filename": "montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-ext-900-normal-ET-C-0fX.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 11572,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_4f79f5b1",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "filename": "montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-ext-900-normal-CfuaLo5j.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 11580,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_96899c8a",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "filename": "montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-900-normal-CrYcRZSi.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 10908,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ad62cbe6",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "filename": "montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "localRelativePath": "assets/fonts/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-cyrillic-900-normal-CGsoW8-j.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 10544,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_91ba8447",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "filename": "montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "localRelativePath": "assets/fonts/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-vietnamese-900-normal-DNvcOCEl.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 7832,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_207599f5",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "filename": "montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "localRelativePath": "assets/fonts/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-vietnamese-900-normal-Dz06HFPU.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 7208,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_8717250d",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "filename": "montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "localRelativePath": "assets/fonts/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-ext-900-normal-BTaqesvP.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 32420,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_40f85f48",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "filename": "montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "localRelativePath": "assets/fonts/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-ext-900-normal-DoASD5Eh.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 40336,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_db98a91e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "filename": "montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "localRelativePath": "assets/fonts/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-900-normal-B0TD3Qnu.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 18020,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_c3259634",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/montserrat-latin-900-normal-BDWDmVut.woff",
+      "filename": "montserrat-latin-900-normal-BDWDmVut.woff",
+      "localRelativePath": "assets/fonts/montserrat-latin-900-normal-BDWDmVut.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/montserrat-latin-900-normal-BDWDmVut.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 19504,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_313c9a9a",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "filename": "assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "localRelativePath": "assets/fonts/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-400-normal-BaQtOmbn.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 4240,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_6b6923ea",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "filename": "assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "localRelativePath": "assets/fonts/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-400-normal-B18Ux13Q.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 5536,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_e63aa748",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "filename": "assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-400-normal-CJRdOknU.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 6424,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_9b6ea578",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "filename": "assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-400-normal-BcqNq6r3.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 8136,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_289f69a4",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "filename": "assistant-latin-400-normal-CDF-mh-3.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-400-normal-CDF-mh-3.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 12352,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_d7ad29d4",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-400-normal-BKD5Gqji.woff",
+      "filename": "assistant-latin-400-normal-BKD5Gqji.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-400-normal-BKD5Gqji.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-400-normal-BKD5Gqji.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 15740,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_41c44888",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "filename": "assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "localRelativePath": "assets/fonts/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-600-normal-DM_XHISn.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 4240,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b8827f3f",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "filename": "assistant-hebrew-600-normal-D6VOnxse.woff",
+      "localRelativePath": "assets/fonts/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-600-normal-D6VOnxse.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 5520,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_1b40e2af",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "filename": "assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-600-normal-BRc8ZhdA.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 6452,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_acbe5056",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "filename": "assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-600-normal-DvGDKMJu.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 8128,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_c2993463",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "filename": "assistant-latin-600-normal-DQhO4fCi.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-600-normal-DQhO4fCi.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 12316,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_6a9f38bd",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-600-normal-CfJI0IBS.woff",
+      "filename": "assistant-latin-600-normal-CfJI0IBS.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-600-normal-CfJI0IBS.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-600-normal-CfJI0IBS.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 15720,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_4c5245e4",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "filename": "assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "localRelativePath": "assets/fonts/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-700-normal-DbcUQTwo.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 4248,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_c4abff9d",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "filename": "assistant-hebrew-700-normal-D7ACPilb.woff",
+      "localRelativePath": "assets/fonts/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-hebrew-700-normal-D7ACPilb.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 5552,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_c9e2e832",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "filename": "assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-700-normal-BKDtlU5N.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 6408,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_2a3d4d7e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "filename": "assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-ext-700-normal-D7H1VhBc.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 8128,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_8eb8734e",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "filename": "assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "localRelativePath": "assets/fonts/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-700-normal-Bh4ZScKg.woff2",
+      "mimeType": "font/woff2",
+      "sizeBytes": 12364,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_f6b7d7be",
+      "category": "fonts",
+      "originalUrl": "https://maqamir.tech/assets/assistant-latin-700-normal-CguIzUmX.woff",
+      "filename": "assistant-latin-700-normal-CguIzUmX.woff",
+      "localRelativePath": "assets/fonts/assistant-latin-700-normal-CguIzUmX.woff",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/fonts/assistant-latin-700-normal-CguIzUmX.woff",
+      "mimeType": "font/woff",
+      "sizeBytes": 15764,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_a8062fb1",
+      "category": "logos",
+      "originalUrl": "https://maqamir.tech/logo-dark.webp",
+      "filename": "logo-dark.webp",
+      "localRelativePath": "assets/logos/logo-dark.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/logo-dark.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7504,
+      "width": 400,
+      "height": 400,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ad77dddb",
+      "category": "images",
+      "originalUrl": "https://media.base44.com/images/public/691d6562ab74cee186822662/945678a22_generated_image.png",
+      "filename": "945678a22_generated_image.png",
+      "localRelativePath": "assets/images/945678a22_generated_image.png",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/945678a22_generated_image.png",
+      "mimeType": "image/png",
+      "sizeBytes": 81782,
+      "width": 1024,
+      "height": 1024,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_39d77d28",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/art/sm/945678a22.png",
+      "filename": "945678a22.png",
+      "localRelativePath": "assets/images/945678a22.png",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/945678a22.png",
+      "mimeType": "image/png",
+      "sizeBytes": 3682,
+      "width": 96,
+      "height": 96,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_946dd532",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/play_pads.webp",
+      "filename": "play_pads.webp",
+      "localRelativePath": "assets/images/play_pads.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/play_pads.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 9840,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_62f339bb",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/piano_keys.webp",
+      "filename": "piano_keys.webp",
+      "localRelativePath": "assets/images/piano_keys.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/piano_keys.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7554,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_ba4793b2",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/dj_pads.webp",
+      "filename": "dj_pads.webp",
+      "localRelativePath": "assets/images/dj_pads.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/dj_pads.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 9840,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_f1017a46",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/qiano.webp",
+      "filename": "qiano.webp",
+      "localRelativePath": "assets/images/qiano.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/qiano.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 6652,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_1b65435d",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/mandala.webp",
+      "filename": "mandala.webp",
+      "localRelativePath": "assets/images/mandala.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/mandala.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7456,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_386a42d0",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/guitouch.webp",
+      "filename": "guitouch.webp",
+      "localRelativePath": "assets/images/guitouch.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/guitouch.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 6824,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_3c637c97",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/cellomir.webp",
+      "filename": "cellomir.webp",
+      "localRelativePath": "assets/images/cellomir.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/cellomir.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 5992,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_46e79a90",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/silk_river.webp",
+      "filename": "silk_river.webp",
+      "localRelativePath": "assets/images/silk_river.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/silk_river.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7402,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_58cd6d7f",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/sitabla.webp",
+      "filename": "sitabla.webp",
+      "localRelativePath": "assets/images/sitabla.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/sitabla.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7878,
+      "width": 280,
+      "height": 160,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_45204dac",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/vortex.webp",
+      "filename": "vortex.webp",
+      "localRelativePath": "assets/images/vortex.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/vortex.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 3586,
+      "width": 146,
+      "height": 92,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_509e1bf3",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/arabesque.webp",
+      "filename": "arabesque.webp",
+      "localRelativePath": "assets/images/arabesque.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/arabesque.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 7200,
+      "width": 146,
+      "height": 92,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e5b4e95e",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/realms/meend_spiral.webp",
+      "filename": "meend_spiral.webp",
+      "localRelativePath": "assets/images/meend_spiral.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/meend_spiral.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 5334,
+      "width": 146,
+      "height": 92,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_212fe491",
+      "category": "logos",
+      "originalUrl": "https://maqamir.tech/logo.webp",
+      "filename": "logo.webp",
+      "localRelativePath": "assets/logos/logo.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/logo.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 8348,
+      "width": 400,
+      "height": 400,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_5d62e924",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/multicultural-piano.png",
+      "filename": "multicultural-piano.png",
+      "localRelativePath": "assets/images/multicultural-piano.png",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/multicultural-piano.png",
+      "mimeType": "image/png",
+      "sizeBytes": 874636,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_6f712841",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-cf1c611dae",
+      "filename": "icon_98.svg",
+      "localRelativePath": "assets/icons/icon_98.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_98.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 481,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_5a000af9",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-990906ea97",
+      "filename": "icon_99.svg",
+      "localRelativePath": "assets/icons/icon_99.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_99.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 834,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_7aa882a8",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-c58a2f495f",
+      "filename": "brand_logo_100.svg",
+      "localRelativePath": "assets/logos/brand_logo_100.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_100.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 451,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_3380ee86",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-72d57787cd",
+      "filename": "brand_logo_101.svg",
+      "localRelativePath": "assets/logos/brand_logo_101.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_101.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 322,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_905c31e1",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-1718231292",
+      "filename": "brand_logo_102.svg",
+      "localRelativePath": "assets/logos/brand_logo_102.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_102.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 444,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_90958860",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-3bdbc49856",
+      "filename": "brand_logo_103.svg",
+      "localRelativePath": "assets/logos/brand_logo_103.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_103.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 448,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_6c5f8a8f",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-a781889e24",
+      "filename": "icon_104.svg",
+      "localRelativePath": "assets/icons/icon_104.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_104.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 612,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_a6868246",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-dff1094c3a",
+      "filename": "icon_105.svg",
+      "localRelativePath": "assets/icons/icon_105.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_105.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 351,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e91527a0",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-863e8bf169",
+      "filename": "icon_106.svg",
+      "localRelativePath": "assets/icons/icon_106.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_106.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 275,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_648c0679",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-dd245c4c34",
+      "filename": "icon_107.svg",
+      "localRelativePath": "assets/icons/icon_107.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_107.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 262,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e367e96a",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-a62c91d898",
+      "filename": "icon_108.svg",
+      "localRelativePath": "assets/icons/icon_108.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_108.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 262,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_064567fe",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-44bfb84a90",
+      "filename": "icon_109.svg",
+      "localRelativePath": "assets/icons/icon_109.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_109.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 274,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_f59d660b",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-fa2b62e442",
+      "filename": "icon_110.svg",
+      "localRelativePath": "assets/icons/icon_110.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_110.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 366,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_659c928c",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-fefb9bbdb6",
+      "filename": "icon_111.svg",
+      "localRelativePath": "assets/icons/icon_111.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_111.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 526,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_7773f3ac",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-f96993065f",
+      "filename": "icon_112.svg",
+      "localRelativePath": "assets/icons/icon_112.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_112.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 532,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_b0f511dd",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-d5beaca6ac",
+      "filename": "icon_113.svg",
+      "localRelativePath": "assets/icons/icon_113.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_113.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 880,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_ddd01de9",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-bc34755d21",
+      "filename": "icon_114.svg",
+      "localRelativePath": "assets/icons/icon_114.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_114.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 635,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e72de330",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-d0bef4b23c",
+      "filename": "icon_115.svg",
+      "localRelativePath": "assets/icons/icon_115.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_115.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 567,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_61ab36ee",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-f59342391b",
+      "filename": "icon_116.svg",
+      "localRelativePath": "assets/icons/icon_116.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_116.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 544,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_88c6e73c",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-4ea918318a",
+      "filename": "icon_117.svg",
+      "localRelativePath": "assets/icons/icon_117.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_117.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 812,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_8ed325ab",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-66e819de43",
+      "filename": "icon_118.svg",
+      "localRelativePath": "assets/icons/icon_118.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_118.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 432,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e06a4777",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-72481d714a",
+      "filename": "icon_119.svg",
+      "localRelativePath": "assets/icons/icon_119.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_119.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 432,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_6dbd9a29",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-c4702b6688",
+      "filename": "icon_120.svg",
+      "localRelativePath": "assets/icons/icon_120.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_120.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 504,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_64c54f24",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-dba12c3da4",
+      "filename": "icon_121.svg",
+      "localRelativePath": "assets/icons/icon_121.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_121.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 671,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_5a74674f",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-bdc8039328",
+      "filename": "icon_122.svg",
+      "localRelativePath": "assets/icons/icon_122.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_122.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 407,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_97c07ded",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-d6f22d70f1",
+      "filename": "icon_123.svg",
+      "localRelativePath": "assets/icons/icon_123.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_123.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 600,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_469aa6fb",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-ef195a8049",
+      "filename": "icon_124.svg",
+      "localRelativePath": "assets/icons/icon_124.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_124.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 307,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_c2568ff6",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-4076804a41",
+      "filename": "icon_125.svg",
+      "localRelativePath": "assets/icons/icon_125.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_125.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 366,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_e01085ee",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-3d30dfb935",
+      "filename": "icon_126.svg",
+      "localRelativePath": "assets/icons/icon_126.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_126.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 386,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_858dcee9",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-6cc4bcb4c3",
+      "filename": "icon_127.svg",
+      "localRelativePath": "assets/icons/icon_127.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_127.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 629,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    },
+    {
+      "id": "asset_ed0ef67c",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/maqamir-hero-dark.png",
+      "filename": "maqamir-hero-dark.png",
+      "localRelativePath": "assets/images/maqamir-hero-dark.png",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/maqamir-hero-dark.png",
+      "mimeType": "image/png",
+      "sizeBytes": 630912,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_e9cde8fc",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-a9050c4e5e",
+      "filename": "brand_logo_129.svg",
+      "localRelativePath": "assets/logos/brand_logo_129.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_129.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 366,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_eda4dd78",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-807afaa5eb",
+      "filename": "brand_logo_130.svg",
+      "localRelativePath": "assets/logos/brand_logo_130.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_130.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 442,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_256d6792",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-a9f6a0fef7",
+      "filename": "icon_131.svg",
+      "localRelativePath": "assets/icons/icon_131.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_131.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 404,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro"
+      ]
+    },
+    {
+      "id": "asset_6a60fe54",
+      "category": "logos",
+      "originalUrl": "inline-svg://logo-3000dad736",
+      "filename": "brand_logo_132.svg",
+      "localRelativePath": "assets/logos/brand_logo_132.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/logos/brand_logo_132.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 349,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about"
+      ]
+    },
+    {
+      "id": "asset_b5509f04",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-a0d089fabd",
+      "filename": "icon_133.svg",
+      "localRelativePath": "assets/icons/icon_133.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_133.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 400,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about"
+      ]
+    },
+    {
+      "id": "asset_ba8d371a",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-11a8305b94",
+      "filename": "icon_134.svg",
+      "localRelativePath": "assets/icons/icon_134.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_134.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 297,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ca6774ee",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-575c815d77",
+      "filename": "icon_135.svg",
+      "localRelativePath": "assets/icons/icon_135.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_135.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 416,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_8b09fc90",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-8438fd91e7",
+      "filename": "icon_136.svg",
+      "localRelativePath": "assets/icons/icon_136.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_136.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 334,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_d4fb19eb",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-d18823ea63",
+      "filename": "icon_137.svg",
+      "localRelativePath": "assets/icons/icon_137.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_137.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 505,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_4584a8dc",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-0b65c84d5d",
+      "filename": "icon_138.svg",
+      "localRelativePath": "assets/icons/icon_138.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_138.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 356,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro"
+      ]
+    },
+    {
+      "id": "asset_ef755198",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-f501e51143",
+      "filename": "icon_139.svg",
+      "localRelativePath": "assets/icons/icon_139.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_139.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 358,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_3e6f982d",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-6ecdf2aae9",
+      "filename": "icon_140.svg",
+      "localRelativePath": "assets/icons/icon_140.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_140.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 373,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_1643e08a",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-d1f08e7e4b",
+      "filename": "icon_141.svg",
+      "localRelativePath": "assets/icons/icon_141.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_141.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 396,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/about",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_a2c1db5d",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/guides/desktop/piano-studio.webp",
+      "filename": "piano-studio.webp",
+      "localRelativePath": "assets/images/piano-studio.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/piano-studio.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 42116,
+      "width": 1200,
+      "height": 750,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_86a4cbe2",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/guides/desktop/dj-realm-vinyl.webp",
+      "filename": "dj-realm-vinyl.webp",
+      "localRelativePath": "assets/images/dj-realm-vinyl.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/dj-realm-vinyl.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 51560,
+      "width": 1200,
+      "height": 750,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_b473b464",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/guides/desktop/synth-lab.webp",
+      "filename": "synth-lab.webp",
+      "localRelativePath": "assets/images/synth-lab.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/synth-lab.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 20722,
+      "width": 1200,
+      "height": 750,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_450ce51e",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/guides/desktop/aura-bowls-heal.webp",
+      "filename": "aura-bowls-heal.webp",
+      "localRelativePath": "assets/images/aura-bowls-heal.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/aura-bowls-heal.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 58708,
+      "width": 1200,
+      "height": 750,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_f61749e3",
+      "category": "images",
+      "originalUrl": "https://maqamir.tech/images/guides/desktop/piano-realm-dual.webp",
+      "filename": "piano-realm-dual.webp",
+      "localRelativePath": "assets/images/piano-realm-dual.webp",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/images/piano-realm-dual.webp",
+      "mimeType": "image/webp",
+      "sizeBytes": 30708,
+      "width": 1200,
+      "height": 750,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_52ffa56b",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-dc20d3f229",
+      "filename": "icon_147.svg",
+      "localRelativePath": "assets/icons/icon_147.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_147.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 329,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_b0f094f4",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-132b460b07",
+      "filename": "icon_148.svg",
+      "localRelativePath": "assets/icons/icon_148.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_148.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 440,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_be4c0f47",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-551a80959f",
+      "filename": "icon_149.svg",
+      "localRelativePath": "assets/icons/icon_149.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_149.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 386,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_1a68652b",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-075113f4b7",
+      "filename": "icon_150.svg",
+      "localRelativePath": "assets/icons/icon_150.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_150.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 406,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_048106da",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-58aeb38ac2",
+      "filename": "icon_151.svg",
+      "localRelativePath": "assets/icons/icon_151.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_151.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 428,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_45514b4e",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-67ccbde9e8",
+      "filename": "icon_152.svg",
+      "localRelativePath": "assets/icons/icon_152.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_152.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 333,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_02975d5b",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-f25df66664",
+      "filename": "icon_153.svg",
+      "localRelativePath": "assets/icons/icon_153.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_153.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 389,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_352f9e80",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-39dc318015",
+      "filename": "icon_154.svg",
+      "localRelativePath": "assets/icons/icon_154.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_154.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 1152,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_d8b5f0f6",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-7d729d3493",
+      "filename": "icon_155.svg",
+      "localRelativePath": "assets/icons/icon_155.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_155.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 628,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_89fee938",
+      "category": "icons",
+      "originalUrl": "inline-svg://icon-13d7d553fa",
+      "filename": "icon_156.svg",
+      "localRelativePath": "assets/icons/icon_156.svg",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/icons/icon_156.svg",
+      "mimeType": "image/svg+xml",
+      "sizeBytes": 537,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/guides"
+      ]
+    },
+    {
+      "id": "asset_caeaf1d6",
+      "category": "css",
+      "originalUrl": "https://maqamir.tech/assets/studio-realms-DeBrkYk-.css",
+      "filename": "studio-realms-DeBrkYk-.css",
+      "localRelativePath": "assets/css/studio-realms-DeBrkYk-.css",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/css/studio-realms-DeBrkYk-.css",
+      "mimeType": "text/css",
+      "sizeBytes": 12569,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_b8166718",
+      "category": "css",
+      "originalUrl": "https://maqamir.tech/assets/index-BZkcRNdG.css",
+      "filename": "index-BZkcRNdG.css",
+      "localRelativePath": "assets/css/index-BZkcRNdG.css",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/css/index-BZkcRNdG.css",
+      "mimeType": "text/css",
+      "sizeBytes": 452215,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_ebb6d6da",
+      "category": "css",
+      "originalUrl": "https://maqamir.tech/assets/PianoStudioImpl-BeuMAIfo.css",
+      "filename": "PianoStudioImpl-BeuMAIfo.css",
+      "localRelativePath": "assets/css/PianoStudioImpl-BeuMAIfo.css",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/css/PianoStudioImpl-BeuMAIfo.css",
+      "mimeType": "text/css",
+      "sizeBytes": 153706,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano",
+        "/about",
+        "/guides",
+        "/pro",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "asset_bdeb06be",
+      "category": "css",
+      "originalUrl": "https://maqamir.tech/assets/CollectionScrollArea-BBWvZhgm.css",
+      "filename": "CollectionScrollArea-BBWvZhgm.css",
+      "localRelativePath": "assets/css/CollectionScrollArea-BBWvZhgm.css",
+      "publicServeUrl": "/project-files/proj_1794845266233_f2bfdd/assets/css/CollectionScrollArea-BBWvZhgm.css",
+      "mimeType": "text/css",
+      "sizeBytes": 792,
+      "status": "downloaded",
+      "referencedOnPages": [
+        "/piano"
+      ]
+    }
+  ]
+}

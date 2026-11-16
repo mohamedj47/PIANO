@@ -1,0 +1,23 @@
+{
+  "id": "proj_1794845266233_f2bfdd",
+  "targetUrl": "https://maqamir.tech/piano",
+  "domain": "maqamir.tech",
+  "title": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+  "status": "compared",
+  "createdAt": "2026-11-16T16:07:46.235Z",
+  "updatedAt": "2026-11-16T16:15:21.730Z",
+  "exportedAt": "2026-11-16T16:15:32.115Z",
+  "counts": {
+    "crawledPages": 5,
+    "reconstructedPages": 5,
+    "exportedHtmlPages": 5,
+    "reusableComponents": 5,
+    "assetsDownloaded": 160,
+    "inlineSvgs": 116,
+    "screenshots": 21,
+    "interceptedRequests": 92,
+    "classifiedFeatures": 12,
+    "visualComparisons": 1,
+    "mockRoutes": 4
+  }
+}

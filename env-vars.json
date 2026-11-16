@@ -1,0 +1,44 @@
+[
+  {
+    "key": "BASE44_APP_ID",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "Public App Settings and Preset Overrides"
+  },
+  {
+    "key": "BASE44_API_BASE_URL",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "User Authentication and Session State"
+  },
+  {
+    "key": "AUTH_SESSION_SECRET",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "User Authentication and Session State"
+  },
+  {
+    "key": "STRIPE_SECRET_KEY",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "Pro Founding Member Subscription Checkout"
+  },
+  {
+    "key": "AUDIO_SAMPLES_CDN_BASE",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "Piano Velocity Audio Sample Delivery"
+  },
+  {
+    "key": "GA4_MEASUREMENT_ID",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "Google Analytics 4 Consent Mode Telemetry"
+  },
+  {
+    "key": "AI_PROVIDER_API_KEY",
+    "exampleValue": "",
+    "category": "external_api",
+    "requiredForFeature": "AI Magic Sound Generation and Ask Amir Assistant"
+  }
+]

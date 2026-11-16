@@ -1,0 +1,99 @@
+[
+  {
+    "pageId": "page_0",
+    "path": "/piano",
+    "overallSimilarityScore": 78.75,
+    "comparedAt": "2026-11-16T16:15:21.702Z",
+    "viewports": {
+      "desktop": {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 900,
+        "visualSimilarityScore": 78.04,
+        "mismatchedPixels": 284622,
+        "totalPixels": 1296000,
+        "originalScreenshotUrl": "/screenshots/page_0_desktop.png",
+        "reconstructedScreenshotUrl": "/screenshots/recon_page_0_desktop.png",
+        "diffImageUrl": "/screenshots/diff_page_0_desktop.png",
+        "layoutDifferences": [],
+        "missingImages": [],
+        "fontDifferences": [],
+        "colorDifferences": [],
+        "spacingDifferences": [
+          {
+            "selector": "main / section",
+            "expected": "2px 0px",
+            "actual": "16px 24px"
+          }
+        ],
+        "missingSections": [
+          "Heading \"Menu\""
+        ],
+        "brokenLinks": [],
+        "nonfunctionalInteractions": []
+      },
+      "tablet": {
+        "viewport": "tablet",
+        "width": 768,
+        "height": 1024,
+        "visualSimilarityScore": 80.63,
+        "mismatchedPixels": 152352,
+        "totalPixels": 786432,
+        "originalScreenshotUrl": "/screenshots/page_0_tablet.png",
+        "reconstructedScreenshotUrl": "/screenshots/recon_page_0_tablet.png",
+        "diffImageUrl": "/screenshots/diff_page_0_tablet.png",
+        "layoutDifferences": [],
+        "missingImages": [],
+        "fontDifferences": [],
+        "colorDifferences": [],
+        "spacingDifferences": [
+          {
+            "selector": "main / section",
+            "expected": "2px 0px",
+            "actual": "16px 24px"
+          }
+        ],
+        "missingSections": [
+          "Heading \"Menu\""
+        ],
+        "brokenLinks": [],
+        "nonfunctionalInteractions": []
+      },
+      "mobile": {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "visualSimilarityScore": 77.57,
+        "mismatchedPixels": 73829,
+        "totalPixels": 329160,
+        "originalScreenshotUrl": "/screenshots/page_0_mobile.png",
+        "reconstructedScreenshotUrl": "/screenshots/recon_page_0_mobile.png",
+        "diffImageUrl": "/screenshots/diff_page_0_mobile.png",
+        "layoutDifferences": [],
+        "missingImages": [],
+        "fontDifferences": [],
+        "colorDifferences": [],
+        "spacingDifferences": [
+          {
+            "selector": "main / section",
+            "expected": "2px 0px",
+            "actual": "16px 24px"
+          }
+        ],
+        "missingSections": [
+          "Heading \"Menu\""
+        ],
+        "brokenLinks": [],
+        "nonfunctionalInteractions": []
+      }
+    },
+    "correctionSummary": [
+      {
+        "severity": "high",
+        "category": "sections",
+        "message": "Missing section content: Heading \"Menu\"",
+        "suggestedFix": "Restore missing section containing Heading \"Menu\"."
+      }
+    ]
+  }
+]
