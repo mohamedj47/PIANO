@@ -147,3 +147,10 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# AI Studio & temporary verification artifacts
+.aistudio/
+.audit_tmp/
+audit_*.png
+.DS_Store
+

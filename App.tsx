@@ -1,57 +1,62 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { PianoStudioPage } from './src/pages/PianoStudioPage';
+import { AboutPage } from './src/pages/AboutPage';
+import { GuidesPage } from './src/pages/GuidesPage';
+import { ProPage } from './src/pages/ProPage';
+import { PricingPage } from './src/pages/PricingPage';
 
-const PAGES = [{"path":"/piano","title":"Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir","url":"/pages/piano.html","isBaseline":false},{"path":"/about","title":"About MaqAmir — A Studio in Your Pocket","url":"/pages/about.html","isBaseline":false},{"path":"/guides","title":"Guides | MaqAmir","url":"/pages/guides.html","isBaseline":false},{"path":"/pro","title":"PianoCreator Pro — Unlock the full microtonal studio | MaqAmir","url":"/pages/pro.html","isBaseline":false},{"path":"/pricing","title":"Pricing — Free for Everyone | MaqAmir","url":"/pages/pricing.html","isBaseline":false}];
+function normalizeRoute(pathWithSearch: string): string {
+  const [pathname] = pathWithSearch.split('?');
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (clean === '/' || clean === '/piano') return '/piano';
+  if (clean === '/about') return '/about';
+  if (clean === '/guides') return '/guides';
+  if (clean === '/pro') return '/pro';
+  if (clean === '/pricing') return '/pricing';
+  return '/piano';
+}
+
+const ROUTE_TITLES: Record<string, string> = {
+  '/piano': 'Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir',
+  '/about': 'About MaqAmir — Microtonal World Music Studio',
+  '/guides': 'Guides & 6-Part Handbook | MaqAmir',
+  '/pro': 'MaqAmir Pro Studio — Unlock Full Microtonal Workstation',
+  '/pricing': 'Pricing — Free Browser Studio | MaqAmir',
+};
 
 export default function App() {
-  const [currentUrl, setCurrentUrl] = useState(PAGES[0]?.url || '');
-  const [viewMode, setViewMode] = useState<'site' | 'artifacts'>('site');
-  const [summary, setSummary] = useState<any>(null);
+  const [route, setRoute] = useState<string>(() =>
+    typeof window !== 'undefined' ? normalizeRoute(window.location.pathname) : '/piano'
+  );
+
+  const navigate = useCallback((path: string) => {
+    const next = normalizeRoute(path);
+    setRoute(next);
+    if (typeof window !== 'undefined') {
+      const targetUrl = path.startsWith('/') ? path : next;
+      const currentUrl = `${window.location.pathname}${window.location.search}`;
+      if (currentUrl !== targetUrl) {
+        window.history.pushState({}, '', targetUrl);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, []);
 
   useEffect(() => {
-    if (viewMode === 'artifacts' && !summary) {
-      fetch('/api/reports').then((r) => r.json()).then(setSummary).catch(() => {});
-    }
-  }, [viewMode, summary]);
+    const onPopState = () => {
+      setRoute(normalizeRoute(window.location.pathname));
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
-  return (
-    <div className="h-screen w-screen flex flex-col bg-slate-950 text-slate-100">
-      <header className="h-12 px-4 border-b border-slate-800 flex items-center justify-between gap-4 shrink-0">
-        <span className="font-semibold text-sm truncate">Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir</span>
-        <div className="flex items-center gap-2 overflow-x-auto">
-          {viewMode === 'site' && PAGES.map((p) => (
-            <button
-              key={p.url}
-              onClick={() => setCurrentUrl(p.url)}
-              className={`px-2.5 py-1 text-xs rounded whitespace-nowrap ${currentUrl === p.url ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-800'}`}
-            >
-              {p.path}
-            </button>
-          ))}
-          <button
-            onClick={() => setViewMode(viewMode === 'site' ? 'artifacts' : 'site')}
-            className="px-2.5 py-1 text-xs rounded bg-slate-800 hover:bg-slate-700 text-slate-200 whitespace-nowrap"
-          >
-            {viewMode === 'site' ? 'Exported Artifacts' : 'Back to Pages'}
-          </button>
-        </div>
-      </header>
-      {viewMode === 'artifacts' ? (
-        <main className="flex-1 overflow-auto p-6 max-w-5xl mx-auto w-full space-y-4">
-          <h2 className="text-base font-semibold">Included Package Outputs & Reports</h2>
-          <pre className="p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs overflow-auto">
-            {summary ? JSON.stringify(summary, null, 2) : 'Loading package report summary...'}
-          </pre>
-        </main>
-      ) : currentUrl ? (
-        <iframe src={currentUrl} title="Reconstructed Site" className="flex-1 w-full border-0 bg-white" />
-      ) : (
-        <main className="flex-1 flex items-center justify-center p-8 text-center">
-          <div className="max-w-md space-y-2">
-            <h1 className="text-lg font-semibold">No Exported Pages Available</h1>
-            <p className="text-sm text-slate-400">Run crawl and reconstruction in CloneForge Studio before exporting.</p>
-          </div>
-        </main>
-      )}
-    </div>
-  );
+  useEffect(() => {
+    document.title = ROUTE_TITLES[route] || ROUTE_TITLES['/piano'];
+  }, [route]);
+
+  if (route === '/about') return <AboutPage onNavigate={navigate} />;
+  if (route === '/guides') return <GuidesPage onNavigate={navigate} />;
+  if (route === '/pro') return <ProPage onNavigate={navigate} />;
+  if (route === '/pricing') return <PricingPage onNavigate={navigate} />;
+  return <PianoStudioPage onNavigate={navigate} />;
 }

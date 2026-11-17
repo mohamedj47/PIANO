@@ -1,5 +1,6 @@
 {
-  "name": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir (Reconstructed)",
-  "description": "Complete reconstructed web application and full analysis package cloned from https://maqamir.tech/piano.",
-  "requestFramePermissions": []
+  "name": "Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir",
+  "description": "Online Microtonal Piano Studio with 135+ World Scales, 12+ Interactive Musical Realms, DJ Performance Deck, 52-parameter Sonic Engine, 2D Gesture Pad, Recording Studio, and Ask Amir AI Assistant.",
+  "requestFramePermissions": ["microphone", "midi"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

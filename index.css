@@ -1,2 +1,92 @@
 @import "tailwindcss";
-@import "./styles/tokens.css";
+
+:root {
+  --brand-gold: 46 65% 52%;
+  --brand-gold-text: 46 72% 62%;
+  --brand-pro: 265 83% 68%;
+  --brand-edu: 199 89% 54%;
+  --brand-heal: 158 64% 52%;
+  --brand-warning: 0 84% 60%;
+  --brand-silver: 215 16% 74%;
+  --brand-onyx: 240 6% 7%;
+  --daw-surface: #09090b;
+  --daw-raised: #141418;
+  --daw-ink: #f6f4ee;
+  --daw-ink-muted: #9ca3af;
+  --daw-line: rgba(255, 255, 255, 0.09);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-hammer: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html, body {
+  background-color: #050505 !important;
+  color: #f6f4ee !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  color-scheme: dark;
+}
+
+.brand-font, .font-montserrat {
+  font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+}
+
+.text-brand-gold { color: #D4AF37; }
+.bg-brand-gold { background-color: #D4AF37; }
+.border-brand-gold { border-color: #D4AF37; }
+
+.text-brand-heal { color: hsl(158 64% 52%); }
+.bg-brand-heal { background-color: hsl(158 64% 52%); }
+
+.text-brand-edu { color: hsl(199 89% 54%); }
+.bg-brand-edu { background-color: hsl(199 89% 54%); }
+
+.text-brand-pro { color: hsl(265 83% 68%); }
+.bg-brand-pro { background-color: hsl(265 83% 68%); }
+
+.text-brand-warning { color: hsl(0 84% 60%); }
+.bg-brand-warning { background-color: hsl(0 84% 60%); }
+
+.bg-daw-surface {
+  background-color: var(--daw-surface);
+}
+
+.bg-daw-raised {
+  background-color: var(--daw-raised);
+}
+
+.text-daw-ink {
+  color: var(--daw-ink);
+}
+
+.text-daw-ink-muted {
+  color: var(--daw-ink-muted);
+}
+
+.border-daw-line {
+  border-color: var(--daw-line);
+}
+
+.scrollbar-hide, .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.daw-slider-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.daw-slider-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+}
+.daw-slider-scroll::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 9999px;
+}
+.daw-slider-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
