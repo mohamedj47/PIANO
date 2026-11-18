@@ -153,4 +153,6 @@ vite.config.ts.timestamp-*
 .audit_tmp/
 audit_*.png
 .DS_Store
+uploads/
+
 

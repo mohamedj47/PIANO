@@ -4,6 +4,10 @@ import { AboutPage } from './src/pages/AboutPage';
 import { GuidesPage } from './src/pages/GuidesPage';
 import { ProPage } from './src/pages/ProPage';
 import { PricingPage } from './src/pages/PricingPage';
+import { AdminPaymentsPage } from './src/pages/AdminPaymentsPage';
+import { AdminPaymentSettingsPage } from './src/pages/AdminPaymentSettingsPage';
+import { ErrorBoundary } from './src/components/ErrorBoundary';
+import { AuthProvider } from './src/context/AuthContext';
 
 function normalizeRoute(pathWithSearch: string): string {
   const [pathname] = pathWithSearch.split('?');
@@ -13,6 +17,8 @@ function normalizeRoute(pathWithSearch: string): string {
   if (clean === '/guides') return '/guides';
   if (clean === '/pro') return '/pro';
   if (clean === '/pricing') return '/pricing';
+  if (clean === '/admin' || clean === '/admin/payments') return '/admin/payments';
+  if (clean === '/admin/payment-settings') return '/admin/payment-settings';
   return '/piano';
 }
 
@@ -20,8 +26,10 @@ const ROUTE_TITLES: Record<string, string> = {
   '/piano': 'Piano Studio — Online Microtonal Piano, 135+ World Scales & DAW | MaqAmir',
   '/about': 'About MaqAmir — Microtonal World Music Studio',
   '/guides': 'Guides & 6-Part Handbook | MaqAmir',
-  '/pro': 'MaqAmir Pro Studio — Unlock Full Microtonal Workstation',
-  '/pricing': 'Pricing — Free Browser Studio | MaqAmir',
+  '/pro': 'MaqAmir Pro Studio — Pricing & Upgrade via InstaPay',
+  '/pricing': 'Pricing & Upgrade — Free, Pro Monthly & Pro Lifetime | MaqAmir',
+  '/admin/payments': 'Admin Payment Requests — InstaPay Review Console | MaqAmir',
+  '/admin/payment-settings': 'Payment Settings — InstaPay Configuration | MaqAmir',
 };
 
 export default function App() {
@@ -54,9 +62,18 @@ export default function App() {
     document.title = ROUTE_TITLES[route] || ROUTE_TITLES['/piano'];
   }, [route]);
 
-  if (route === '/about') return <AboutPage onNavigate={navigate} />;
-  if (route === '/guides') return <GuidesPage onNavigate={navigate} />;
-  if (route === '/pro') return <ProPage onNavigate={navigate} />;
-  if (route === '/pricing') return <PricingPage onNavigate={navigate} />;
-  return <PianoStudioPage onNavigate={navigate} />;
+  let content: React.ReactNode;
+  if (route === '/about') content = <AboutPage onNavigate={navigate} />;
+  else if (route === '/guides') content = <GuidesPage onNavigate={navigate} />;
+  else if (route === '/pro') content = <ProPage onNavigate={navigate} />;
+  else if (route === '/pricing') content = <PricingPage onNavigate={navigate} />;
+  else if (route === '/admin/payments') content = <AdminPaymentsPage onNavigate={navigate} />;
+  else if (route === '/admin/payment-settings') content = <AdminPaymentSettingsPage onNavigate={navigate} />;
+  else content = <PianoStudioPage onNavigate={navigate} />;
+
+  return (
+    <ErrorBoundary>
+      <AuthProvider>{content}</AuthProvider>
+    </ErrorBoundary>
+  );
 }

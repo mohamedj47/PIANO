@@ -1,0 +1,367 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Core Identity & Validation Primitives
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'mohamedmaqled66@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isValidUserProfile(data) {
+      return data.keys().hasAll([
+          'uid', 'email', 'displayName', 'role',
+          'subscriptionPlan', 'subscriptionStatus',
+          'renewalNoticeDismissed', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'uid', 'email', 'displayName', 'role',
+          'subscriptionPlan', 'subscriptionStatus',
+          'subscriptionStartedAt', 'subscriptionExpiresAt',
+          'renewalNoticeDismissed', 'createdAt', 'updatedAt'
+        ])
+        && isValidId(data.uid)
+        && data.email is string && data.email.size() >= 3 && data.email.size() <= 254
+        && data.displayName is string && data.displayName.size() <= 120
+        && data.role in ['user', 'admin']
+        && data.subscriptionPlan in ['free', 'pro_monthly', 'pro_lifetime']
+        && data.subscriptionStatus in ['free', 'active', 'expired']
+        && (!('subscriptionStartedAt' in data) || data.subscriptionStartedAt == null || data.subscriptionStartedAt is timestamp)
+        && (!('subscriptionExpiresAt' in data) || data.subscriptionExpiresAt == null || data.subscriptionExpiresAt is timestamp)
+        && data.renewalNoticeDismissed is bool
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidAdminRole(data) {
+      return data.keys().hasAll(['uid', 'email', 'grantedBy', 'createdAt'])
+        && data.keys().hasOnly(['uid', 'email', 'grantedBy', 'createdAt'])
+        && isValidId(data.uid)
+        && data.email is string && data.email.size() >= 3 && data.email.size() <= 254
+        && isValidId(data.grantedBy)
+        && data.createdAt is timestamp;
+    }
+
+    function isValidPublicPricing(data) {
+      return data.keys().hasAll([
+          'monthlyPrice', 'lifetimePrice', 'currency',
+          'renewalReminderDays', 'updatedBy', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'monthlyPrice', 'lifetimePrice', 'currency',
+          'renewalReminderDays', 'updatedBy', 'updatedAt'
+        ])
+        && (data.monthlyPrice is int || data.monthlyPrice is float)
+        && data.monthlyPrice > 0 && data.monthlyPrice <= 1000000
+        && (data.lifetimePrice is int || data.lifetimePrice is float)
+        && data.lifetimePrice > 0 && data.lifetimePrice <= 10000000
+        && data.currency is string && data.currency.size() >= 1 && data.currency.size() <= 12
+        && (data.renewalReminderDays is int || data.renewalReminderDays is float)
+        && data.renewalReminderDays >= 1 && data.renewalReminderDays <= 30
+        && isValidId(data.updatedBy)
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidInstapaySettings(data) {
+      return data.keys().hasAll([
+          'ipaAddress', 'accountHolderName', 'transferNumber',
+          'instructions', 'updatedBy', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'ipaAddress', 'accountHolderName', 'transferNumber',
+          'instructions', 'updatedBy', 'updatedAt'
+        ])
+        && data.ipaAddress is string && data.ipaAddress.size() >= 3 && data.ipaAddress.size() <= 160
+        && data.accountHolderName is string && data.accountHolderName.size() >= 2 && data.accountHolderName.size() <= 120
+        && data.transferNumber is string && data.transferNumber.size() >= 3 && data.transferNumber.size() <= 60
+        && data.instructions is string && data.instructions.size() <= 2000
+        && isValidId(data.updatedBy)
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidPaymentRequest(data) {
+      return data.keys().hasAll([
+          'orderNumber', 'userId', 'userName', 'userEmail',
+          'planType', 'isRenewal', 'amount', 'currency',
+          'referenceNumber', 'referenceKey', 'proofImageUrl',
+          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail',
+          'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'orderNumber', 'userId', 'userName', 'userEmail',
+          'planType', 'isRenewal', 'amount', 'currency',
+          'referenceNumber', 'referenceKey', 'proofImageUrl',
+          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail',
+          'reviewedAt', 'createdAt', 'updatedAt'
+        ])
+        && data.orderNumber is string && data.orderNumber.size() >= 6 && data.orderNumber.size() <= 32
+        && data.orderNumber.matches('^MQ-[A-Z0-9]{6,12}$')
+        && isValidId(data.userId)
+        && data.userName is string && data.userName.size() >= 1 && data.userName.size() <= 120
+        && data.userEmail is string && data.userEmail.size() >= 3 && data.userEmail.size() <= 254
+        && data.planType in ['pro_monthly', 'pro_lifetime']
+        && data.isRenewal is bool
+        && (data.amount is int || data.amount is float) && data.amount > 0 && data.amount <= 10000000
+        && data.currency is string && data.currency.size() >= 1 && data.currency.size() <= 12
+        && data.referenceNumber is string && data.referenceNumber.size() >= 4 && data.referenceNumber.size() <= 80
+        && data.referenceKey is string && data.referenceKey.size() >= 4 && data.referenceKey.size() <= 80
+        && data.referenceKey.matches('^[A-Z0-9_\\-]+$')
+        && data.proofImageUrl is string && data.proofImageUrl.size() >= 5 && data.proofImageUrl.size() <= 500
+        && data.status in ['pending', 'approved', 'rejected']
+        && data.rejectionReason is string && data.rejectionReason.size() <= 500
+        && data.reviewedBy is string && data.reviewedBy.size() <= 128
+        && data.reviewedByEmail is string && data.reviewedByEmail.size() <= 254
+        && (!('reviewedAt' in data) || data.reviewedAt == null || data.reviewedAt is timestamp)
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidUsedReference(data) {
+      return data.keys().hasAll([
+          'referenceKey', 'referenceNumber', 'requestId',
+          'userId', 'approvedBy', 'approvedAt'
+        ])
+        && data.keys().hasOnly([
+          'referenceKey', 'referenceNumber', 'requestId',
+          'userId', 'approvedBy', 'approvedAt'
+        ])
+        && data.referenceKey is string && data.referenceKey.size() >= 4 && data.referenceKey.size() <= 80
+        && data.referenceKey.matches('^[A-Z0-9_\\-]+$')
+        && data.referenceNumber is string && data.referenceNumber.size() >= 4 && data.referenceNumber.size() <= 80
+        && isValidId(data.requestId)
+        && isValidId(data.userId)
+        && isValidId(data.approvedBy)
+        && data.approvedAt is timestamp;
+    }
+
+    function isValidAuditLog(data) {
+      return data.keys().hasAll([
+          'action', 'requestId', 'orderNumber', 'userId', 'userEmail',
+          'planType', 'amount', 'currency', 'referenceNumber',
+          'adminUid', 'adminEmail', 'note', 'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'action', 'requestId', 'orderNumber', 'userId', 'userEmail',
+          'planType', 'amount', 'currency', 'referenceNumber',
+          'adminUid', 'adminEmail', 'note', 'createdAt'
+        ])
+        && data.action in ['approved', 'rejected', 'settings_updated', 'admin_granted', 'admin_revoked']
+        && data.requestId is string && data.requestId.size() <= 128
+        && data.orderNumber is string && data.orderNumber.size() <= 32
+        && data.userId is string && data.userId.size() <= 128
+        && data.userEmail is string && data.userEmail.size() <= 254
+        && data.planType is string && data.planType.size() <= 32
+        && (data.amount is int || data.amount is float) && data.amount >= 0 && data.amount <= 10000000
+        && data.currency is string && data.currency.size() <= 12
+        && data.referenceNumber is string && data.referenceNumber.size() <= 80
+        && isValidId(data.adminUid)
+        && data.adminEmail is string && data.adminEmail.size() >= 3 && data.adminEmail.size() <= 254
+        && data.note is string && data.note.size() <= 500
+        && data.createdAt is timestamp;
+    }
+
+    // Connection check endpoint (no sensitive data)
+    match /test/connection {
+      allow get: if true;
+      allow write: if false;
+    }
+
+    // Users & Subscriptions (strict anti-self-upgrade rules)
+    match /users/{userId} {
+      allow get: if isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+
+      allow create: if isValidId(userId)
+        && isOwner(userId)
+        && isValidUserProfile(incoming())
+        && incoming().uid == request.auth.uid
+        && incoming().role == 'user'
+        && incoming().subscriptionPlan == 'free'
+        && incoming().subscriptionStatus == 'free'
+        && (!('subscriptionStartedAt' in incoming()) || incoming().subscriptionStartedAt == null)
+        && (!('subscriptionExpiresAt' in incoming()) || incoming().subscriptionExpiresAt == null)
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isValidId(userId)
+        && isSignedIn()
+        && isValidUserProfile(incoming())
+        && incoming().uid == existing().uid
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin() ||
+          (
+            isOwner(userId)
+            && incoming().role == existing().role
+            && incoming().email == existing().email
+            && (
+              (
+                incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'renewalNoticeDismissed', 'updatedAt'])
+                && incoming().subscriptionPlan == existing().subscriptionPlan
+                && incoming().subscriptionStatus == existing().subscriptionStatus
+              ) ||
+              (
+                existing().subscriptionPlan == 'pro_monthly'
+                && existing().subscriptionExpiresAt is timestamp
+                && request.time > existing().subscriptionExpiresAt
+                && incoming().diff(existing()).affectedKeys().hasOnly(['subscriptionPlan', 'subscriptionStatus', 'updatedAt'])
+                && incoming().subscriptionPlan == 'free'
+                && incoming().subscriptionStatus == 'expired'
+              )
+            )
+          )
+        );
+
+      allow delete: if false;
+    }
+
+    // Admin role registry
+    match /admins/{userId} {
+      allow get: if isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+      allow create: if isValidId(userId)
+        && isAdmin()
+        && isValidAdminRole(incoming())
+        && incoming().uid == userId
+        && incoming().grantedBy == request.auth.uid
+        && incoming().createdAt == request.time;
+      allow update: if false;
+      allow delete: if isValidId(userId) && isAdmin() && userId != request.auth.uid;
+    }
+
+    // Dynamic pricing settings (admin-configured, no hardcoded fallback)
+    match /payment_settings/public_pricing {
+      allow get: if true;
+      allow list: if false;
+      allow create, update: if isAdmin()
+        && isValidPublicPricing(incoming())
+        && incoming().updatedBy == request.auth.uid
+        && incoming().updatedAt == request.time;
+      allow delete: if false;
+    }
+
+    // Sensitive InstaPay transfer details (authenticated read, admin-only write)
+    match /payment_settings/instapay {
+      allow get: if isSignedIn();
+      allow list: if false;
+      allow create, update: if isAdmin()
+        && isValidInstapaySettings(incoming())
+        && incoming().updatedBy == request.auth.uid
+        && incoming().updatedAt == request.time;
+      allow delete: if false;
+    }
+
+    // InstaPay Payment Requests
+    match /payment_requests/{requestId} {
+      allow get: if isValidId(requestId) && isSignedIn() && (existing().userId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+
+      allow create: if isValidId(requestId)
+        && isSignedIn()
+        && isValidPaymentRequest(incoming())
+        && incoming().userId == request.auth.uid
+        && incoming().status == 'pending'
+        && incoming().rejectionReason == ''
+        && incoming().reviewedBy == ''
+        && incoming().reviewedByEmail == ''
+        && (!('reviewedAt' in incoming()) || incoming().reviewedAt == null)
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time
+        && exists(/databases/$(database)/documents/payment_settings/public_pricing)
+        && incoming().currency == get(/databases/$(database)/documents/payment_settings/public_pricing).data.currency
+        && incoming().amount == (
+          incoming().planType == 'pro_monthly'
+            ? get(/databases/$(database)/documents/payment_settings/public_pricing).data.monthlyPrice
+            : get(/databases/$(database)/documents/payment_settings/public_pricing).data.lifetimePrice
+        )
+        && !exists(/databases/$(database)/documents/used_references/$(incoming().referenceKey));
+
+      allow update: if isValidId(requestId)
+        && isAdmin()
+        && isValidPaymentRequest(incoming())
+        && existing().status == 'pending'
+        && incoming().orderNumber == existing().orderNumber
+        && incoming().userId == existing().userId
+        && incoming().planType == existing().planType
+        && incoming().isRenewal == existing().isRenewal
+        && incoming().amount == existing().amount
+        && incoming().currency == existing().currency
+        && incoming().referenceNumber == existing().referenceNumber
+        && incoming().referenceKey == existing().referenceKey
+        && incoming().proofImageUrl == existing().proofImageUrl
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && incoming().reviewedAt == request.time
+        && incoming().reviewedBy == request.auth.uid
+        && incoming().diff(existing()).affectedKeys().hasOnly([
+          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail', 'reviewedAt', 'updatedAt'
+        ])
+        && (
+          (
+            incoming().status == 'approved'
+            && !exists(/databases/$(database)/documents/used_references/$(existing().referenceKey))
+            && existsAfter(/databases/$(database)/documents/used_references/$(existing().referenceKey))
+          ) ||
+          (
+            incoming().status == 'rejected'
+            && incoming().rejectionReason.size() >= 1
+          )
+        );
+
+      allow delete: if false;
+    }
+
+    // Approved Reference Keys Registry (prevents reusing an approved reference)
+    match /used_references/{referenceKey} {
+      allow get: if isValidId(referenceKey) && isSignedIn();
+      allow list: if isAdmin();
+      allow create: if isValidId(referenceKey)
+        && isAdmin()
+        && isValidUsedReference(incoming())
+        && incoming().referenceKey == referenceKey
+        && !exists(/databases/$(database)/documents/used_references/$(referenceKey))
+        && incoming().approvedBy == request.auth.uid
+        && incoming().approvedAt == request.time;
+      allow update, delete: if false;
+    }
+
+    // Append-Only Audit Log for Payment Actions & Settings
+    match /payment_audit_logs/{logId} {
+      allow get: if isValidId(logId) && isAdmin();
+      allow list: if isAdmin();
+      allow create: if isValidId(logId)
+        && isAdmin()
+        && isValidAuditLog(incoming())
+        && incoming().adminUid == request.auth.uid
+        && incoming().createdAt == request.time;
+      allow update, delete: if false;
+    }
+  }
+}

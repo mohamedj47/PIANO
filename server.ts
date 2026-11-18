@@ -1,13 +1,31 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
+import crypto from "crypto";
 import "dotenv/config";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, ThinkingLevel, Type } from "@google/genai";
+import { getApp as getAdminApp, getApps as getAdminApps, initializeApp as initializeAdminApp } from "firebase-admin/app";
+import { getAuth as getAdminAuth } from "firebase-admin/auth";
+import firebaseConfig from "./firebase-applet-config.json";
+import { validateProofImageDataUrl } from "./src/lib/instapayDomain";
 
 const PORT = Number(process.env.PORT || 3000);
 const app = express();
 app.use(express.json({ limit: "25mb" }));
+
+const PROOFS_DIR = path.join(process.cwd(), "uploads", "proofs");
+fs.mkdirSync(PROOFS_DIR, { recursive: true });
+
+function getFirebaseAdminAuth() {
+  if (!firebaseConfig?.projectId || firebaseConfig.projectId === "remixed-project-id") {
+    return null;
+  }
+  const adminApp = getAdminApps().length
+    ? getAdminApp()
+    : initializeAdminApp({ projectId: firebaseConfig.projectId });
+  return getAdminAuth(adminApp);
+}
 
 const mocks = [
   {
@@ -262,6 +280,65 @@ Return valid JSON matching the schema. Include numeric sound design values in so
       elapsedMs,
     });
   }
+});
+
+app.post("/api/uploads/proof", async (req, res) => {
+  const authHeader = req.headers.authorization || "";
+  const match = authHeader.match(/^Bearer\s+(.+)$/i);
+  if (!match) {
+    return res.status(401).json({ error: "Missing Authorization Bearer token." });
+  }
+  const adminAuth = getFirebaseAdminAuth();
+  if (!adminAuth) {
+    return res.status(503).json({ error: "Firebase project is not configured." });
+  }
+
+  let uid: string;
+  try {
+    const decoded = await adminAuth.verifyIdToken(match[1]);
+    if (!decoded?.uid || !decoded.email_verified) {
+      return res.status(403).json({ error: "Verified user account is required." });
+    }
+    uid = decoded.uid.replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 64);
+  } catch {
+    return res.status(401).json({ error: "Invalid or expired authentication token." });
+  }
+
+  const { dataUrl } = req.body || {};
+  const validated = validateProofImageDataUrl(dataUrl);
+  if (!validated.ok) {
+    const errMsg = "error" in validated ? validated.error : "Invalid proof image.";
+    return res.status(400).json({ error: errMsg });
+  }
+
+  const safeRand = crypto.randomBytes(6).toString("hex");
+  const filename = `proof_${uid}_${Date.now()}_${safeRand}.${validated.ext}`;
+  const outPath = path.join(PROOFS_DIR, filename);
+  fs.writeFileSync(outPath, Buffer.from(validated.bytes));
+
+  return res.json({
+    ok: true,
+    proofImageUrl: `/api/uploads/proofs/${filename}`,
+    mimeType: validated.mimeType,
+    sizeBytes: validated.bytes.length,
+  });
+});
+
+app.get("/api/uploads/proofs/:filename", (req, res) => {
+  const raw = req.params.filename || "";
+  if (!/^[a-zA-Z0-9_-]+\.(png|jpg|webp)$/.test(raw)) {
+    return res.status(400).json({ error: "Invalid proof filename." });
+  }
+  const candidate = path.join(PROOFS_DIR, path.basename(raw));
+  if (!fs.existsSync(candidate)) {
+    return res.status(404).json({ error: "Proof image not found." });
+  }
+  const ext = path.extname(candidate).toLowerCase();
+  const mime = ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : "image/jpeg";
+  res.setHeader("Content-Type", mime);
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Cache-Control", "private, max-age=86400");
+  return res.sendFile(candidate);
 });
 
 app.all("/api/mock/*", async (req, res) => {

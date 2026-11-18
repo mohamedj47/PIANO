@@ -15,9 +15,14 @@ import {
   Crown,
   Info,
   CreditCard,
+  ShieldCheck,
+  Settings,
+  LogIn,
+  LogOut,
 } from 'lucide-react';
 import { INSTRUMENTS, InstrumentId, PIANO_SKINS } from '../../data/instruments';
 import { ROOT_NOTES, RootNote, SCALE_CATEGORIES, ScaleCategory, WORLD_SCALES, WorldScale } from '../../data/scales';
+import { useAuth } from '../../context/AuthContext';
 
 interface StudioHeaderProps {
   currentRoute: string;
@@ -53,6 +58,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
   onToggleFullscreen,
   midiConnectedCount,
 }) => {
+  const { user, authBusy, isAdmin, subscriptionState, signInWithGoogle, signOutUser } = useAuth();
   const [openMenu, setOpenMenu] = useState<'nav' | 'inst' | 'scale' | 'apps' | null>(null);
   const [scaleSearch, setScaleSearch] = useState('');
   const [scaleCat, setScaleCat] = useState<'All' | ScaleCategory>('All');
@@ -362,8 +368,13 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                   { path: '/piano', label: 'Piano Studio', sub: 'Microtonal DAW & Realms', icon: Music2 },
                   { path: '/guides', label: 'Guides & Handbook', sub: '6-Part Musical Mastery', icon: BookOpen },
                   { path: '/about', label: 'About MaqAmir', sub: 'Heritage & Architecture', icon: Info },
-                  { path: '/pro', label: 'MaqAmir Pro', sub: 'Studio Power Features', icon: Crown },
-                  { path: '/pricing', label: 'Pricing & Credits', sub: 'Free Studio + AI Pack', icon: CreditCard },
+                  { path: '/pricing', label: 'Pricing & Upgrade', sub: 'Free, Pro Monthly & Lifetime', icon: CreditCard },
+                  ...(isAdmin
+                    ? [
+                        { path: '/admin/payments', label: 'Admin Payments', sub: 'Review InstaPay Requests', icon: ShieldCheck },
+                        { path: '/admin/payment-settings', label: 'Payment Settings', sub: 'Configure InstaPay & Prices', icon: Settings },
+                      ]
+                    : []),
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -434,32 +445,80 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
       {openMenu === 'nav' && (
         <>
           <div className="fixed inset-0 z-40 bg-black/50" onClick={() => setOpenMenu(null)} />
-          <div className="fixed left-0 top-11 sm:top-12 bottom-0 z-50 w-64 bg-[#0d0d10] border-r border-white/10 p-4 flex flex-col justify-between shadow-2xl">
-            <div className="space-y-1.5">
-              <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 px-2 mb-2">
-                Navigation
+          <div className="fixed left-0 top-11 sm:top-12 bottom-0 z-50 w-64 bg-[#0d0d10] border-r border-white/10 p-4 flex flex-col justify-between shadow-2xl overflow-y-auto">
+            <div className="space-y-4">
+              <div className="space-y-1.5">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 px-2 mb-2">
+                  Navigation
+                </div>
+                {[
+                  { path: '/piano', label: 'Piano Studio' },
+                  { path: '/guides', label: 'Guides & Handbook' },
+                  { path: '/about', label: 'About MaqAmir' },
+                  { path: '/pricing', label: 'Pricing & Upgrade' },
+                  ...(isAdmin
+                    ? [
+                        { path: '/admin/payments', label: 'Admin Payments' },
+                        { path: '/admin/payment-settings', label: 'Payment Settings' },
+                      ]
+                    : []),
+                ].map((link) => (
+                  <button
+                    key={link.path}
+                    type="button"
+                    onClick={() => {
+                      onNavigate(link.path);
+                      setOpenMenu(null);
+                    }}
+                    className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/[0.07] hover:text-[#D4AF37] transition"
+                  >
+                    {link.label}
+                  </button>
+                ))}
               </div>
-              {[
-                { path: '/piano', label: 'Piano Studio' },
-                { path: '/guides', label: 'Guides & Handbook' },
-                { path: '/about', label: 'About MaqAmir' },
-                { path: '/pro', label: 'Pro Studio' },
-                { path: '/pricing', label: 'Pricing' },
-              ].map((link) => (
-                <button
-                  key={link.path}
-                  type="button"
-                  onClick={() => {
-                    onNavigate(link.path);
-                    setOpenMenu(null);
-                  }}
-                  className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/[0.07] hover:text-[#D4AF37] transition"
-                >
-                  {link.label}
-                </button>
-              ))}
+
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-2">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="text-white/55">Plan:</span>
+                  <span className="font-bold text-[#FACC15]">
+                    {subscriptionState.effectivePlan === 'pro_lifetime'
+                      ? 'Pro Lifetime'
+                      : subscriptionState.effectivePlan === 'pro_monthly'
+                      ? 'Pro Monthly'
+                      : 'Free'}
+                  </span>
+                </div>
+                {user ? (
+                  <div className="space-y-1.5">
+                    <div className="text-[11px] text-white/70 truncate">{user.email}</div>
+                    <button
+                      type="button"
+                      disabled={authBusy}
+                      onClick={() => {
+                        void signOutUser();
+                      }}
+                      className="w-full flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-[11px] font-semibold text-white"
+                    >
+                      <LogOut className="w-3.5 h-3.5" />
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    disabled={authBusy}
+                    onClick={() => {
+                      void signInWithGoogle();
+                    }}
+                    className="w-full flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#D4AF37] hover:bg-[#FACC15] text-[11px] font-extrabold text-black"
+                  >
+                    <LogIn className="w-3.5 h-3.5" />
+                    <span>Sign In with Google</span>
+                  </button>
+                )}
+              </div>
             </div>
-            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] text-white/60 space-y-1">
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] text-white/60 space-y-1 mt-4">
               <div className="font-semibold text-[#D4AF37]">Keyboard Shortcuts</div>
               <div>White keys: A S D F G H J K L</div>
               <div>Black keys: W E · T Y U · O P</div>

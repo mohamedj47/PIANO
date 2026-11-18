@@ -27,6 +27,7 @@ import {
   SavedRecording,
 } from '../../audio/MaqAmirAudioEngine';
 import { RealmId } from '../../data/realms';
+import { useAuth } from '../../context/AuthContext';
 
 export interface AiSuggestion {
   reply: string;
@@ -129,6 +130,7 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
   onNavigatePro,
   onSwitchRealm,
 }) => {
+  const { subscriptionState, profile } = useAuth();
   const [aiPrompt, setAiPrompt] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
@@ -600,9 +602,22 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
             </div>
             <div className="p-3 rounded-xl bg-gradient-to-br from-[#D4AF37]/15 to-transparent border border-[#D4AF37]/40 flex flex-col justify-between gap-2">
               <div>
-                <div className="text-xs font-extrabold text-[#FACC15]">MaqAmir Pro Studio</div>
+                <div className="flex items-center justify-between gap-2">
+                  <div className="text-xs font-extrabold text-[#FACC15]">MaqAmir Pro Studio</div>
+                  <span className="px-2 py-0.5 rounded bg-black/40 border border-[#D4AF37]/40 text-[10px] font-bold text-[#FACC15]">
+                    {subscriptionState.effectivePlan === 'pro_lifetime'
+                      ? 'PRO LIFETIME'
+                      : subscriptionState.effectivePlan === 'pro_monthly'
+                      ? 'PRO MONTHLY'
+                      : 'FREE PLAN'}
+                  </span>
+                </div>
                 <div className="text-[11px] text-white/75 mt-1">
-                  Explore 6-part Microtonal Handbook, unlimited AI sound builder prompts, and multi-track studio export workflows.
+                  {subscriptionState.effectivePlan === 'pro_lifetime'
+                    ? 'اشتراكك الدائم مفعّل مدى الحياة بدون تاريخ انتهاء.'
+                    : subscriptionState.effectivePlan === 'pro_monthly' && profile?.subscriptionExpiresAt
+                    ? `اشتراك Pro الشهري مفعّل حتى ${profile.subscriptionExpiresAt.toLocaleDateString('en-GB')}.`
+                    : 'قم بالترقية إلى Pro Monthly (30 يومًا) أو Pro Lifetime عبر التحويل اليدوي InstaPay.'}
                 </div>
               </div>
               <button
@@ -610,7 +625,11 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
                 onClick={onNavigatePro}
                 className="self-start px-3.5 py-1.5 rounded-lg bg-[#D4AF37] text-black text-xs font-extrabold hover:bg-[#FACC15]"
               >
-                View Pro Plan
+                {subscriptionState.effectivePlan === 'pro_monthly'
+                  ? 'Renew / View Pricing'
+                  : subscriptionState.effectivePlan === 'pro_lifetime'
+                  ? 'Manage Subscription'
+                  : 'Upgrade via InstaPay'}
               </button>
             </div>
           </div>

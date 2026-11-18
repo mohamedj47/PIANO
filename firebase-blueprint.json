@@ -1,0 +1,273 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Studio user profile, role, and Pro subscription status.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 254
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "enum": ["user", "admin"]
+        },
+        "subscriptionPlan": {
+          "type": "string",
+          "enum": ["free", "pro_monthly", "pro_lifetime"]
+        },
+        "subscriptionStatus": {
+          "type": "string",
+          "enum": ["free", "active", "expired"]
+        },
+        "subscriptionStartedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "subscriptionExpiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "renewalNoticeDismissed": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "uid",
+        "email",
+        "displayName",
+        "role",
+        "subscriptionPlan",
+        "subscriptionStatus",
+        "renewalNoticeDismissed",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminRole": {
+      "title": "AdminRole",
+      "description": "Authorized admin UID registry.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 254
+        },
+        "grantedBy": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "email", "grantedBy", "createdAt"]
+    },
+    "PublicPricingSettings": {
+      "title": "PublicPricingSettings",
+      "description": "Admin-managed Pro plan pricing and renewal reminder configuration.",
+      "type": "object",
+      "properties": {
+        "monthlyPrice": { "type": "number" },
+        "lifetimePrice": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 12 },
+        "renewalReminderDays": { "type": "number" },
+        "updatedBy": { "type": "string", "maxLength": 128 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["monthlyPrice", "lifetimePrice", "currency", "renewalReminderDays", "updatedBy", "updatedAt"]
+    },
+    "InstapaySettings": {
+      "title": "InstapaySettings",
+      "description": "Admin-managed InstaPay IPA, account holder, transfer number, and instructions.",
+      "type": "object",
+      "properties": {
+        "ipaAddress": { "type": "string", "maxLength": 160 },
+        "accountHolderName": { "type": "string", "maxLength": 120 },
+        "transferNumber": { "type": "string", "maxLength": 60 },
+        "instructions": { "type": "string", "maxLength": 2000 },
+        "updatedBy": { "type": "string", "maxLength": 128 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ipaAddress", "accountHolderName", "transferNumber", "instructions", "updatedBy", "updatedAt"]
+    },
+    "PaymentRequest": {
+      "title": "PaymentRequest",
+      "description": "Manual InstaPay payment submission awaiting admin verification.",
+      "type": "object",
+      "properties": {
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^MQ-[A-Z0-9]{6,12}$"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "userName": { "type": "string", "maxLength": 120 },
+        "userEmail": { "type": "string", "format": "email", "maxLength": 254 },
+        "planType": { "type": "string", "enum": ["pro_monthly", "pro_lifetime"] },
+        "isRenewal": { "type": "boolean" },
+        "amount": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 12 },
+        "referenceNumber": { "type": "string", "minLength": 4, "maxLength": 80 },
+        "referenceKey": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 80,
+          "pattern": "^[A-Z0-9_\\-]+$"
+        },
+        "proofImageUrl": { "type": "string", "maxLength": 500 },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "rejectionReason": { "type": "string", "maxLength": 500 },
+        "reviewedBy": { "type": "string", "maxLength": 128 },
+        "reviewedByEmail": { "type": "string", "maxLength": 254 },
+        "reviewedAt": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "orderNumber",
+        "userId",
+        "userName",
+        "userEmail",
+        "planType",
+        "isRenewal",
+        "amount",
+        "currency",
+        "referenceNumber",
+        "referenceKey",
+        "proofImageUrl",
+        "status",
+        "rejectionReason",
+        "reviewedBy",
+        "reviewedByEmail",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "UsedReference": {
+      "title": "UsedReference",
+      "description": "Immutable registry of approved InstaPay reference keys preventing double-approval.",
+      "type": "object",
+      "properties": {
+        "referenceKey": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 80,
+          "pattern": "^[A-Z0-9_\\-]+$"
+        },
+        "referenceNumber": { "type": "string", "maxLength": 80 },
+        "requestId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "approvedBy": { "type": "string", "maxLength": 128 },
+        "approvedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["referenceKey", "referenceNumber", "requestId", "userId", "approvedBy", "approvedAt"]
+    },
+    "PaymentAuditLog": {
+      "title": "PaymentAuditLog",
+      "description": "Immutable audit log for every payment approval, rejection, settings update, and admin role change.",
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["approved", "rejected", "settings_updated", "admin_granted", "admin_revoked"]
+        },
+        "requestId": { "type": "string", "maxLength": 128 },
+        "orderNumber": { "type": "string", "maxLength": 32 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userEmail": { "type": "string", "maxLength": 254 },
+        "planType": { "type": "string", "maxLength": 32 },
+        "amount": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 12 },
+        "referenceNumber": { "type": "string", "maxLength": 80 },
+        "adminUid": { "type": "string", "maxLength": 128 },
+        "adminEmail": { "type": "string", "maxLength": 254 },
+        "note": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "action",
+        "requestId",
+        "orderNumber",
+        "userId",
+        "userEmail",
+        "planType",
+        "amount",
+        "currency",
+        "referenceNumber",
+        "adminUid",
+        "adminEmail",
+        "note",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profiles, role assignments, and subscription validity timestamps."
+    },
+    "/admins/{userId}": {
+      "schema": { "$ref": "#/entities/AdminRole" },
+      "description": "Admin role grants keyed by Firebase UID."
+    },
+    "/payment_settings/public_pricing": {
+      "schema": { "$ref": "#/entities/PublicPricingSettings" },
+      "description": "Publicly readable Pro Monthly and Pro Lifetime pricing configured by admin."
+    },
+    "/payment_settings/instapay": {
+      "schema": { "$ref": "#/entities/InstapaySettings" },
+      "description": "InstaPay IPA, account holder name, transfer number, and instructions (authenticated read, admin write)."
+    },
+    "/payment_requests/{requestId}": {
+      "schema": { "$ref": "#/entities/PaymentRequest" },
+      "description": "User-submitted manual InstaPay payment requests awaiting admin review."
+    },
+    "/used_references/{referenceKey}": {
+      "schema": { "$ref": "#/entities/UsedReference" },
+      "description": "Approved transaction reference numbers locked against reuse."
+    },
+    "/payment_audit_logs/{logId}": {
+      "schema": { "$ref": "#/entities/PaymentAuditLog" },
+      "description": "Append-only audit trail for approvals, rejections, settings edits, and role changes."
+    }
+  }
+}
