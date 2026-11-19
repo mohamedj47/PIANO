@@ -20,10 +20,12 @@ import {
   Settings,
   LogIn,
   LogOut,
+  Share2,
 } from 'lucide-react';
 import { INSTRUMENTS, InstrumentId, PIANO_SKINS } from '../../data/instruments';
 import { ROOT_NOTES, RootNote, SCALE_CATEGORIES, ScaleCategory, WORLD_SCALES, WorldScale } from '../../data/scales';
 import { useAuth } from '../../context/AuthContext';
+import { ShareStudioModal } from '../growth/ShareStudioModal';
 
 interface StudioHeaderProps {
   currentRoute: string;
@@ -64,6 +66,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
   const [scaleSearch, setScaleSearch] = useState('');
   const [scaleCat, setScaleCat] = useState<'All' | ScaleCategory>('All');
   const [skinSearch, setSkinSearch] = useState('');
+  const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     if (!openMenu) return;
@@ -431,6 +434,16 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
 
         <button
           type="button"
+          onClick={() => setShareOpen(true)}
+          title="Share Studio & Active Scale"
+          aria-label="Share Studio"
+          className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-white/55 hover:text-[#D4AF37] hover:bg-white/[0.06] transition"
+        >
+          <Share2 className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
           onClick={onToggleFullscreen}
           title="Toggle Fullscreen"
           className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-white/55 hover:text-white hover:bg-white/[0.06] transition"
@@ -477,6 +490,11 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                   </div>
                   {[
                     { path: '/piano', label: 'Piano Studio' },
+                    { path: '/online-piano', label: 'Online Piano' },
+                    { path: '/virtual-instruments', label: 'Virtual Instruments' },
+                    { path: '/music-studio', label: 'Music Studio & Realms' },
+                    { path: '/learn-piano', label: 'Learn Piano' },
+                    { path: '/music-theory', label: 'World Music Theory' },
                     { path: '/guides', label: 'Guides & Handbook' },
                     { path: '/about', label: 'About MaqAmir' },
                     { path: '/pricing', label: 'Pricing & Upgrade' },
@@ -494,7 +512,7 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                         onNavigate(link.path);
                         setOpenMenu(null);
                       }}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-white/85 hover:bg-white/[0.07] hover:text-[#D4AF37] transition"
+                      className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-white/85 hover:bg-white/[0.07] hover:text-[#D4AF37] transition"
                     >
                       {link.label}
                     </button>
@@ -552,6 +570,14 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
           </>,
           document.body
         )}
+
+      <ShareStudioModal
+        open={shareOpen}
+        onClose={() => setShareOpen(false)}
+        sharePath={`/piano?scale=${encodeURIComponent(scale.id)}&instrument=${encodeURIComponent(instrument)}`}
+        shareTitle={`${instrument} in ${scale.name} (${rootNote}) — MAQAMIR Piano Studio`}
+        shareContextLabel={`Share ${instrument} · ${scale.name} (${rootNote})`}
+      />
     </header>
   );
 };

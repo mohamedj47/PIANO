@@ -2,6 +2,16 @@ export type PlanType = 'pro_monthly' | 'pro_lifetime';
 export type SubscriptionPlan = 'free' | PlanType;
 export type SubscriptionStatus = 'free' | 'active' | 'expired';
 export type PaymentRequestStatus = 'pending' | 'approved' | 'rejected';
+export type AuditAction =
+  | 'request_created'
+  | 'proof_uploaded'
+  | 'approved'
+  | 'rejected'
+  | 'subscription_activated'
+  | 'subscription_expired'
+  | 'settings_updated'
+  | 'admin_granted'
+  | 'admin_revoked';
 
 export interface PublicPricingSettings {
   monthlyPrice: number;
@@ -42,12 +52,14 @@ export interface PaymentRequestRecord {
   planType: PlanType;
   isRenewal: boolean;
   amount: number;
+  priceSnapshot: number;
   currency: string;
   referenceNumber: string;
   referenceKey: string;
   proofImageUrl: string;
   status: PaymentRequestStatus;
   rejectionReason: string;
+  adminConfirmedTransfer: boolean;
   reviewedBy: string;
   reviewedByEmail: string;
   reviewedAt: Date | null;
@@ -58,6 +70,9 @@ export interface PaymentRequestRecord {
 export const MAX_PROOF_FILE_BYTES = 2 * 1024 * 1024; // 2 MB
 export const ALLOWED_PROOF_MIME_TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const;
 export const MONTHLY_DURATION_MS = 30 * 24 * 60 * 60 * 1000;
+export const ORDER_NUMBER_REGEX = /^MQ-[A-Z0-9]{6,12}$/;
+export const PROOF_FILENAME_REGEX = /^proof_[a-zA-Z0-9_-]{1,128}_[0-9]{10,16}_[0-9a-f]{12,24}\.(png|jpg|webp)$/;
+export const PROOF_URL_REGEX = /^\/api\/uploads\/proofs\/proof_[a-zA-Z0-9_-]{1,128}_[0-9]{10,16}_[0-9a-f]{12,24}\.(png|jpg|webp)$/;
 
 export function normalizeReferenceKey(referenceNumber: string): string {
   return referenceNumber
@@ -66,13 +81,30 @@ export function normalizeReferenceKey(referenceNumber: string): string {
     .replace(/[^A-Z0-9]+/g, '');
 }
 
+/**
+ * Cryptographically strong order reference generator using Web Crypto CSPRNG
+ * (zero Math.random fallback, uniform 32-char alphabet masking).
+ */
 export function generateOrderNumber(): string {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // 32 unambiguous chars
+  const randomBytes = new Uint8Array(10);
+  if (typeof globalThis.crypto?.getRandomValues !== 'function') {
+    throw new Error('Secure CSPRNG (crypto.getRandomValues) is unavailable.');
+  }
+  globalThis.crypto.getRandomValues(randomBytes);
   let suffix = '';
-  for (let i = 0; i < 8; i++) {
-    suffix += chars[Math.floor(Math.random() * chars.length)];
+  for (let i = 0; i < randomBytes.length; i++) {
+    suffix += chars[randomBytes[i] & 31];
   }
   return `MQ-${suffix}`;
+}
+
+export function isValidPrivateProofUrl(url: string): boolean {
+  return typeof url === 'string' && PROOF_URL_REGEX.test(url);
+}
+
+export function isValidProofFilename(filename: string): boolean {
+  return typeof filename === 'string' && PROOF_FILENAME_REGEX.test(filename);
 }
 
 export function computeMonthlyExpiryDate(fromDate: Date = new Date()): Date {

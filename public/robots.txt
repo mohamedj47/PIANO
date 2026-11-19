@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /api/uploads/proofs/
+
+Sitemap: https://piano-eta-ivory.vercel.app/sitemap.xml

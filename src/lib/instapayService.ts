@@ -8,26 +8,26 @@ import {
   orderBy,
   query,
   serverTimestamp,
-  setDoc,
   updateDoc,
   where,
   writeBatch,
 } from 'firebase/firestore';
 import { db, handleFirestoreError, OperationType } from './firebase';
 import {
+  AuditAction,
   InstapaySettings,
   PaymentRequestRecord,
   PlanType,
   PublicPricingSettings,
   UserSubscriptionRecord,
-  computeMonthlyExpiryDate,
   generateOrderNumber,
+  isValidPrivateProofUrl,
   normalizeReferenceKey,
 } from './instapayDomain';
 
 export interface AuditLogRecord {
   id: string;
-  action: 'approved' | 'rejected' | 'settings_updated' | 'admin_granted' | 'admin_revoked';
+  action: AuditAction;
   requestId: string;
   orderNumber: string;
   userId: string;
@@ -59,6 +59,8 @@ function toDateOrNull(val: unknown): Date | null {
 }
 
 function mapPaymentRequest(id: string, d: Record<string, unknown>): PaymentRequestRecord {
+  const amount = Number(d.amount || 0);
+  const priceSnapshot = d.priceSnapshot !== undefined ? Number(d.priceSnapshot) : amount;
   return {
     id,
     orderNumber: String(d.orderNumber || ''),
@@ -67,13 +69,15 @@ function mapPaymentRequest(id: string, d: Record<string, unknown>): PaymentReque
     userEmail: String(d.userEmail || ''),
     planType: (d.planType === 'pro_lifetime' ? 'pro_lifetime' : 'pro_monthly') as PlanType,
     isRenewal: Boolean(d.isRenewal),
-    amount: Number(d.amount || 0),
+    amount,
+    priceSnapshot,
     currency: String(d.currency || ''),
     referenceNumber: String(d.referenceNumber || ''),
     referenceKey: String(d.referenceKey || ''),
     proofImageUrl: String(d.proofImageUrl || ''),
-    status: (d.status === 'approved' || d.status === 'rejected' ? d.status : 'pending'),
+    status: d.status === 'approved' || d.status === 'rejected' ? d.status : 'pending',
     rejectionReason: String(d.rejectionReason || ''),
+    adminConfirmedTransfer: Boolean(d.adminConfirmedTransfer),
     reviewedBy: String(d.reviewedBy || ''),
     reviewedByEmail: String(d.reviewedByEmail || ''),
     reviewedAt: toDateOrNull(d.reviewedAt),
@@ -221,41 +225,119 @@ export async function submitPaymentRequest(params: {
   if (referenceKey.length < 4 || referenceKey.length > 80) {
     throw new Error('رقم العملية المرجعي يجب أن يكون 4 أحرف/أرقام على الأقل.');
   }
+  if (!isValidPrivateProofUrl(params.proofImageUrl)) {
+    throw new Error('مسار صورة إثبات التحويل غير صالح.');
+  }
 
-  // Pre-check if this transaction reference was already approved
-  const usedSnap = await getDoc(doc(db, 'used_references', referenceKey)).catch((error) =>
-    handleFirestoreError(error, OperationType.GET, `used_references/${referenceKey}`)
+  // Check if user already has an active pending payment request lock
+  const pendingLockSnap = await getDoc(doc(db, 'pending_locks', params.uid)).catch((error) =>
+    handleFirestoreError(error, OperationType.GET, `pending_locks/${params.uid}`)
   );
-  if (usedSnap.exists()) {
-    throw new Error('رقم العملية المرجعي هذا تم اعتماده مسبقًا ولا يمكن استخدامه مرة أخرى.');
+  if (pendingLockSnap.exists()) {
+    throw new Error(
+      'لديك طلب دفع قيد المراجعة حاليًا. يرجى انتظار مراجعة الإدارة للطلب الحالي قبل إرسال طلب جديد.'
+    );
+  }
+
+  // Pre-check if this transaction reference is already pending/approved/rejected
+  try {
+    const usedSnap = await getDoc(doc(db, 'used_references', referenceKey));
+    if (usedSnap.exists()) {
+      throw new Error(
+        'رقم العملية المرجعي هذا مستخدم مسبقًا في طلب آخر ولا يمكن إعادة استخدامه.'
+      );
+    }
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    if (msg.includes('permission-denied') || msg.includes('Missing or insufficient permissions')) {
+      throw new Error(
+        'رقم العملية المرجعي هذا مسجل مسبقًا لحساب آخر ولا يمكن إعادة استخدامه.'
+      );
+    }
+    if (msg.includes('مستخدم مسبقًا')) {
+      throw err;
+    }
   }
 
   const reqRef = doc(collection(db, 'payment_requests'));
-  const orderNumber = (params.orderNumber && /^MQ-[A-Z0-9]{6,12}$/.test(params.orderNumber))
-    ? params.orderNumber
-    : generateOrderNumber();
+  const orderNumber =
+    params.orderNumber && /^MQ-[A-Z0-9]{6,12}$/.test(params.orderNumber)
+      ? params.orderNumber
+      : generateOrderNumber();
+
+  const amountNum = Number(params.amount);
+  const currencyClean = params.currency.trim().slice(0, 12);
+  const refNumClean = params.referenceNumber.trim().slice(0, 80);
+
+  const batch = writeBatch(db);
+  batch.set(reqRef, {
+    orderNumber,
+    userId: params.uid,
+    userName: params.userName.trim().slice(0, 120) || params.userEmail,
+    userEmail: params.userEmail.trim().slice(0, 254),
+    planType: params.planType,
+    isRenewal: Boolean(params.isRenewal),
+    amount: amountNum,
+    priceSnapshot: amountNum,
+    currency: currencyClean,
+    referenceNumber: refNumClean,
+    referenceKey,
+    proofImageUrl: params.proofImageUrl,
+    status: 'pending',
+    rejectionReason: '',
+    adminConfirmedTransfer: false,
+    reviewedBy: '',
+    reviewedByEmail: '',
+    reviewedAt: null,
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  });
+
+  batch.set(doc(db, 'used_references', referenceKey), {
+    referenceKey,
+    referenceNumber: refNumClean,
+    requestId: reqRef.id,
+    orderNumber,
+    userId: params.uid,
+    status: 'pending',
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+    approvedBy: '',
+    approvedAt: null,
+  });
+
+  batch.set(doc(db, 'used_orders', orderNumber), {
+    orderNumber,
+    requestId: reqRef.id,
+    userId: params.uid,
+    createdAt: serverTimestamp(),
+  });
+
+  batch.set(doc(db, 'pending_locks', params.uid), {
+    userId: params.uid,
+    requestId: reqRef.id,
+    orderNumber,
+    createdAt: serverTimestamp(),
+  });
+
+  batch.set(doc(db, 'payment_audit_logs', `created_${reqRef.id}`), {
+    action: 'request_created',
+    requestId: reqRef.id,
+    orderNumber,
+    userId: params.uid,
+    userEmail: params.userEmail.trim().slice(0, 254),
+    planType: params.planType,
+    amount: amountNum,
+    currency: currencyClean,
+    referenceNumber: refNumClean,
+    adminUid: '',
+    adminEmail: '',
+    note: `Submitted InstaPay ${params.planType} request (${amountNum} ${currencyClean})`,
+    createdAt: serverTimestamp(),
+  });
 
   try {
-    await setDoc(reqRef, {
-      orderNumber,
-      userId: params.uid,
-      userName: params.userName.trim().slice(0, 120) || params.userEmail,
-      userEmail: params.userEmail.trim().slice(0, 254),
-      planType: params.planType,
-      isRenewal: Boolean(params.isRenewal),
-      amount: Number(params.amount),
-      currency: params.currency.trim().slice(0, 12),
-      referenceNumber: params.referenceNumber.trim().slice(0, 80),
-      referenceKey,
-      proofImageUrl: params.proofImageUrl,
-      status: 'pending',
-      rejectionReason: '',
-      reviewedBy: '',
-      reviewedByEmail: '',
-      reviewedAt: null,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
+    await batch.commit();
     return { id: reqRef.id, orderNumber };
   } catch (error) {
     handleFirestoreError(error, OperationType.CREATE, `payment_requests/${reqRef.id}`);
@@ -267,11 +349,7 @@ export function subscribeUserPaymentRequests(
   onData: (rows: PaymentRequestRecord[]) => void,
   onError?: (err: Error) => void
 ) {
-  const q = query(
-    collection(db, 'payment_requests'),
-    where('userId', '==', uid),
-    limit(50)
-  );
+  const q = query(collection(db, 'payment_requests'), where('userId', '==', uid), limit(50));
   return onSnapshot(
     q,
     (snap) => {
@@ -323,7 +401,7 @@ export function subscribeAuditLogs(
           const data = d.data();
           return {
             id: d.id,
-            action: data.action,
+            action: data.action as AuditAction,
             requestId: String(data.requestId || ''),
             orderNumber: String(data.orderNumber || ''),
             userId: String(data.userId || ''),
@@ -413,104 +491,42 @@ export function subscribeAllUsers(
   );
 }
 
+/**
+ * Approves a payment request via trusted backend /api/payments/approve
+ * so subscription expiration is calculated exclusively from server time.
+ */
 export async function approvePaymentRequest(params: {
-  adminUid: string;
-  adminEmail: string;
+  idToken: string;
   request: PaymentRequestRecord;
-}): Promise<void> {
-  const { adminUid, adminEmail, request } = params;
+  adminConfirmedTransfer: boolean;
+}): Promise<{ subscriptionExpiresAt: string | null }> {
+  const { idToken, request, adminConfirmedTransfer } = params;
   if (request.status !== 'pending') {
     throw new Error('لا يمكن اعتماد طلب تم البت فيه بالفعل.');
   }
-
-  // Verify reference hasn't already been used
-  const usedSnap = await getDoc(doc(db, 'used_references', request.referenceKey)).catch((error) =>
-    handleFirestoreError(error, OperationType.GET, `used_references/${request.referenceKey}`)
-  );
-  if (usedSnap.exists()) {
-    throw new Error('رقم العملية المرجعي معتمد مسبقًا لطلب آخر ولا يمكن تكرار الاعتماد.');
+  if (!adminConfirmedTransfer) {
+    throw new Error('يرجى تأكيد التحقق من التحويل الفعلي والمبلغ والمرجع قبل الموافقة.');
+  }
+  if (request.amount <= 0 || request.amount !== request.priceSnapshot) {
+    throw new Error('المبلغ غير مطابق لقيمة الباقة المثبتة وقت الطلب.');
   }
 
-  const userRef = doc(db, 'users', request.userId);
-  const userSnap = await getDoc(userRef).catch((error) =>
-    handleFirestoreError(error, OperationType.GET, `users/${request.userId}`)
-  );
-  if (!userSnap.exists()) {
-    throw new Error('لم يتم العثور على حساب المستخدم في قاعدة البيانات.');
+  const resp = await fetch('/api/payments/approve', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${idToken}`,
+    },
+    body: JSON.stringify({
+      requestId: request.id,
+      adminConfirmedTransfer: true,
+    }),
+  });
+  const body = await resp.json();
+  if (!resp.ok || !body?.ok) {
+    throw new Error(body?.error || 'تعذر اعتماد الطلب على الخادم.');
   }
-
-  const existingUserData = userSnap.data();
-  const now = new Date();
-  let nextExpiry: Timestamp | null = null;
-  if (request.planType === 'pro_monthly') {
-    // If renewing before expiry, extend 30 days from current active expiry; otherwise 30 days from approval
-    const currentExpiry = toDateOrNull(existingUserData.subscriptionExpiresAt);
-    const baseDate =
-      existingUserData.subscriptionPlan === 'pro_monthly' &&
-      existingUserData.subscriptionStatus === 'active' &&
-      currentExpiry &&
-      currentExpiry.getTime() > now.getTime()
-        ? currentExpiry
-        : now;
-    nextExpiry = Timestamp.fromDate(computeMonthlyExpiryDate(baseDate));
-  }
-
-  const batch = writeBatch(db);
-  const reqRef = doc(db, 'payment_requests', request.id);
-  const usedRef = doc(db, 'used_references', request.referenceKey);
-  const logRef = doc(collection(db, 'payment_audit_logs'));
-
-  batch.update(reqRef, {
-    status: 'approved',
-    rejectionReason: '',
-    reviewedBy: adminUid,
-    reviewedByEmail: adminEmail,
-    reviewedAt: serverTimestamp(),
-    updatedAt: serverTimestamp(),
-  });
-
-  batch.set(usedRef, {
-    referenceKey: request.referenceKey,
-    referenceNumber: request.referenceNumber,
-    requestId: request.id,
-    userId: request.userId,
-    approvedBy: adminUid,
-    approvedAt: serverTimestamp(),
-  });
-
-  batch.update(userRef, {
-    subscriptionPlan: request.planType,
-    subscriptionStatus: 'active',
-    subscriptionStartedAt: serverTimestamp(),
-    subscriptionExpiresAt: nextExpiry,
-    renewalNoticeDismissed: false,
-    updatedAt: serverTimestamp(),
-  });
-
-  batch.set(logRef, {
-    action: 'approved',
-    requestId: request.id,
-    orderNumber: request.orderNumber,
-    userId: request.userId,
-    userEmail: request.userEmail,
-    planType: request.planType,
-    amount: request.amount,
-    currency: request.currency,
-    referenceNumber: request.referenceNumber,
-    adminUid,
-    adminEmail,
-    note:
-      request.planType === 'pro_lifetime'
-        ? 'Approved Pro Lifetime permanent activation'
-        : `Approved Pro Monthly (30 days${nextExpiry ? ` until ${nextExpiry.toDate().toISOString().slice(0, 10)}` : ''})`,
-    createdAt: serverTimestamp(),
-  });
-
-  try {
-    await batch.commit();
-  } catch (error) {
-    handleFirestoreError(error, OperationType.WRITE, `payment_requests/${request.id}`);
-  }
+  return { subscriptionExpiresAt: body.subscriptionExpiresAt || null };
 }
 
 export async function rejectPaymentRequest(params: {
@@ -528,18 +544,49 @@ export async function rejectPaymentRequest(params: {
     throw new Error('تم البت في هذا الطلب مسبقًا.');
   }
 
+  const usedRefDoc = doc(db, 'used_references', request.referenceKey);
+  const usedSnap = await getDoc(usedRefDoc).catch((error) =>
+    handleFirestoreError(error, OperationType.GET, `used_references/${request.referenceKey}`)
+  );
+
   const batch = writeBatch(db);
   const reqRef = doc(db, 'payment_requests', request.id);
-  const logRef = doc(collection(db, 'payment_audit_logs'));
+  const logRef = doc(db, 'payment_audit_logs', `rejected_${request.id}`);
 
   batch.update(reqRef, {
     status: 'rejected',
     rejectionReason: cleanReason,
+    adminConfirmedTransfer: false,
+    priceSnapshot: request.priceSnapshot || request.amount,
     reviewedBy: adminUid,
     reviewedByEmail: adminEmail,
     reviewedAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });
+
+  if (usedSnap.exists()) {
+    batch.update(usedRefDoc, {
+      status: 'rejected',
+      approvedBy: '',
+      approvedAt: null,
+      updatedAt: serverTimestamp(),
+    });
+  } else {
+    batch.set(usedRefDoc, {
+      referenceKey: request.referenceKey,
+      referenceNumber: request.referenceNumber,
+      requestId: request.id,
+      orderNumber: request.orderNumber,
+      userId: request.userId,
+      status: 'rejected',
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+      approvedBy: '',
+      approvedAt: null,
+    });
+  }
+
+  batch.delete(doc(db, 'pending_locks', request.userId));
 
   batch.set(logRef, {
     action: 'rejected',
@@ -564,14 +611,36 @@ export async function rejectPaymentRequest(params: {
   }
 }
 
-export async function downgradeExpiredSubscription(uid: string): Promise<void> {
+export async function downgradeExpiredSubscription(
+  uid: string,
+  userEmail: string = ''
+): Promise<void> {
   const path = `users/${uid}`;
-  try {
-    await updateDoc(doc(db, 'users', uid), {
-      subscriptionPlan: 'free',
-      subscriptionStatus: 'expired',
-      updatedAt: serverTimestamp(),
+  const batch = writeBatch(db);
+  batch.update(doc(db, 'users', uid), {
+    subscriptionPlan: 'free',
+    subscriptionStatus: 'expired',
+    updatedAt: serverTimestamp(),
+  });
+  if (userEmail) {
+    batch.set(doc(collection(db, 'payment_audit_logs')), {
+      action: 'subscription_expired',
+      requestId: uid,
+      orderNumber: '-',
+      userId: uid,
+      userEmail,
+      planType: 'pro_monthly',
+      amount: 0,
+      currency: '-',
+      referenceNumber: '-',
+      adminUid: '',
+      adminEmail: '',
+      note: 'Pro Monthly subscription expired and downgraded to Free tier',
+      createdAt: serverTimestamp(),
     });
+  }
+  try {
+    await batch.commit();
   } catch (error) {
     handleFirestoreError(error, OperationType.UPDATE, path);
   }

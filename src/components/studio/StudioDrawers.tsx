@@ -130,7 +130,7 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
   onNavigatePro,
   onSwitchRealm,
 }) => {
-  const { subscriptionState, profile } = useAuth();
+  const { user, subscriptionState, profile, getIdToken, signInWithGoogle } = useAuth();
   const [aiPrompt, setAiPrompt] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
@@ -152,12 +152,20 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
   const handleAskAmir = async (promptText: string) => {
     const q = promptText.trim();
     if (!q || aiLoading) return;
+    if (!user || !subscriptionState.isPro) {
+      setAiError('ميزة Ask Amir AI متاحة حصريًا لمشتركي Pro Monthly أو Pro Lifetime النشطين.');
+      return;
+    }
     setAiLoading(true);
     setAiError(null);
     try {
+      const idToken = await getIdToken();
       const resp = await fetch('/api/ai/assist', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${idToken}`,
+        },
         body: JSON.stringify({
           prompt: q,
           currentScale: scale.name,
@@ -637,91 +645,132 @@ export const StudioDrawers: React.FC<StudioDrawersProps> = ({
 
         {/* DRAWER: ASK AMIR AI ASSISTANT */}
         {activeDrawer === 'ask-amir' && (
-          <div className="space-y-3">
-            <div className="flex flex-wrap gap-1.5">
-              {[
-                'Warm Egyptian Rast Oud with atmospheric desert reverb',
-                'Midnight Anatolian Hicaz Ney Flute for meditation',
-                'Dawn Indian Raga Bhairav Sitar with deep shimmer',
-                'Analog Synth Hijaz Kar bassline at 124 BPM',
-              ].map((presetQ) => (
-                <button
-                  key={presetQ}
-                  type="button"
-                  onClick={() => handleAskAmir(presetQ)}
-                  className="px-2.5 py-1 rounded-full bg-white/[0.06] hover:bg-[#D4AF37]/20 border border-white/10 text-[10px] text-white/80 hover:text-[#FACC15]"
-                >
-                  {presetQ}
-                </button>
-              ))}
-            </div>
-
-            {aiError && (
-              <div className="p-2.5 rounded-lg bg-red-500/15 border border-red-500/40 text-xs text-red-200">
-                {aiError}
+          !user ? (
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-[#D4AF37]/35 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div className="space-y-1">
+                <div className="font-extrabold text-[#FACC15]">Ask Amir AI · للمشتركين في Pro</div>
+                <p className="text-white/70">
+                  سجّل الدخول بحساب Google المفعل وتحقق من باقة Pro الخاصة بك لاستخدام المساعد الصوتي الذكي.
+                </p>
               </div>
-            )}
-
-            {aiHistory.length > 0 && (
-              <div className="space-y-2 max-h-[210px] overflow-y-auto pr-1">
-                {aiHistory.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-xl bg-white/[0.04] border border-[#D4AF37]/30 space-y-2"
+              <button
+                type="button"
+                onClick={() => void signInWithGoogle()}
+                className="px-4 py-2 rounded-xl bg-[#D4AF37] hover:bg-[#FACC15] text-black font-extrabold"
+              >
+                Sign In with Google
+              </button>
+            </div>
+          ) : !subscriptionState.isPro ? (
+            <div className="p-4 rounded-xl bg-gradient-to-r from-[#D4AF37]/15 to-transparent border border-[#D4AF37]/40 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div className="space-y-1">
+                <div className="font-extrabold text-[#FACC15] flex items-center gap-1.5">
+                  <Crown className="w-4 h-4" />
+                  <span>
+                    {subscriptionState.isExpired
+                      ? 'انتهى اشتراك Pro الخاص بك — جدّد للاستمرار مع Ask Amir AI'
+                      : 'ميزة Ask Amir AI مخصصة لباقات Pro Monthly و Pro Lifetime'}
+                  </span>
+                </div>
+                <p className="text-white/75">
+                  قم بالترقية عبر InstaPay وسيتم فتح المساعد فور اعتماد الإدارة (يتم التحقق على الخادم).
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={onNavigatePro}
+                className="px-4 py-2 rounded-xl bg-[#D4AF37] hover:bg-[#FACC15] text-black font-extrabold shrink-0"
+              >
+                Upgrade via InstaPay
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'Warm Egyptian Rast Oud with atmospheric desert reverb',
+                  'Midnight Anatolian Hicaz Ney Flute for meditation',
+                  'Dawn Indian Raga Bhairav Sitar with deep shimmer',
+                  'Analog Synth Hijaz Kar bassline at 124 BPM',
+                ].map((presetQ) => (
+                  <button
+                    key={presetQ}
+                    type="button"
+                    onClick={() => handleAskAmir(presetQ)}
+                    className="px-2.5 py-1 rounded-full bg-white/[0.06] hover:bg-[#D4AF37]/20 border border-white/10 text-[10px] text-white/80 hover:text-[#FACC15]"
                   >
-                    <div className="text-[10px] text-white/50">You: {item.user}</div>
-                    <div className="text-xs text-white/90 leading-relaxed">{item.suggestion.reply}</div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-white/10">
-                      <div className="flex flex-wrap gap-1.5 text-[10px]">
-                        <span className="px-2 py-0.5 rounded bg-[#D4AF37]/20 text-[#FACC15] font-bold">
-                          {item.suggestion.recommendedScale}
-                        </span>
-                        <span className="px-2 py-0.5 rounded bg-white/10 text-white">
-                          {item.suggestion.recommendedInstrument}
-                        </span>
-                        {item.suggestion.suggestedBpm && (
-                          <span className="px-2 py-0.5 rounded bg-white/10 text-white">
-                            {item.suggestion.suggestedBpm} BPM
-                          </span>
-                        )}
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => applyAiPatch(item.suggestion)}
-                        className="px-3 py-1 rounded-lg bg-[#D4AF37] hover:bg-[#FACC15] text-black text-[11px] font-extrabold"
-                      >
-                        Apply "{item.suggestion.presetName}"
-                      </button>
-                    </div>
-                  </div>
+                    {presetQ}
+                  </button>
                 ))}
               </div>
-            )}
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleAskAmir(aiPrompt);
-              }}
-              className="flex items-center gap-2"
-            >
-              <input
-                type="text"
-                value={aiPrompt}
-                onChange={(e) => setAiPrompt(e.target.value)}
-                placeholder="Ask Amir to design a Maqam patch, suggest progressions, or configure FX..."
-                className="flex-1 h-9 px-3 rounded-xl bg-black/60 border border-white/15 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4AF37]"
-              />
-              <button
-                type="submit"
-                disabled={aiLoading || !aiPrompt.trim()}
-                className="h-9 px-4 rounded-xl bg-[#D4AF37] hover:bg-[#FACC15] disabled:opacity-45 text-black text-xs font-extrabold flex items-center gap-1.5"
+              {aiError && (
+                <div className="p-2.5 rounded-lg bg-red-500/15 border border-red-500/40 text-xs text-red-200">
+                  {aiError}
+                </div>
+              )}
+
+              {aiHistory.length > 0 && (
+                <div className="space-y-2 max-h-[210px] overflow-y-auto pr-1">
+                  {aiHistory.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-xl bg-white/[0.04] border border-[#D4AF37]/30 space-y-2"
+                    >
+                      <div className="text-[10px] text-white/50">You: {item.user}</div>
+                      <div className="text-xs text-white/90 leading-relaxed">{item.suggestion.reply}</div>
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-white/10">
+                        <div className="flex flex-wrap gap-1.5 text-[10px]">
+                          <span className="px-2 py-0.5 rounded bg-[#D4AF37]/20 text-[#FACC15] font-bold">
+                            {item.suggestion.recommendedScale}
+                          </span>
+                          <span className="px-2 py-0.5 rounded bg-white/10 text-white">
+                            {item.suggestion.recommendedInstrument}
+                          </span>
+                          {item.suggestion.suggestedBpm && (
+                            <span className="px-2 py-0.5 rounded bg-white/10 text-white">
+                              {item.suggestion.suggestedBpm} BPM
+                            </span>
+                          )}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => applyAiPatch(item.suggestion)}
+                          className="px-3 py-1 rounded-lg bg-[#D4AF37] hover:bg-[#FACC15] text-black text-[11px] font-extrabold"
+                        >
+                          Apply "{item.suggestion.presetName}"
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleAskAmir(aiPrompt);
+                }}
+                className="flex items-center gap-2"
               >
-                {aiLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
-                <span>Ask Amir</span>
-              </button>
-            </form>
-          </div>
+                <input
+                  type="text"
+                  value={aiPrompt}
+                  onChange={(e) => setAiPrompt(e.target.value)}
+                  placeholder="Ask Amir to design a Maqam patch, suggest progressions, or configure FX..."
+                  className="flex-1 h-9 px-3 rounded-xl bg-black/60 border border-white/15 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4AF37]"
+                />
+                <button
+                  type="submit"
+                  disabled={aiLoading || !aiPrompt.trim()}
+                  className="h-9 px-4 rounded-xl bg-[#D4AF37] hover:bg-[#FACC15] disabled:opacity-45 text-black text-xs font-extrabold flex items-center gap-1.5"
+                >
+                  {aiLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
+                  <span>Ask Amir</span>
+                </button>
+              </form>
+            </div>
+          )
         )}
       </div>
     </div>

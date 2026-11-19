@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { BookOpen, CheckCircle2, Circle, Compass, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, CheckCircle2, Circle, Compass, Play, Sparkles } from 'lucide-react';
 import { SiteChrome } from '../components/SiteChrome';
+import { EDUCATIONAL_ARTICLES } from '../data/articles';
+import { trackEvent } from '../lib/analytics';
 
 interface HandbookChapter {
   id: string;
@@ -100,6 +102,7 @@ export const GuidesPage: React.FC<{ onNavigate: (path: string) => void }> = ({ o
   const [showPaths, setShowPaths] = useState(false);
 
   const toggleLesson = (id: string) => {
+    trackEvent('lesson_view', { lesson_id: id, source: 'handbook_checklist' });
     setCompleted((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
@@ -115,12 +118,12 @@ export const GuidesPage: React.FC<{ onNavigate: (path: string) => void }> = ({ o
 
   return (
     <SiteChrome currentPath="/guides" onNavigate={onNavigate}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 space-y-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 space-y-12">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">
               <BookOpen className="w-4 h-4" />
-              <span>MaqAmir Interactive Handbook</span>
+              <span>MaqAmir Interactive Handbook &amp; Academy</span>
             </div>
             <h1 className="brand-font text-3xl sm:text-4xl font-black text-white mt-1">
               6-Part Studio Mastery Guide
@@ -177,7 +180,7 @@ export const GuidesPage: React.FC<{ onNavigate: (path: string) => void }> = ({ o
               <h2 className="text-xl font-extrabold text-white">{activeChapter.title}</h2>
               <p className="text-xs text-white/60 mt-1">{activeChapter.subtitle}</p>
             </div>
-            <span className="px-2.5 py-1 rounded-full bg-white/10 text-[10px] font-bold text-[#D4AF37]">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4AF37] tabular-nums">
               {activeChapter.duration}
             </span>
           </div>
@@ -209,6 +212,66 @@ export const GuidesPage: React.FC<{ onNavigate: (path: string) => void }> = ({ o
             })}
           </div>
         </div>
+
+        {/* Educational Articles Library */}
+        <section className="space-y-6 border-t border-white/10 pt-10">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div className="text-xs font-extrabold uppercase tracking-wider text-[#D4AF37]">
+                In-Depth Tutorials
+              </div>
+              <h2 className="brand-font text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                Piano, Notes, Chords &amp; World Scales Articles
+              </h2>
+            </div>
+            <button
+              type="button"
+              onClick={() => onNavigate('/music-theory')}
+              className="text-xs font-extrabold text-[#FACC15] hover:underline flex items-center gap-1"
+            >
+              <span>Explore Interactive Scale Catalog</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {EDUCATIONAL_ARTICLES.map((art) => (
+              <div
+                key={art.slug}
+                className="rounded-2xl bg-[#0e0e13] border border-white/10 hover:border-[#D4AF37]/50 transition overflow-hidden flex flex-col justify-between"
+              >
+                <div>
+                  <img
+                    src={art.heroImage}
+                    alt={art.heroAlt}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-32 object-cover"
+                  />
+                  <div className="p-4 space-y-2">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF37]">
+                      {art.category} · {art.readingMinutes}m
+                    </div>
+                    <h3 className="text-sm font-extrabold text-white leading-snug">
+                      {art.shortTitle}
+                    </h3>
+                    <p className="text-[11px] text-white/60 line-clamp-3 leading-relaxed">
+                      {art.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="px-4 pb-4">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(`/guides/${art.slug}`)}
+                    className="w-full py-2 rounded-lg bg-white/[0.06] hover:bg-[#D4AF37] hover:text-black text-xs font-bold text-white transition"
+                  >
+                    Read Guide
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
       {showPaths && (

@@ -137,6 +137,7 @@
         "planType": { "type": "string", "enum": ["pro_monthly", "pro_lifetime"] },
         "isRenewal": { "type": "boolean" },
         "amount": { "type": "number" },
+        "priceSnapshot": { "type": "number" },
         "currency": { "type": "string", "maxLength": 12 },
         "referenceNumber": { "type": "string", "minLength": 4, "maxLength": 80 },
         "referenceKey": {
@@ -145,9 +146,14 @@
           "maxLength": 80,
           "pattern": "^[A-Z0-9_\\-]+$"
         },
-        "proofImageUrl": { "type": "string", "maxLength": 500 },
+        "proofImageUrl": {
+          "type": "string",
+          "maxLength": 500,
+          "pattern": "^/api/uploads/proofs/proof_[a-zA-Z0-9_\\-]+\\.(png|jpg|webp)$"
+        },
         "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
         "rejectionReason": { "type": "string", "maxLength": 500 },
+        "adminConfirmedTransfer": { "type": "boolean" },
         "reviewedBy": { "type": "string", "maxLength": 128 },
         "reviewedByEmail": { "type": "string", "maxLength": 254 },
         "reviewedAt": { "type": "string", "format": "date-time" },
@@ -162,12 +168,14 @@
         "planType",
         "isRenewal",
         "amount",
+        "priceSnapshot",
         "currency",
         "referenceNumber",
         "referenceKey",
         "proofImageUrl",
         "status",
         "rejectionReason",
+        "adminConfirmedTransfer",
         "reviewedBy",
         "reviewedByEmail",
         "createdAt",
@@ -176,7 +184,7 @@
     },
     "UsedReference": {
       "title": "UsedReference",
-      "description": "Immutable registry of approved InstaPay reference keys preventing double-approval.",
+      "description": "Immutable/state-locked registry of InstaPay reference keys preventing reuse across pending, approved, and rejected requests.",
       "type": "object",
       "properties": {
         "referenceKey": {
@@ -191,24 +199,87 @@
           "maxLength": 128,
           "pattern": "^[a-zA-Z0-9_\\-]+$"
         },
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^MQ-[A-Z0-9]{6,12}$"
+        },
         "userId": {
           "type": "string",
           "maxLength": 128,
           "pattern": "^[a-zA-Z0-9_\\-]+$"
         },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "approved", "rejected"]
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
         "approvedBy": { "type": "string", "maxLength": 128 },
         "approvedAt": { "type": "string", "format": "date-time" }
       },
-      "required": ["referenceKey", "referenceNumber", "requestId", "userId", "approvedBy", "approvedAt"]
+      "required": [
+        "referenceKey",
+        "referenceNumber",
+        "requestId",
+        "orderNumber",
+        "userId",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "approvedBy"
+      ]
+    },
+    "UsedOrder": {
+      "title": "UsedOrder",
+      "description": "Unique registry of CSPRNG order numbers preventing collisions.",
+      "type": "object",
+      "properties": {
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^MQ-[A-Z0-9]{6,12}$"
+        },
+        "requestId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["orderNumber", "requestId", "userId", "createdAt"]
+    },
+    "PendingLock": {
+      "title": "PendingLock",
+      "description": "Single active pending payment lock per user preventing duplicate concurrent pending requests.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "requestId": { "type": "string", "maxLength": 128 },
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^MQ-[A-Z0-9]{6,12}$"
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "requestId", "orderNumber", "createdAt"]
     },
     "PaymentAuditLog": {
       "title": "PaymentAuditLog",
-      "description": "Immutable audit log for every payment approval, rejection, settings update, and admin role change.",
+      "description": "Append-only audit log for request creation, proof upload, payment approval/rejection, subscription activation/expiration, settings updates, and admin role changes.",
       "type": "object",
       "properties": {
         "action": {
           "type": "string",
-          "enum": ["approved", "rejected", "settings_updated", "admin_granted", "admin_revoked"]
+          "enum": [
+            "request_created",
+            "proof_uploaded",
+            "approved",
+            "rejected",
+            "subscription_activated",
+            "subscription_expired",
+            "settings_updated",
+            "admin_granted",
+            "admin_revoked"
+          ]
         },
         "requestId": { "type": "string", "maxLength": 128 },
         "orderNumber": { "type": "string", "maxLength": 32 },
@@ -263,11 +334,19 @@
     },
     "/used_references/{referenceKey}": {
       "schema": { "$ref": "#/entities/UsedReference" },
-      "description": "Approved transaction reference numbers locked against reuse."
+      "description": "Transaction reference numbers locked from submission through approval/rejection."
+    },
+    "/used_orders/{orderNumber}": {
+      "schema": { "$ref": "#/entities/UsedOrder" },
+      "description": "Unique CSPRNG order number registry preventing collisions."
+    },
+    "/pending_locks/{userId}": {
+      "schema": { "$ref": "#/entities/PendingLock" },
+      "description": "Active pending payment lock per user preventing duplicate pending orders."
     },
     "/payment_audit_logs/{logId}": {
       "schema": { "$ref": "#/entities/PaymentAuditLog" },
-      "description": "Append-only audit trail for approvals, rejections, settings edits, and role changes."
+      "description": "Append-only audit trail for payment lifecycle, subscription events, settings edits, and role changes."
     }
   }
 }

@@ -41,9 +41,9 @@ export const AboutPage: React.FC<{ onNavigate: (path: string) => void }> = ({ on
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-14 space-y-14">
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-5">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[11px] font-extrabold uppercase tracking-widest text-[#FACC15]">
+            <div className="text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">
               Microtonal World Music Workstation
-            </span>
+            </div>
             <h1 className="brand-font text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
               Bridging Millennia of World Scales with a Modern Browser DAW
             </h1>
@@ -65,12 +65,20 @@ export const AboutPage: React.FC<{ onNavigate: (path: string) => void }> = ({ on
               >
                 Read the 6-Part Handbook
               </button>
+              <button
+                type="button"
+                onClick={() => onNavigate('/music-theory')}
+                className="px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 text-sm font-semibold text-white/85 transition"
+              >
+                Explore World Scales
+              </button>
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl">
             <img
               src="/images/multicultural-piano.png"
               alt="MaqAmir Multicultural Piano Studio"
+              referrerPolicy="no-referrer"
               className="w-full h-auto object-cover"
             />
           </div>

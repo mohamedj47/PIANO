@@ -24,6 +24,7 @@ import {
   RecordedNoteEvent,
   SavedRecording,
 } from '../audio/MaqAmirAudioEngine';
+import { getConsentDecision, setAnalyticsConsent, trackEvent } from '../lib/analytics';
 
 const KEYBOARD_NOTE_OFFSETS: Record<string, number> = {
   a: 0,  // C
@@ -58,9 +59,30 @@ interface PianoStudioPageProps {
 }
 
 export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) => {
-  const [instrument, setInstrument] = useState<InstrumentId>('Grand Piano');
-  const [pianoSkin, setPianoSkin] = useState<string>('classic');
-  const [scale, setScale] = useState<WorldScale>(WORLD_SCALES[0]); // Rast default
+  const [instrument, setInstrument] = useState<InstrumentId>(() => {
+    if (typeof window === 'undefined') return 'Grand Piano';
+    const q = new URLSearchParams(window.location.search).get('instrument')?.trim().toLowerCase();
+    if (!q) return 'Grand Piano';
+    const found = INSTRUMENTS.find((i) => i.id.toLowerCase() === q || i.name.toLowerCase() === q);
+    return found ? found.id : 'Grand Piano';
+  });
+  const [pianoSkin, setPianoSkin] = useState<string>(() => {
+    if (typeof window === 'undefined') return 'classic';
+    const q = new URLSearchParams(window.location.search).get('instrument')?.trim().toLowerCase();
+    const found = q
+      ? INSTRUMENTS.find((i) => i.id.toLowerCase() === q || i.name.toLowerCase() === q)
+      : null;
+    return found ? found.recommendedSkin : 'classic';
+  });
+  const [scale, setScale] = useState<WorldScale>(() => {
+    if (typeof window === 'undefined') return WORLD_SCALES[0];
+    const q = new URLSearchParams(window.location.search).get('scale')?.trim().toLowerCase();
+    if (!q) return WORLD_SCALES[0];
+    const found = WORLD_SCALES.find(
+      (s) => s.id.toLowerCase() === q || s.name.toLowerCase() === q
+    );
+    return found || WORLD_SCALES[0];
+  }); // Rast default
   const [rootNote, setRootNote] = useState<RootNote>('C');
   const [octaveOffset, setOctaveOffset] = useState<number>(3);
   const [params, setParams] = useState<SonicParams>({ ...DEFAULT_SONIC_PARAMS });
@@ -108,13 +130,12 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
     }
   });
   const [tourStep, setTourStep] = useState(0);
-  const [showConsent, setShowConsent] = useState<boolean>(() => {
-    try {
-      return !localStorage.getItem('maqamir_consent');
-    } catch {
-      return true;
-    }
-  });
+  const [showConsent, setShowConsent] = useState<boolean>(() => getConsentDecision() === null);
+
+  useEffect(() => {
+    trackEvent('studio_open', { instrument, scale: scale.name }, { oncePerSessionKey: 'studio_open' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Undo / Redo History
   const [history, setHistory] = useState<HistorySnapshot[]>([]);
@@ -189,6 +210,7 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
         next.add(noteId);
         return next;
       });
+      trackEvent('piano_interaction', { instrument, scale: scale.name });
       if (loopRecording) {
         const delayMs = performance.now() - loopStartTimeRef.current;
         setLoopEvents((prev) => [...prev, { midi: midiNote, delayMs }]);
@@ -514,6 +536,7 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
     setInstrument(next);
     const instDef = INSTRUMENTS.find((i) => i.id === next);
     if (instDef) setPianoSkin(instDef.recommendedSkin);
+    trackEvent('instrument_selected', { instrument: next, source: 'studio' });
   };
 
   const handleMagicShuffle = () => {
@@ -962,15 +985,11 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
         visible={showConsent}
         onAccept={() => {
           setShowConsent(false);
-          try {
-            localStorage.setItem('maqamir_consent', 'accepted');
-          } catch {}
+          setAnalyticsConsent('accepted');
         }}
         onDecline={() => {
           setShowConsent(false);
-          try {
-            localStorage.setItem('maqamir_consent', 'declined');
-          } catch {}
+          setAnalyticsConsent('declined');
         }}
         onLearnMore={() => onNavigate('/about')}
       />

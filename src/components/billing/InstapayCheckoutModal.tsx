@@ -22,6 +22,7 @@ import {
   submitPaymentRequest,
   uploadProofImage,
 } from '../../lib/instapayService';
+import { trackEvent } from '../../lib/analytics';
 
 interface InstapayCheckoutModalProps {
   open: boolean;
@@ -40,7 +41,7 @@ export const InstapayCheckoutModal: React.FC<InstapayCheckoutModalProps> = ({
   onClose,
   onSuccess,
 }) => {
-  const { user, profile, getIdToken, signInWithGoogle, authBusy } = useAuth();
+  const { user, profile, userRequests, getIdToken, signInWithGoogle, authBusy } = useAuth();
   const [instapay, setInstapay] = useState<InstapaySettings | null>(null);
   const [loadingSettings, setLoadingSettings] = useState(false);
   const [settingsError, setSettingsError] = useState<string | null>(null);
@@ -52,6 +53,8 @@ export const InstapayCheckoutModal: React.FC<InstapayCheckoutModalProps> = ({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const existingPending = userRequests.find((r) => r.status === 'pending') || null;
 
   useEffect(() => {
     if (!open) return;
@@ -144,6 +147,7 @@ export const InstapayCheckoutModal: React.FC<InstapayCheckoutModalProps> = ({
         proofImageUrl: uploadedUrl,
         orderNumber: previewOrderNumber,
       });
+      trackEvent('payment_submitted', { plan_type: planType, is_renewal: isRenewal });
       onSuccess(res.orderNumber);
     } catch (err: unknown) {
       setSubmitError(err instanceof Error ? err.message : 'فشل إرسال طلب الدفع.');
@@ -206,6 +210,19 @@ export const InstapayCheckoutModal: React.FC<InstapayCheckoutModalProps> = ({
                   {settingsError || 'لم يقم المسؤول بإعداد بيانات InstaPay والأسعار من لوحة Payment Settings بعد.'}
                 </p>
               </div>
+            </div>
+          ) : existingPending ? (
+            <div className="rounded-xl bg-amber-500/10 border border-[#D4AF37]/40 p-5 space-y-2 text-xs text-amber-100">
+              <div className="font-extrabold text-sm text-[#FACC15]">
+                لديك طلب دفع قيد المراجعة حاليًا ({existingPending.orderNumber})
+              </div>
+              <p className="text-white/75 leading-relaxed">
+                لا يمكن إرسال طلب دفع جديد قبل أن تنتهي الإدارة من مراجعة طلبك الحالي للباقة{' '}
+                <strong>
+                  {existingPending.planType === 'pro_lifetime' ? 'Pro Lifetime' : 'Pro Monthly'}
+                </strong>{' '}
+                (المرجع: <span className="font-mono">{existingPending.referenceNumber}</span>).
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">

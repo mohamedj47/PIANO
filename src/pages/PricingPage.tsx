@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AlertTriangle,
   Check,
   Clock,
   Crown,
+  Eye,
   Infinity as InfinityIcon,
   LogIn,
   RefreshCw,
   Settings,
   ShieldCheck,
   Sparkles,
+  X,
   XCircle,
 } from 'lucide-react';
 import { SiteChrome } from '../components/SiteChrome';
 import { useAuth } from '../context/AuthContext';
 import { PlanType } from '../lib/instapayDomain';
 import { InstapayCheckoutModal } from '../components/billing/InstapayCheckoutModal';
+import { AuthenticatedProofImage } from '../components/billing/AuthenticatedProofImage';
+import { trackEvent } from '../lib/analytics';
 
 function formatDate(d: Date | null): string {
   if (!d) return '—';
@@ -46,8 +50,14 @@ export const PricingPage: React.FC<{ onNavigate: (path: string) => void; routePa
   const [checkoutPlan, setCheckoutPlan] = useState<PlanType | null>(null);
   const [checkoutRenewal, setCheckoutRenewal] = useState(false);
   const [submittedOrder, setSubmittedOrder] = useState<string | null>(null);
+  const [previewProof, setPreviewProof] = useState<{ url: string; requestId: string } | null>(null);
+
+  useEffect(() => {
+    trackEvent('pricing_view', { path: routePath }, { oncePerSessionKey: `pricing:${routePath}` });
+  }, [routePath]);
 
   const openCheckout = (plan: PlanType, isRenewal = false) => {
+    trackEvent('checkout_started', { plan_type: plan, is_renewal: isRenewal });
     setSubmittedOrder(null);
     setCheckoutPlan(plan);
     setCheckoutRenewal(isRenewal);
@@ -360,6 +370,47 @@ export const PricingPage: React.FC<{ onNavigate: (path: string) => void; routePa
           </div>
         </section>
 
+        {/* Free vs Pro Comparison Table */}
+        <section className="rounded-2xl bg-[#0e0e13] border border-white/10 p-6 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-base font-extrabold text-white">
+              Free vs. Pro Feature Breakdown · مقارنة المزايا
+            </h2>
+            <span className="text-[11px] text-white/50">
+              All core playing, scales, realms &amp; WAV/MIDI exports stay free
+            </span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs">
+              <thead>
+                <tr className="border-b border-white/10 text-white/55">
+                  <th className="py-2.5 pr-4">Capability</th>
+                  <th className="py-2.5 px-3">Free Studio</th>
+                  <th className="py-2.5 px-3 text-[#FACC15]">Pro Monthly (30d)</th>
+                  <th className="py-2.5 pl-3 text-[#FACC15]">Pro Lifetime</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 text-white/80">
+                {[
+                  ['8 Web Audio Instruments & 44 Keybed Skins', 'Included', 'Included', 'Included'],
+                  ['140+ World Scales, Maqam (-50¢), Ragas & K-EDO', 'Included', 'Included', 'Included'],
+                  ['13 Interactive Realms & DJ Performance Matrix', 'Included', 'Included', 'Included'],
+                  ['52-Parameter Sonic Engine & WAV/MIDI Export', 'Included', 'Included', 'Included'],
+                  ['Ask Amir AI Producer Sound & Maqam Architect', '—', 'Included', 'Included'],
+                  ['Unlimited Custom Preset Banks & Early Updates', '—', 'Included', 'Permanent'],
+                ].map(([label, freeCol, monCol, lifeCol]) => (
+                  <tr key={label}>
+                    <td className="py-2.5 pr-4 font-medium text-white">{label}</td>
+                    <td className="py-2.5 px-3 text-white/65">{freeCol}</td>
+                    <td className="py-2.5 px-3 text-emerald-300 font-semibold">{monCol}</td>
+                    <td className="py-2.5 pl-3 text-[#FACC15] font-semibold">{lifeCol}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* User Payment Requests History */}
         {user && (
           <section className="rounded-2xl bg-[#0e0e13] border border-white/10 p-6 space-y-4">
@@ -380,6 +431,7 @@ export const PricingPage: React.FC<{ onNavigate: (path: string) => void; routePa
                       <th className="py-2 pr-4">Plan</th>
                       <th className="py-2 pr-4">Amount</th>
                       <th className="py-2 pr-4">Reference #</th>
+                      <th className="py-2 pr-4">Receipt</th>
                       <th className="py-2 pr-4">Submitted</th>
                       <th className="py-2">Status</th>
                     </tr>
@@ -396,6 +448,18 @@ export const PricingPage: React.FC<{ onNavigate: (path: string) => void; routePa
                           {req.amount} {req.currency}
                         </td>
                         <td className="py-2.5 pr-4 font-mono">{req.referenceNumber}</td>
+                        <td className="py-2.5 pr-4">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setPreviewProof({ url: req.proofImageUrl, requestId: req.id })
+                            }
+                            className="inline-flex items-center gap-1 px-2 py-1 rounded bg-white/[0.06] hover:bg-white/15 border border-white/10 text-[11px]"
+                          >
+                            <Eye className="w-3 h-3 text-[#D4AF37]" />
+                            <span>View</span>
+                          </button>
+                        </td>
                         <td className="py-2.5 pr-4 tabular-nums text-white/60">
                           {formatDate(req.createdAt)}
                         </td>
@@ -438,6 +502,30 @@ export const PricingPage: React.FC<{ onNavigate: (path: string) => void; routePa
           setSubmittedOrder(orderNum);
         }}
       />
+
+      {previewProof && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90"
+          onClick={() => setPreviewProof(null)}
+        >
+          <div
+            className="relative max-w-3xl max-h-[85vh] rounded-2xl bg-[#0e0e13] border border-[#D4AF37]/40 p-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setPreviewProof(null)}
+              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-lg bg-black/80 text-white flex items-center justify-center"
+            >
+              <X className="w-4 h-4" />
+            </button>
+            <AuthenticatedProofImage
+              proofImageUrl={previewProof.url}
+              requestId={previewProof.requestId}
+            />
+          </div>
+        </div>
+      )}
     </SiteChrome>
   );
 };

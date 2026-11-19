@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
+  AlertTriangle,
   Check,
   Clock,
   Eye,
@@ -15,6 +16,7 @@ import {
 } from 'lucide-react';
 import { SiteChrome } from '../components/SiteChrome';
 import { AdminGuard } from '../components/admin/AdminGuard';
+import { AuthenticatedProofImage } from '../components/billing/AuthenticatedProofImage';
 import { useAuth } from '../context/AuthContext';
 import { PaymentRequestRecord, UserSubscriptionRecord } from '../lib/instapayDomain';
 import {
@@ -44,7 +46,7 @@ function formatDateTime(d: Date | null): string {
 export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }> = ({
   onNavigate,
 }) => {
-  const { user, isAdmin } = useAuth();
+  const { user, isAdmin, pricing, getIdToken } = useAuth();
   const [tab, setTab] = useState<'requests' | 'audit' | 'users'>('requests');
   const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>(
     'pending'
@@ -60,9 +62,12 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
 
+  const [approveTarget, setApproveTarget] = useState<PaymentRequestRecord | null>(null);
+  const [approveConfirmed, setApproveConfirmed] = useState(false);
+
   const [rejectTarget, setRejectTarget] = useState<PaymentRequestRecord | null>(null);
   const [rejectReason, setRejectReason] = useState('');
-  const [previewProofUrl, setPreviewProofUrl] = useState<string | null>(null);
+  const [previewProof, setPreviewProof] = useState<{ url: string; requestId: string } | null>(null);
 
   const [newAdminUid, setNewAdminUid] = useState('');
   const [newAdminEmail, setNewAdminEmail] = useState('');
@@ -100,22 +105,26 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
     [requests]
   );
 
-  const handleApprove = async (req: PaymentRequestRecord) => {
-    if (!user) return;
+  const handleConfirmApprove = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!user || !approveTarget || !approveConfirmed) return;
     setActionError(null);
     setActionSuccess(null);
-    setBusyId(req.id);
+    setBusyId(approveTarget.id);
     try {
+      const idToken = await getIdToken();
       await approvePaymentRequest({
-        adminUid: user.uid,
-        adminEmail: user.email || '',
-        request: req,
+        idToken,
+        request: approveTarget,
+        adminConfirmedTransfer: true,
       });
       setActionSuccess(
-        `تم اعتماد الطلب ${req.orderNumber} وتفعيل ${
-          req.planType === 'pro_lifetime' ? 'Pro Lifetime' : 'Pro Monthly (30 يوم)'
-        } للمستخدم ${req.userEmail}.`
+        `تم اعتماد الطلب ${approveTarget.orderNumber} وتفعيل ${
+          approveTarget.planType === 'pro_lifetime' ? 'Pro Lifetime' : 'Pro Monthly (30 يوم)'
+        } للمستخدم ${approveTarget.userEmail} بتوقيت الخادم الموثق.`
       );
+      setApproveTarget(null);
+      setApproveConfirmed(false);
     } catch (err: unknown) {
       setActionError(err instanceof Error ? err.message : 'تعذر اعتماد الطلب.');
     } finally {
@@ -164,6 +173,11 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
     } catch (err: unknown) {
       setActionError(err instanceof Error ? err.message : 'تعذر إضافة المسؤول.');
     }
+  };
+
+  const currentCatalogPriceFor = (r: PaymentRequestRecord): number | null => {
+    if (!pricing) return null;
+    return r.planType === 'pro_lifetime' ? pricing.lifetimePrice : pricing.monthlyPrice;
   };
 
   return (
@@ -292,96 +306,113 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5">
-                      {filteredRequests.map((r) => (
-                        <tr key={r.id} className="hover:bg-white/[0.02]">
-                          <td className="py-3 px-4">
-                            <div className="font-bold text-white">{r.userName}</div>
-                            <div className="text-white/55 font-mono text-[11px]">{r.userEmail}</div>
-                          </td>
-                          <td className="py-3 px-4">
-                            <div className="font-bold text-[#FACC15]">
-                              {r.planType === 'pro_lifetime' ? 'Pro Lifetime' : 'Pro Monthly'}
-                            </div>
-                            {r.isRenewal && <div className="text-[11px] text-amber-300">Renewal</div>}
-                          </td>
-                          <td className="py-3 px-4 font-mono font-bold tabular-nums text-white">
-                            {r.amount} {r.currency}
-                          </td>
-                          <td className="py-3 px-4">
-                            <div className="font-mono font-bold text-white">{r.referenceNumber}</div>
-                            <div className="font-mono text-[11px] text-white/50">{r.orderNumber}</div>
-                          </td>
-                          <td className="py-3 px-4">
-                            <button
-                              type="button"
-                              onClick={() => setPreviewProofUrl(r.proofImageUrl)}
-                              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/15 border border-white/10 text-[11px] font-semibold text-white"
-                            >
-                              <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
-                              <span>عرض الإيصال</span>
-                            </button>
-                          </td>
-                          <td className="py-3 px-4 tabular-nums text-white/65">
-                            {formatDateTime(r.createdAt)}
-                          </td>
-                          <td className="py-3 px-4">
-                            {r.status === 'pending' && (
-                              <span className="text-amber-300 font-bold">Pending</span>
-                            )}
-                            {r.status === 'approved' && (
-                              <div className="text-emerald-400 font-bold">
-                                Approved
-                                <div className="text-[10px] text-white/45 font-normal">
-                                  by {r.reviewedByEmail}
+                      {filteredRequests.map((r) => {
+                        const catalogPrice = currentCatalogPriceFor(r);
+                        const priceChanged =
+                          catalogPrice !== null && catalogPrice !== r.priceSnapshot;
+                        return (
+                          <tr key={r.id} className="hover:bg-white/[0.02]">
+                            <td className="py-3 px-4">
+                              <div className="font-bold text-white">{r.userName}</div>
+                              <div className="text-white/55 font-mono text-[11px]">{r.userEmail}</div>
+                            </td>
+                            <td className="py-3 px-4">
+                              <div className="font-bold text-[#FACC15]">
+                                {r.planType === 'pro_lifetime' ? 'Pro Lifetime' : 'Pro Monthly'}
+                              </div>
+                              {r.isRenewal && <div className="text-[11px] text-amber-300">Renewal</div>}
+                            </td>
+                            <td className="py-3 px-4 font-mono font-bold tabular-nums text-white">
+                              <div>
+                                {r.priceSnapshot} {r.currency}
+                              </div>
+                              {priceChanged && (
+                                <div className="text-[10px] text-amber-300 font-normal">
+                                  Current price: {catalogPrice} {pricing?.currency}
                                 </div>
-                              </div>
-                            )}
-                            {r.status === 'rejected' && (
-                              <div className="text-red-400 font-bold">
-                                Rejected
-                                {r.rejectionReason && (
-                                  <div className="text-[10px] text-red-200/75 font-normal max-w-[180px] truncate">
-                                    {r.rejectionReason}
+                              )}
+                            </td>
+                            <td className="py-3 px-4">
+                              <div className="font-mono font-bold text-white">{r.referenceNumber}</div>
+                              <div className="font-mono text-[11px] text-white/50">{r.orderNumber}</div>
+                            </td>
+                            <td className="py-3 px-4">
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setPreviewProof({ url: r.proofImageUrl, requestId: r.id })
+                                }
+                                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/15 border border-white/10 text-[11px] font-semibold text-white"
+                              >
+                                <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
+                                <span>عرض الإيصال</span>
+                              </button>
+                            </td>
+                            <td className="py-3 px-4 tabular-nums text-white/65">
+                              {formatDateTime(r.createdAt)}
+                            </td>
+                            <td className="py-3 px-4">
+                              {r.status === 'pending' && (
+                                <span className="text-amber-300 font-bold">Pending</span>
+                              )}
+                              {r.status === 'approved' && (
+                                <div className="text-emerald-400 font-bold">
+                                  Approved
+                                  <div className="text-[10px] text-white/45 font-normal">
+                                    by {r.reviewedByEmail}
                                   </div>
-                                )}
-                              </div>
-                            )}
-                          </td>
-                          <td className="py-3 px-4 text-right">
-                            {r.status === 'pending' ? (
-                              <div className="inline-flex items-center gap-2">
-                                <button
-                                  type="button"
-                                  disabled={busyId === r.id}
-                                  onClick={() => void handleApprove(r)}
-                                  className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-bold inline-flex items-center gap-1 whitespace-nowrap"
-                                >
-                                  {busyId === r.id ? (
-                                    <Loader2 className="w-3 h-3 animate-spin" />
-                                  ) : (
-                                    <Check className="w-3 h-3" />
+                                </div>
+                              )}
+                              {r.status === 'rejected' && (
+                                <div className="text-red-400 font-bold">
+                                  Rejected
+                                  {r.rejectionReason && (
+                                    <div className="text-[10px] text-red-200/75 font-normal max-w-[180px] truncate">
+                                      {r.rejectionReason}
+                                    </div>
                                   )}
-                                  <span>Approve Payment</span>
-                                </button>
-                                <button
-                                  type="button"
-                                  disabled={busyId === r.id}
-                                  onClick={() => {
-                                    setRejectTarget(r);
-                                    setRejectReason('');
-                                  }}
-                                  className="px-3 py-1.5 rounded-lg bg-red-600/85 hover:bg-red-500 disabled:opacity-50 text-white font-bold inline-flex items-center gap-1 whitespace-nowrap"
-                                >
-                                  <XCircle className="w-3 h-3" />
-                                  <span>Reject Payment</span>
-                                </button>
-                              </div>
-                            ) : (
-                              <span className="text-white/40 text-[11px]">مكتمل المراجعة</span>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
+                                </div>
+                              )}
+                            </td>
+                            <td className="py-3 px-4 text-right">
+                              {r.status === 'pending' ? (
+                                <div className="inline-flex items-center gap-2">
+                                  <button
+                                    type="button"
+                                    disabled={busyId === r.id}
+                                    onClick={() => {
+                                      setApproveTarget(r);
+                                      setApproveConfirmed(false);
+                                    }}
+                                    className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-bold inline-flex items-center gap-1 whitespace-nowrap"
+                                  >
+                                    {busyId === r.id ? (
+                                      <Loader2 className="w-3 h-3 animate-spin" />
+                                    ) : (
+                                      <Check className="w-3 h-3" />
+                                    )}
+                                    <span>Approve Payment</span>
+                                  </button>
+                                  <button
+                                    type="button"
+                                    disabled={busyId === r.id}
+                                    onClick={() => {
+                                      setRejectTarget(r);
+                                      setRejectReason('');
+                                    }}
+                                    className="px-3 py-1.5 rounded-lg bg-red-600/85 hover:bg-red-500 disabled:opacity-50 text-white font-bold inline-flex items-center gap-1 whitespace-nowrap"
+                                  >
+                                    <XCircle className="w-3 h-3" />
+                                    <span>Reject Payment</span>
+                                  </button>
+                                </div>
+                              ) : (
+                                <span className="text-white/40 text-[11px]">مكتمل المراجعة</span>
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -396,7 +427,7 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
                 <thead>
                   <tr className="border-b border-white/10 text-white/55">
                     <th className="py-3 px-4">Action</th>
-                    <th className="py-3 px-4">Admin</th>
+                    <th className="py-3 px-4">Actor (Admin/System)</th>
                     <th className="py-3 px-4">Target User</th>
                     <th className="py-3 px-4">Order / Ref</th>
                     <th className="py-3 px-4">Details</th>
@@ -406,8 +437,12 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
                 <tbody className="divide-y divide-white/5">
                   {logs.map((log) => (
                     <tr key={log.id} className="text-white/80">
-                      <td className="py-2.5 px-4 font-mono font-bold uppercase">{log.action}</td>
-                      <td className="py-2.5 px-4 font-mono text-[11px]">{log.adminEmail}</td>
+                      <td className="py-2.5 px-4 font-mono font-bold uppercase text-[#FACC15]">
+                        {log.action}
+                      </td>
+                      <td className="py-2.5 px-4 font-mono text-[11px]">
+                        {log.adminEmail || 'User / Server'}
+                      </td>
                       <td className="py-2.5 px-4 font-mono text-[11px]">{log.userEmail}</td>
                       <td className="py-2.5 px-4 font-mono">
                         {log.orderNumber} · {log.referenceNumber}
@@ -530,6 +565,110 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
           )}
         </div>
 
+        {/* Verified Approval Confirmation Modal */}
+        {approveTarget && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <form
+              onSubmit={handleConfirmApprove}
+              className="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0e0e13] border border-emerald-500/40 p-5 space-y-4 text-xs"
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-extrabold text-white flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>تأكيد اعتماد الدفع ({approveTarget.orderNumber})</span>
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setApproveTarget(null)}
+                  className="text-white/60 hover:text-white"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2.5 rounded-xl bg-black/40 border border-white/10 p-3">
+                <div>
+                  <span className="text-white/50 block">المستخدم</span>
+                  <span className="font-mono font-bold text-white">{approveTarget.userEmail}</span>
+                </div>
+                <div>
+                  <span className="text-white/50 block">الباقة</span>
+                  <span className="font-bold text-[#FACC15]">
+                    {approveTarget.planType === 'pro_lifetime'
+                      ? 'Pro Lifetime (دائم)'
+                      : 'Pro Monthly (30 يوم بتوقيت الخادم)'}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-white/50 block">المبلغ المثبّت (Price Snapshot)</span>
+                  <span className="font-mono font-bold text-emerald-300 tabular-nums">
+                    {approveTarget.priceSnapshot} {approveTarget.currency}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-white/50 block">الرقم المرجعي</span>
+                  <span className="font-mono font-bold text-white">
+                    {approveTarget.referenceNumber}
+                  </span>
+                </div>
+              </div>
+
+              {(() => {
+                const catalogPrice = currentCatalogPriceFor(approveTarget);
+                if (catalogPrice !== null && catalogPrice !== approveTarget.priceSnapshot) {
+                  return (
+                    <div className="rounded-xl bg-amber-500/15 border border-amber-500/40 p-3 flex items-start gap-2 text-amber-200">
+                      <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <span>
+                        تنبيه: السعر الحالي للباقة في الإعدادات هو {catalogPrice} {pricing?.currency}، بينما أنشئ هذا الطلب عند سعر {approveTarget.priceSnapshot} {approveTarget.currency}.
+                      </span>
+                    </div>
+                  );
+                }
+                return null;
+              })()}
+
+              <div className="rounded-xl bg-black/50 border border-white/10 p-2 flex justify-center">
+                <AuthenticatedProofImage
+                  proofImageUrl={approveTarget.proofImageUrl}
+                  requestId={approveTarget.id}
+                  className="max-h-56 w-auto rounded-lg object-contain"
+                />
+              </div>
+
+              <label className="flex items-start gap-2.5 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={approveConfirmed}
+                  onChange={(e) => setApproveConfirmed(e.target.checked)}
+                  className="mt-0.5 accent-emerald-500"
+                />
+                <span className="text-white/90 leading-relaxed font-semibold">
+                  أؤكد أنني راجعت الإيصال وتحققّت من وصول التحويل الفعلي على حساب InstaPay بنفس المبلغ المثبّت ({approveTarget.priceSnapshot} {approveTarget.currency}) والرقم المرجعي ({approveTarget.referenceNumber}).
+                </span>
+              </label>
+
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setApproveTarget(null)}
+                  className="px-4 py-2 rounded-lg bg-white/10 font-bold text-white"
+                >
+                  إلغاء
+                </button>
+                <button
+                  type="submit"
+                  disabled={!approveConfirmed || busyId === approveTarget.id}
+                  className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:opacity-45 font-extrabold text-white flex items-center gap-1.5"
+                >
+                  {busyId === approveTarget.id && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
+                  <span>تأكيد Approve Payment</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
+
         {/* Reject Reason Modal */}
         {rejectTarget && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
@@ -580,11 +719,11 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
           </div>
         )}
 
-        {/* Proof Image Zoom Modal */}
-        {previewProofUrl && (
+        {/* Proof Image Zoom Modal (Authenticated Stream) */}
+        {previewProof && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90"
-            onClick={() => setPreviewProofUrl(null)}
+            onClick={() => setPreviewProof(null)}
           >
             <div
               className="relative max-w-3xl max-h-[85vh] rounded-2xl bg-[#0e0e13] border border-[#D4AF37]/40 p-3"
@@ -592,15 +731,14 @@ export const AdminPaymentsPage: React.FC<{ onNavigate: (path: string) => void }>
             >
               <button
                 type="button"
-                onClick={() => setPreviewProofUrl(null)}
-                className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/80 text-white flex items-center justify-center"
+                onClick={() => setPreviewProof(null)}
+                className="absolute top-3 right-3 z-10 w-8 h-8 rounded-lg bg-black/80 text-white flex items-center justify-center"
               >
                 <X className="w-4 h-4" />
               </button>
-              <img
-                src={previewProofUrl}
-                alt="InstaPay Transfer Proof"
-                className="max-h-[78vh] w-auto rounded-xl object-contain"
+              <AuthenticatedProofImage
+                proofImageUrl={previewProof.url}
+                requestId={previewProof.requestId}
               />
             </div>
           </div>

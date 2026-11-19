@@ -23,6 +23,10 @@ service cloud.firestore {
       return request.auth != null && request.auth.token.email_verified == true;
     }
 
+    function matchesAuthEmail(emailVal) {
+      return request.auth.token.email is string && emailVal == request.auth.token.email;
+    }
+
     function isOwner(userId) {
       return isSignedIn() && request.auth.uid == userId;
     }
@@ -57,6 +61,52 @@ service cloud.firestore {
         && data.renewalNoticeDismissed is bool
         && data.createdAt is timestamp
         && data.updatedAt is timestamp;
+    }
+
+    function isValidAdminUserUpdate(existingData, incomingData) {
+      return !(
+          existingData.subscriptionPlan == 'pro_lifetime'
+          && existingData.subscriptionStatus == 'active'
+          && incomingData.subscriptionPlan == 'pro_monthly'
+        )
+        && (
+          (
+            incomingData.subscriptionPlan == existingData.subscriptionPlan
+            && incomingData.subscriptionStatus == existingData.subscriptionStatus
+          ) ||
+          (
+            incomingData.subscriptionPlan == 'pro_lifetime'
+            && incomingData.subscriptionStatus == 'active'
+            && incomingData.subscriptionStartedAt == request.time
+            && incomingData.subscriptionExpiresAt == null
+          ) ||
+          (
+            incomingData.subscriptionPlan == 'pro_monthly'
+            && incomingData.subscriptionStatus == 'active'
+            && incomingData.subscriptionStartedAt == request.time
+            && incomingData.subscriptionExpiresAt is timestamp
+            && (
+              (
+                existingData.subscriptionPlan == 'pro_monthly'
+                && existingData.subscriptionStatus == 'active'
+                && existingData.subscriptionExpiresAt is timestamp
+                && existingData.subscriptionExpiresAt > request.time
+                && incomingData.subscriptionExpiresAt >= existingData.subscriptionExpiresAt + duration.value(30, 'd') - duration.value(120, 's')
+                && incomingData.subscriptionExpiresAt <= existingData.subscriptionExpiresAt + duration.value(30, 'd') + duration.value(120, 's')
+              ) ||
+              (
+                !(
+                  existingData.subscriptionPlan == 'pro_monthly'
+                  && existingData.subscriptionStatus == 'active'
+                  && existingData.subscriptionExpiresAt is timestamp
+                  && existingData.subscriptionExpiresAt > request.time
+                )
+                && incomingData.subscriptionExpiresAt >= request.time + duration.value(30, 'd') - duration.value(120, 's')
+                && incomingData.subscriptionExpiresAt <= request.time + duration.value(30, 'd') + duration.value(120, 's')
+              )
+            )
+          )
+        );
     }
 
     function isValidAdminRole(data) {
@@ -108,17 +158,17 @@ service cloud.firestore {
     function isValidPaymentRequest(data) {
       return data.keys().hasAll([
           'orderNumber', 'userId', 'userName', 'userEmail',
-          'planType', 'isRenewal', 'amount', 'currency',
+          'planType', 'isRenewal', 'amount', 'priceSnapshot', 'currency',
           'referenceNumber', 'referenceKey', 'proofImageUrl',
-          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail',
-          'createdAt', 'updatedAt'
+          'status', 'rejectionReason', 'adminConfirmedTransfer',
+          'reviewedBy', 'reviewedByEmail', 'createdAt', 'updatedAt'
         ])
         && data.keys().hasOnly([
           'orderNumber', 'userId', 'userName', 'userEmail',
-          'planType', 'isRenewal', 'amount', 'currency',
+          'planType', 'isRenewal', 'amount', 'priceSnapshot', 'currency',
           'referenceNumber', 'referenceKey', 'proofImageUrl',
-          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail',
-          'reviewedAt', 'createdAt', 'updatedAt'
+          'status', 'rejectionReason', 'adminConfirmedTransfer',
+          'reviewedBy', 'reviewedByEmail', 'reviewedAt', 'createdAt', 'updatedAt'
         ])
         && data.orderNumber is string && data.orderNumber.size() >= 6 && data.orderNumber.size() <= 32
         && data.orderNumber.matches('^MQ-[A-Z0-9]{6,12}$')
@@ -128,13 +178,16 @@ service cloud.firestore {
         && data.planType in ['pro_monthly', 'pro_lifetime']
         && data.isRenewal is bool
         && (data.amount is int || data.amount is float) && data.amount > 0 && data.amount <= 10000000
+        && (data.priceSnapshot is int || data.priceSnapshot is float) && data.priceSnapshot > 0 && data.priceSnapshot <= 10000000
         && data.currency is string && data.currency.size() >= 1 && data.currency.size() <= 12
         && data.referenceNumber is string && data.referenceNumber.size() >= 4 && data.referenceNumber.size() <= 80
         && data.referenceKey is string && data.referenceKey.size() >= 4 && data.referenceKey.size() <= 80
         && data.referenceKey.matches('^[A-Z0-9_\\-]+$')
-        && data.proofImageUrl is string && data.proofImageUrl.size() >= 5 && data.proofImageUrl.size() <= 500
+        && data.proofImageUrl is string && data.proofImageUrl.size() >= 25 && data.proofImageUrl.size() <= 500
+        && data.proofImageUrl.matches('^/api/uploads/proofs/proof_[a-zA-Z0-9_\\-]{1,128}_[0-9]{10,16}_[0-9a-f]{12,24}\\.(png|jpg|webp)$')
         && data.status in ['pending', 'approved', 'rejected']
         && data.rejectionReason is string && data.rejectionReason.size() <= 500
+        && data.adminConfirmedTransfer is bool
         && data.reviewedBy is string && data.reviewedBy.size() <= 128
         && data.reviewedByEmail is string && data.reviewedByEmail.size() <= 254
         && (!('reviewedAt' in data) || data.reviewedAt == null || data.reviewedAt is timestamp)
@@ -144,20 +197,42 @@ service cloud.firestore {
 
     function isValidUsedReference(data) {
       return data.keys().hasAll([
-          'referenceKey', 'referenceNumber', 'requestId',
-          'userId', 'approvedBy', 'approvedAt'
+          'referenceKey', 'referenceNumber', 'requestId', 'orderNumber',
+          'userId', 'status', 'createdAt', 'updatedAt', 'approvedBy'
         ])
         && data.keys().hasOnly([
-          'referenceKey', 'referenceNumber', 'requestId',
-          'userId', 'approvedBy', 'approvedAt'
+          'referenceKey', 'referenceNumber', 'requestId', 'orderNumber',
+          'userId', 'status', 'createdAt', 'updatedAt', 'approvedBy', 'approvedAt'
         ])
         && data.referenceKey is string && data.referenceKey.size() >= 4 && data.referenceKey.size() <= 80
         && data.referenceKey.matches('^[A-Z0-9_\\-]+$')
         && data.referenceNumber is string && data.referenceNumber.size() >= 4 && data.referenceNumber.size() <= 80
         && isValidId(data.requestId)
+        && data.orderNumber is string && data.orderNumber.matches('^MQ-[A-Z0-9]{6,12}$')
         && isValidId(data.userId)
-        && isValidId(data.approvedBy)
-        && data.approvedAt is timestamp;
+        && data.status in ['pending', 'approved', 'rejected']
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp
+        && data.approvedBy is string && data.approvedBy.size() <= 128
+        && (!('approvedAt' in data) || data.approvedAt == null || data.approvedAt is timestamp);
+    }
+
+    function isValidUsedOrder(data) {
+      return data.keys().hasAll(['orderNumber', 'requestId', 'userId', 'createdAt'])
+        && data.keys().hasOnly(['orderNumber', 'requestId', 'userId', 'createdAt'])
+        && data.orderNumber is string && data.orderNumber.matches('^MQ-[A-Z0-9]{6,12}$')
+        && isValidId(data.requestId)
+        && isValidId(data.userId)
+        && data.createdAt is timestamp;
+    }
+
+    function isValidPendingLock(data) {
+      return data.keys().hasAll(['userId', 'requestId', 'orderNumber', 'createdAt'])
+        && data.keys().hasOnly(['userId', 'requestId', 'orderNumber', 'createdAt'])
+        && isValidId(data.userId)
+        && isValidId(data.requestId)
+        && data.orderNumber is string && data.orderNumber.matches('^MQ-[A-Z0-9]{6,12}$')
+        && data.createdAt is timestamp;
     }
 
     function isValidAuditLog(data) {
@@ -171,7 +246,11 @@ service cloud.firestore {
           'planType', 'amount', 'currency', 'referenceNumber',
           'adminUid', 'adminEmail', 'note', 'createdAt'
         ])
-        && data.action in ['approved', 'rejected', 'settings_updated', 'admin_granted', 'admin_revoked']
+        && data.action in [
+          'request_created', 'proof_uploaded', 'approved', 'rejected',
+          'subscription_activated', 'subscription_expired',
+          'settings_updated', 'admin_granted', 'admin_revoked'
+        ]
         && data.requestId is string && data.requestId.size() <= 128
         && data.orderNumber is string && data.orderNumber.size() <= 32
         && data.userId is string && data.userId.size() <= 128
@@ -180,8 +259,8 @@ service cloud.firestore {
         && (data.amount is int || data.amount is float) && data.amount >= 0 && data.amount <= 10000000
         && data.currency is string && data.currency.size() <= 12
         && data.referenceNumber is string && data.referenceNumber.size() <= 80
-        && isValidId(data.adminUid)
-        && data.adminEmail is string && data.adminEmail.size() >= 3 && data.adminEmail.size() <= 254
+        && data.adminUid is string && data.adminUid.size() <= 128
+        && data.adminEmail is string && data.adminEmail.size() <= 254
         && data.note is string && data.note.size() <= 500
         && data.createdAt is timestamp;
     }
@@ -192,7 +271,7 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    // Users & Subscriptions (strict anti-self-upgrade rules)
+    // Users & Subscriptions (strict anti-self-upgrade & anti-spoofing rules)
     match /users/{userId} {
       allow get: if isValidId(userId) && (isOwner(userId) || isAdmin());
       allow list: if isAdmin();
@@ -201,6 +280,7 @@ service cloud.firestore {
         && isOwner(userId)
         && isValidUserProfile(incoming())
         && incoming().uid == request.auth.uid
+        && matchesAuthEmail(incoming().email)
         && incoming().role == 'user'
         && incoming().subscriptionPlan == 'free'
         && incoming().subscriptionStatus == 'free'
@@ -213,14 +293,17 @@ service cloud.firestore {
         && isSignedIn()
         && isValidUserProfile(incoming())
         && incoming().uid == existing().uid
+        && incoming().email == existing().email
         && incoming().createdAt == existing().createdAt
         && incoming().updatedAt == request.time
         && (
-          isAdmin() ||
+          (
+            isAdmin()
+            && isValidAdminUserUpdate(existing(), incoming())
+          ) ||
           (
             isOwner(userId)
             && incoming().role == existing().role
-            && incoming().email == existing().email
             && (
               (
                 incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'renewalNoticeDismissed', 'updatedAt'])
@@ -287,8 +370,11 @@ service cloud.firestore {
         && isSignedIn()
         && isValidPaymentRequest(incoming())
         && incoming().userId == request.auth.uid
+        && matchesAuthEmail(incoming().userEmail)
+        && incoming().proofImageUrl.matches('^/api/uploads/proofs/proof_' + request.auth.uid + '_[0-9]{10,16}_[0-9a-f]{12,24}\\.(png|jpg|webp)$')
         && incoming().status == 'pending'
         && incoming().rejectionReason == ''
+        && incoming().adminConfirmedTransfer == false
         && incoming().reviewedBy == ''
         && incoming().reviewedByEmail == ''
         && (!('reviewedAt' in incoming()) || incoming().reviewedAt == null)
@@ -301,7 +387,14 @@ service cloud.firestore {
             ? get(/databases/$(database)/documents/payment_settings/public_pricing).data.monthlyPrice
             : get(/databases/$(database)/documents/payment_settings/public_pricing).data.lifetimePrice
         )
-        && !exists(/databases/$(database)/documents/used_references/$(incoming().referenceKey));
+        && incoming().priceSnapshot == incoming().amount
+        && !exists(/databases/$(database)/documents/used_references/$(incoming().referenceKey))
+        && existsAfter(/databases/$(database)/documents/used_references/$(incoming().referenceKey))
+        && !exists(/databases/$(database)/documents/used_orders/$(incoming().orderNumber))
+        && existsAfter(/databases/$(database)/documents/used_orders/$(incoming().orderNumber))
+        && !exists(/databases/$(database)/documents/pending_locks/$(request.auth.uid))
+        && existsAfter(/databases/$(database)/documents/pending_locks/$(request.auth.uid))
+        && existsAfter(/databases/$(database)/documents/payment_audit_logs/$('created_' + requestId));
 
       allow update: if isValidId(requestId)
         && isAdmin()
@@ -309,9 +402,12 @@ service cloud.firestore {
         && existing().status == 'pending'
         && incoming().orderNumber == existing().orderNumber
         && incoming().userId == existing().userId
+        && incoming().userEmail == existing().userEmail
         && incoming().planType == existing().planType
         && incoming().isRenewal == existing().isRenewal
         && incoming().amount == existing().amount
+        && (!('priceSnapshot' in existing()) || incoming().priceSnapshot == existing().priceSnapshot)
+        && incoming().priceSnapshot == incoming().amount
         && incoming().currency == existing().currency
         && incoming().referenceNumber == existing().referenceNumber
         && incoming().referenceKey == existing().referenceKey
@@ -320,47 +416,141 @@ service cloud.firestore {
         && incoming().updatedAt == request.time
         && incoming().reviewedAt == request.time
         && incoming().reviewedBy == request.auth.uid
+        && matchesAuthEmail(incoming().reviewedByEmail)
         && incoming().diff(existing()).affectedKeys().hasOnly([
-          'status', 'rejectionReason', 'reviewedBy', 'reviewedByEmail', 'reviewedAt', 'updatedAt'
+          'status', 'rejectionReason', 'adminConfirmedTransfer',
+          'reviewedBy', 'reviewedByEmail', 'reviewedAt', 'updatedAt', 'priceSnapshot'
         ])
+        && !existsAfter(/databases/$(database)/documents/pending_locks/$(existing().userId))
         && (
           (
             incoming().status == 'approved'
-            && !exists(/databases/$(database)/documents/used_references/$(existing().referenceKey))
-            && existsAfter(/databases/$(database)/documents/used_references/$(existing().referenceKey))
+            && incoming().adminConfirmedTransfer == true
+            && (
+              !exists(/databases/$(database)/documents/used_references/$(existing().referenceKey)) ||
+              get(/databases/$(database)/documents/used_references/$(existing().referenceKey)).data.status == 'pending'
+            )
+            && getAfter(/databases/$(database)/documents/used_references/$(existing().referenceKey)).data.status == 'approved'
+            && existsAfter(/databases/$(database)/documents/payment_audit_logs/$('approved_' + requestId))
+            && existsAfter(/databases/$(database)/documents/payment_audit_logs/$('activated_' + requestId))
           ) ||
           (
             incoming().status == 'rejected'
             && incoming().rejectionReason.size() >= 1
+            && (
+              !exists(/databases/$(database)/documents/used_references/$(existing().referenceKey)) ||
+              get(/databases/$(database)/documents/used_references/$(existing().referenceKey)).data.status == 'pending'
+            )
+            && getAfter(/databases/$(database)/documents/used_references/$(existing().referenceKey)).data.status == 'rejected'
+            && existsAfter(/databases/$(database)/documents/payment_audit_logs/$('rejected_' + requestId))
           )
         );
 
       allow delete: if false;
     }
 
-    // Approved Reference Keys Registry (prevents reusing an approved reference)
+    // Reference Keys Registry (reserved at submission, finalized at approval/rejection, never reusable)
     match /used_references/{referenceKey} {
-      allow get: if isValidId(referenceKey) && isSignedIn();
+      allow get: if isValidId(referenceKey) && isSignedIn() && (
+        resource == null || existing().userId == request.auth.uid || isAdmin()
+      );
       allow list: if isAdmin();
+
       allow create: if isValidId(referenceKey)
-        && isAdmin()
+        && isSignedIn()
         && isValidUsedReference(incoming())
         && incoming().referenceKey == referenceKey
+        && incoming().userId == request.auth.uid
+        && incoming().status == 'pending'
+        && incoming().approvedBy == ''
+        && (!('approvedAt' in incoming()) || incoming().approvedAt == null)
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time
         && !exists(/databases/$(database)/documents/used_references/$(referenceKey))
-        && incoming().approvedBy == request.auth.uid
-        && incoming().approvedAt == request.time;
+        && existsAfter(/databases/$(database)/documents/payment_requests/$(incoming().requestId));
+
+      allow update: if isValidId(referenceKey)
+        && isAdmin()
+        && isValidUsedReference(incoming())
+        && existing().status == 'pending'
+        && incoming().referenceKey == existing().referenceKey
+        && incoming().referenceNumber == existing().referenceNumber
+        && incoming().requestId == existing().requestId
+        && incoming().orderNumber == existing().orderNumber
+        && incoming().userId == existing().userId
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          (
+            incoming().status == 'approved'
+            && incoming().approvedBy == request.auth.uid
+            && incoming().approvedAt == request.time
+          ) ||
+          (
+            incoming().status == 'rejected'
+            && incoming().approvedBy == ''
+            && (!('approvedAt' in incoming()) || incoming().approvedAt == null)
+          )
+        );
+
+      allow delete: if false;
+    }
+
+    // Order Number Uniqueness Registry
+    match /used_orders/{orderNumber} {
+      allow get: if isValidId(orderNumber) && isSignedIn() && (
+        resource == null || existing().userId == request.auth.uid || isAdmin()
+      );
+      allow list: if isAdmin();
+      allow create: if isValidId(orderNumber)
+        && isSignedIn()
+        && isValidUsedOrder(incoming())
+        && incoming().orderNumber == orderNumber
+        && incoming().userId == request.auth.uid
+        && incoming().createdAt == request.time
+        && !exists(/databases/$(database)/documents/used_orders/$(orderNumber))
+        && existsAfter(/databases/$(database)/documents/payment_requests/$(incoming().requestId));
       allow update, delete: if false;
     }
 
-    // Append-Only Audit Log for Payment Actions & Settings
+    // Single Active Pending Lock Per User
+    match /pending_locks/{userId} {
+      allow get: if isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+      allow create: if isValidId(userId)
+        && isOwner(userId)
+        && isValidPendingLock(incoming())
+        && incoming().userId == request.auth.uid
+        && incoming().createdAt == request.time
+        && !exists(/databases/$(database)/documents/pending_locks/$(userId))
+        && existsAfter(/databases/$(database)/documents/payment_requests/$(incoming().requestId));
+      allow update: if false;
+      allow delete: if isValidId(userId) && isAdmin();
+    }
+
+    // Append-Only Audit Log for Payment Lifecycle, Subscriptions, Settings & Roles
     match /payment_audit_logs/{logId} {
       allow get: if isValidId(logId) && isAdmin();
       allow list: if isAdmin();
       allow create: if isValidId(logId)
-        && isAdmin()
+        && isSignedIn()
         && isValidAuditLog(incoming())
-        && incoming().adminUid == request.auth.uid
-        && incoming().createdAt == request.time;
+        && incoming().createdAt == request.time
+        && (
+          (
+            isAdmin()
+            && isValidId(incoming().adminUid)
+            && incoming().adminUid == request.auth.uid
+            && matchesAuthEmail(incoming().adminEmail)
+          ) ||
+          (
+            incoming().action in ['request_created', 'proof_uploaded', 'subscription_expired']
+            && incoming().userId == request.auth.uid
+            && matchesAuthEmail(incoming().userEmail)
+            && incoming().adminUid == ''
+            && incoming().adminEmail == ''
+          )
+        );
       allow update, delete: if false;
     }
   }

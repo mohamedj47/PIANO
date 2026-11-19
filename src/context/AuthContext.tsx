@@ -23,6 +23,7 @@ import {
   subscribePublicPricing,
   subscribeUserPaymentRequests,
 } from '../lib/instapayService';
+import { trackEvent } from '../lib/analytics';
 
 interface EffectiveSubscriptionState {
   effectivePlan: SubscriptionPlan;
@@ -156,6 +157,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         };
         setProfile(rec);
 
+        if (
+          (rec.subscriptionPlan === 'pro_monthly' || rec.subscriptionPlan === 'pro_lifetime') &&
+          rec.subscriptionStatus === 'active'
+        ) {
+          trackEvent(
+            'subscription_activated',
+            { plan: rec.subscriptionPlan },
+            { oncePerSessionKey: `sub_active:${rec.subscriptionPlan}` }
+          );
+        }
+
         // Automatically downgrade expired monthly subscriptions in Firestore
         if (
           rec.subscriptionPlan === 'pro_monthly' &&
@@ -163,7 +175,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           rec.subscriptionExpiresAt &&
           rec.subscriptionExpiresAt.getTime() <= Date.now()
         ) {
-          void downgradeExpiredSubscription(user.uid).catch(() => {});
+          void downgradeExpiredSubscription(user.uid, rec.email || user.email || '').catch(() => {});
         }
       },
       (err) => {
@@ -219,8 +231,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signInWithGoogle = useCallback(async () => {
     setAuthBusy(true);
     setAuthError(null);
+    trackEvent('signup_started', { provider: 'google' });
     try {
       const cred = await signInWithPopup(auth, googleProvider);
+      if (cred.user) {
+        trackEvent('signup_completed', { provider: 'google' });
+      }
       return cred.user;
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Google sign-in failed.';

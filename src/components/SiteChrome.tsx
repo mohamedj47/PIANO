@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AlertTriangle,
   ArrowRight,
   Crown,
+  Globe2,
   LogIn,
   LogOut,
   Piano,
   Settings,
+  Share2,
   ShieldCheck,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { ShareStudioModal } from './growth/ShareStudioModal';
+import { CookieConsentBanner } from './studio/CookieConsentBanner';
+import { LOCALE_OPTIONS } from '../lib/i18n';
+import { getConsentDecision, setAnalyticsConsent } from '../lib/analytics';
 
 interface SiteChromeProps {
   currentPath: string;
@@ -28,10 +34,17 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
     signOutUser,
   } = useAuth();
 
+  const [shareOpen, setShareOpen] = useState(false);
+  const [showConsent, setShowConsent] = useState<boolean>(() => getConsentDecision() === null);
+
   const navLinks = [
-    { path: '/piano', label: 'Piano Studio' },
+    { path: '/piano', label: 'Studio' },
+    { path: '/online-piano', label: 'Online Piano' },
+    { path: '/virtual-instruments', label: 'Instruments' },
+    { path: '/learn-piano', label: 'Learn' },
+    { path: '/music-theory', label: 'Theory' },
     { path: '/guides', label: 'Guides' },
-    { path: '/pricing', label: 'Pricing & Upgrade' },
+    { path: '/pricing', label: 'Pricing' },
     { path: '/about', label: 'About' },
   ];
 
@@ -56,16 +69,18 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
           </span>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-5">
+        <nav className="hidden xl:flex items-center gap-4">
           {navLinks.map((link) => {
             const active =
-              currentPath === link.path || (link.path === '/pricing' && currentPath === '/pro');
+              currentPath === link.path ||
+              (link.path === '/pricing' && currentPath === '/pro') ||
+              (link.path === '/guides' && currentPath.startsWith('/guides/'));
             return (
               <button
                 key={link.path}
                 type="button"
                 onClick={() => onNavigate(link.path)}
-                className={`text-xs font-bold uppercase tracking-wider transition whitespace-nowrap shrink-0 ${
+                className={`text-[11px] font-bold uppercase tracking-wider transition whitespace-nowrap shrink-0 ${
                   active ? 'text-[#FACC15]' : 'text-white/70 hover:text-white'
                 }`}
               >
@@ -78,7 +93,7 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
               <button
                 type="button"
                 onClick={() => onNavigate('/admin/payments')}
-                className={`text-xs font-bold uppercase tracking-wider transition flex items-center gap-1 whitespace-nowrap shrink-0 ${
+                className={`text-[11px] font-bold uppercase tracking-wider transition flex items-center gap-1 whitespace-nowrap shrink-0 ${
                   currentPath === '/admin/payments' || currentPath === '/admin'
                     ? 'text-[#FACC15]'
                     : 'text-emerald-300/85 hover:text-emerald-200'
@@ -90,7 +105,7 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
               <button
                 type="button"
                 onClick={() => onNavigate('/admin/payment-settings')}
-                className={`text-xs font-bold uppercase tracking-wider transition flex items-center gap-1 whitespace-nowrap shrink-0 ${
+                className={`text-[11px] font-bold uppercase tracking-wider transition flex items-center gap-1 whitespace-nowrap shrink-0 ${
                   currentPath === '/admin/payment-settings'
                     ? 'text-[#FACC15]'
                     : 'text-emerald-300/85 hover:text-emerald-200'
@@ -104,6 +119,16 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
         </nav>
 
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <button
+            type="button"
+            onClick={() => setShareOpen(true)}
+            aria-label="Share MAQAMIR"
+            className="hidden sm:inline-flex items-center gap-1 px-2.5 py-2 rounded-lg bg-white/[0.05] hover:bg-white/15 border border-white/10 text-[11px] font-semibold text-white/80"
+          >
+            <Share2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <span>Share</span>
+          </button>
+
           {user ? (
             <div className="flex items-center gap-1.5 sm:gap-2">
               <button
@@ -183,39 +208,94 @@ export const SiteChrome: React.FC<SiteChromeProps> = ({ currentPath, onNavigate,
       <main className="flex-1">{children}</main>
 
       <footer className="border-t border-white/10 bg-[#08080b] py-10 px-4 sm:px-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5">
-            <img src="/logo-dark.webp" alt="MaqAmir" className="w-5 h-5 object-contain" />
-            <span className="brand-font text-sm font-bold text-white/90">
-              MaqAmir<span className="text-[#D4AF37]">.</span> Piano Studio
-            </span>
-          </div>
-          <div className="flex flex-wrap items-center gap-5 text-xs text-white/55">
-            {navLinks.map((l) => (
+        <div className="max-w-6xl mx-auto space-y-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-2.5">
+              <img src="/logo-dark.webp" alt="MaqAmir" className="w-5 h-5 object-contain" />
+              <span className="brand-font text-sm font-bold text-white/90">
+                MAQAMIR<span className="text-[#D4AF37]">.</span> Interactive Music Studio
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/60">
+              {navLinks.map((l) => (
+                <button
+                  key={l.path}
+                  type="button"
+                  onClick={() => onNavigate(l.path)}
+                  className="hover:text-[#D4AF37] transition"
+                >
+                  {l.label}
+                </button>
+              ))}
               <button
-                key={l.path}
                 type="button"
-                onClick={() => onNavigate(l.path)}
-                className="hover:text-[#D4AF37]"
+                onClick={() => onNavigate('/music-studio')}
+                className="hover:text-[#D4AF37] transition"
               >
-                {l.label}
+                Browser DAW
               </button>
-            ))}
-            {isAdmin && (
               <button
                 type="button"
-                onClick={() => onNavigate('/admin/payments')}
-                className="text-emerald-300/80 hover:text-emerald-200"
+                onClick={() => setShareOpen(true)}
+                className="hover:text-[#D4AF37] transition"
               >
-                Admin Console
+                Share Studio
               </button>
-            )}
+              {isAdmin && (
+                <button
+                  type="button"
+                  onClick={() => onNavigate('/admin/payments')}
+                  className="text-emerald-300/80 hover:text-emerald-200"
+                >
+                  Admin Console
+                </button>
+              )}
+            </div>
           </div>
-          <div className="text-[11px] text-white/40">
-            Microtonal World Music Workstation · 199 Scales · 13 Realms
+
+          <div className="border-t border-white/10 pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="text-[11px] text-white/45">
+              Microtonal World Music Workstation · 140+ Scales · 13 Realms · 8 Synthesized Instruments
+            </div>
+            <div className="flex items-center gap-2 text-[11px] text-white/55">
+              <Globe2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+              {LOCALE_OPTIONS.map((opt) => (
+                <button
+                  key={opt.locale}
+                  type="button"
+                  onClick={() => onNavigate(opt.path)}
+                  className={`px-2 py-0.5 rounded transition ${
+                    currentPath === opt.path
+                      ? 'bg-[#D4AF37]/20 text-[#FACC15] font-bold'
+                      : 'hover:text-white'
+                  }`}
+                >
+                  {opt.code}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </footer>
+
+      <ShareStudioModal
+        open={shareOpen}
+        onClose={() => setShareOpen(false)}
+        sharePath={currentPath}
+      />
+
+      <CookieConsentBanner
+        visible={showConsent}
+        onAccept={() => {
+          setShowConsent(false);
+          setAnalyticsConsent('accepted');
+        }}
+        onDecline={() => {
+          setShowConsent(false);
+          setAnalyticsConsent('declined');
+        }}
+        onLearnMore={() => onNavigate('/about')}
+      />
     </div>
   );
 };
