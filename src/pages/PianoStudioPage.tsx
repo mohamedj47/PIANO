@@ -206,6 +206,7 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
         overrideFreqHz
       );
       setActiveNotes((prev) => {
+        if (prev.has(noteId)) return prev;
         const next = new Set(prev);
         next.add(noteId);
         return next;
@@ -222,6 +223,7 @@ export const PianoStudioPage: React.FC<PianoStudioPageProps> = ({ onNavigate }) 
   const handleNoteOff = useCallback((noteId: string, force = false) => {
     audioEngine.noteOff(noteId, force);
     setActiveNotes((prev) => {
+      if (!prev.has(noteId)) return prev;
       const next = new Set(prev);
       next.delete(noteId);
       return next;

@@ -73,19 +73,21 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
   onSelectOctaveBadge,
 }) => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const pointerNotesRef = useRef<
-    Map<
-      number,
-      {
-        noteId: string;
-        midiNote: number;
-        label: string;
-        startX: number;
-        startY: number;
-        startedAt: number;
-      }
-    >
-  >(new Map());
+  type ActivePointerRecord = {
+    noteId: string;
+    midiNote: number;
+    label: string;
+    startX: number;
+    startY: number;
+    startedAt: number;
+    pointerType: string;
+  };
+  const pointerNotesRef = useRef<Map<number, ActivePointerRecord>>(new Map());
+  const lastPointerInputRef = useRef<{ pointerType: string; button: number }>({
+    pointerType: 'mouse',
+    button: 0,
+  });
+  const windowListenersAttachedRef = useRef(false);
   const [aftertouchFeedback, setAftertouchFeedback] = useState<string | null>(null);
   const [viewportWidth, setViewportWidth] = useState<number>(() =>
     typeof window !== 'undefined' ? window.innerWidth : 1280
@@ -160,41 +162,200 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
     return m;
   }, [latchedNotes]);
 
+  const latchedMapRef = useRef(latchedMap);
+  latchedMapRef.current = latchedMap;
+
+  const callbacksRef = useRef({ onNoteOn, onNoteOff, onAftertouchMove, onToggleLatch });
+  callbacksRef.current = { onNoteOn, onNoteOff, onAftertouchMove, onToggleLatch };
+
+  const isMidiHeldByOtherPointer = useCallback((midiNote: number, excludePointerId?: number) => {
+    for (const [pid, active] of pointerNotesRef.current.entries()) {
+      if (pid !== excludePointerId && active.midiNote === midiNote) {
+        return true;
+      }
+    }
+    return false;
+  }, []);
+
+  const findHitKeyElement = useCallback((clientX: number, clientY: number): HTMLElement | null => {
+    const container = scrollContainerRef.current;
+    if (!container) return null;
+    if (typeof document.elementsFromPoint === 'function') {
+      const stack = document.elementsFromPoint(clientX, clientY);
+      for (const el of stack) {
+        const keyBtn = (el as HTMLElement).closest?.('[data-piano-key="true"]') as HTMLElement | null;
+        if (keyBtn && container.contains(keyBtn)) {
+          return keyBtn;
+        }
+      }
+      return null;
+    }
+    const el = document.elementFromPoint(clientX, clientY) as HTMLElement | null;
+    const keyBtn = el?.closest?.('[data-piano-key="true"]') as HTMLElement | null;
+    return keyBtn && container.contains(keyBtn) ? keyBtn : null;
+  }, []);
+
+  const windowHandlersRef = useRef<{
+    move: (e: PointerEvent) => void;
+    up: (e: PointerEvent) => void;
+    blur: () => void;
+  } | null>(null);
+
+  const detachWindowListeners = useCallback(() => {
+    if (!windowListenersAttachedRef.current || !windowHandlersRef.current) return;
+    window.removeEventListener('pointermove', windowHandlersRef.current.move);
+    window.removeEventListener('pointerup', windowHandlersRef.current.up);
+    window.removeEventListener('pointercancel', windowHandlersRef.current.up);
+    window.removeEventListener('blur', windowHandlersRef.current.blur);
+    windowListenersAttachedRef.current = false;
+  }, []);
+
+  const releasePointer = useCallback(
+    (pointerId: number) => {
+      const rec = pointerNotesRef.current.get(pointerId);
+      if (!rec) return;
+      pointerNotesRef.current.delete(pointerId);
+      if (pointerNotesRef.current.size === 0) {
+        detachWindowListeners();
+        setAftertouchFeedback((prev) => (prev !== null ? null : prev));
+      }
+      if (!isMidiHeldByOtherPointer(rec.midiNote) && !latchedMapRef.current.has(rec.midiNote)) {
+        callbacksRef.current.onNoteOff(rec.noteId, false);
+      }
+    },
+    [detachWindowListeners, isMidiHeldByOtherPointer]
+  );
+
+  const releaseAllPointers = useCallback(() => {
+    if (pointerNotesRef.current.size === 0) return;
+    const activeEntries: ActivePointerRecord[] = [];
+    pointerNotesRef.current.forEach((rec) => {
+      activeEntries.push(rec);
+    });
+    pointerNotesRef.current.clear();
+    detachWindowListeners();
+    setAftertouchFeedback((prev) => (prev !== null ? null : prev));
+    const releasedMidis = new Set<number>();
+    for (const rec of activeEntries) {
+      if (releasedMidis.has(rec.midiNote)) continue;
+      releasedMidis.add(rec.midiNote);
+      if (!latchedMapRef.current.has(rec.midiNote)) {
+        callbacksRef.current.onNoteOff(rec.noteId, false);
+      }
+    }
+  }, [detachWindowListeners]);
+
+  if (!windowHandlersRef.current) {
+    windowHandlersRef.current = {
+      move: () => {},
+      up: () => {},
+      blur: () => {},
+    };
+  }
+
+  windowHandlersRef.current.move = (e: PointerEvent) => {
+    const rec = pointerNotesRef.current.get(e.pointerId);
+    if (!rec) return;
+
+    const hitKeyEl = findHitKeyElement(e.clientX, e.clientY);
+    if (hitKeyEl) {
+      const nextMidi = Number(hitKeyEl.dataset.midi);
+      if (Number.isFinite(nextMidi) && nextMidi !== rec.midiNote) {
+        const prevMidi = rec.midiNote;
+        const prevNoteId = rec.noteId;
+        const nextNoteId = `key-${nextMidi}`;
+        const nextLabel = hitKeyEl.dataset.note || rec.label;
+
+        const rect = hitKeyEl.getBoundingClientRect();
+        const relY = rect.height > 0 ? Math.max(0.15, Math.min(1, (e.clientY - rect.top) / rect.height)) : 0.7;
+        const velocity = Math.max(0.35, Math.min(1, 0.35 + relY * 0.65));
+
+        rec.midiNote = nextMidi;
+        rec.noteId = nextNoteId;
+        rec.label = nextLabel;
+        rec.startX = e.clientX;
+        rec.startY = e.clientY;
+        rec.startedAt = performance.now();
+
+        if (!isMidiHeldByOtherPointer(prevMidi, e.pointerId) && !latchedMapRef.current.has(prevMidi)) {
+          callbacksRef.current.onNoteOff(prevNoteId, false);
+        }
+        callbacksRef.current.onNoteOn(nextNoteId, nextMidi, velocity, latchedMapRef.current.has(nextMidi));
+        setAftertouchFeedback((prev) => (prev !== null ? null : prev));
+        return;
+      }
+    }
+
+    const elapsed = performance.now() - rec.startedAt;
+    if (elapsed < 180) return;
+
+    const dxNorm = Math.max(-1, Math.min(1, (e.clientX - rec.startX) / 80));
+    const dyNorm = Math.max(-1, Math.min(1, (e.clientY - rec.startY) / 80));
+    if (Math.abs(dxNorm) > 0.12 || Math.abs(dyNorm) > 0.12) {
+      callbacksRef.current.onAftertouchMove(rec.noteId, dxNorm, dyNorm);
+      let dir = '';
+      if (Math.abs(dyNorm) >= Math.abs(dxNorm)) {
+        dir =
+          dyNorm < 0
+            ? `↑ Vibrato ${Math.round(Math.abs(dyNorm) * 100)}%`
+            : `↓ Volume ${Math.round((1 - dyNorm * 0.72) * 100)}%`;
+      } else {
+        dir =
+          dxNorm < 0
+            ? `← Cutoff ${Math.round((1 - Math.abs(dxNorm)) * 100)}%`
+            : `→ Drive +${Math.round(dxNorm * 100)}%`;
+      }
+      setAftertouchFeedback((prev) => (prev === dir ? prev : dir));
+    }
+  };
+
+  windowHandlersRef.current.up = (e: PointerEvent) => {
+    releasePointer(e.pointerId);
+  };
+
+  windowHandlersRef.current.blur = () => {
+    releaseAllPointers();
+  };
+
+  const attachWindowListeners = useCallback(() => {
+    if (windowListenersAttachedRef.current || !windowHandlersRef.current) return;
+    window.addEventListener('pointermove', windowHandlersRef.current.move);
+    window.addEventListener('pointerup', windowHandlersRef.current.up);
+    window.addEventListener('pointercancel', windowHandlersRef.current.up);
+    window.addEventListener('blur', windowHandlersRef.current.blur);
+    windowListenersAttachedRef.current = true;
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      releaseAllPointers();
+    };
+  }, [releaseAllPointers]);
+
   const handleKeyPointerDown = useCallback(
     (e: React.PointerEvent, key: KeyDef) => {
+      const pointerType = e.pointerType || 'mouse';
+      lastPointerInputRef.current = { pointerType, button: e.button };
+
+      // Right-click (button 2) is handled in onContextMenu for mouse only
+      if (pointerType === 'mouse' && e.button !== 0) {
+        return;
+      }
+
       e.preventDefault();
       e.stopPropagation();
 
-      // Alt+Click latches note hands-free; right-click (button 2) is handled in onContextMenu
-      if (e.button === 2) {
-        return;
-      }
       if (e.altKey) {
         const noteId = `key-${key.midi}`;
-        onToggleLatch(noteId, key.midi, key.label);
+        callbacksRef.current.onToggleLatch(noteId, key.midi, key.label);
         return;
-      }
-
-      // 2-finger simultaneous hold on an already touched key latches it
-      if (pointerNotesRef.current.size >= 1) {
-        for (const active of pointerNotesRef.current.values()) {
-          if (active.midiNote === key.midi) {
-            onToggleLatch(active.noteId, key.midi, key.label);
-            return;
-          }
-        }
       }
 
       const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-      const relY = Math.max(0.15, Math.min(1, (e.clientY - rect.top) / rect.height));
+      const relY = rect.height > 0 ? Math.max(0.15, Math.min(1, (e.clientY - rect.top) / rect.height)) : 0.7;
       const velocity = Math.max(0.35, Math.min(1, 0.35 + relY * 0.65));
 
       const noteId = `key-${key.midi}`;
-      try {
-        (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-      } catch {
-        // ignore pointer capture issues
-      }
 
       pointerNotesRef.current.set(e.pointerId, {
         noteId,
@@ -203,55 +364,40 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
         startX: e.clientX,
         startY: e.clientY,
         startedAt: performance.now(),
+        pointerType,
       });
+      attachWindowListeners();
 
-      onNoteOn(noteId, key.midi, velocity, latchedMap.has(key.midi));
+      callbacksRef.current.onNoteOn(noteId, key.midi, velocity, latchedMapRef.current.has(key.midi));
     },
-    [onNoteOn, onToggleLatch, latchedMap]
+    [attachWindowListeners]
   );
 
-  const handleKeyPointerMove = useCallback(
-    (e: React.PointerEvent) => {
-      const rec = pointerNotesRef.current.get(e.pointerId);
-      if (!rec) return;
-      const elapsed = performance.now() - rec.startedAt;
-      if (elapsed < 180) return;
-      const dxNorm = Math.max(-1, Math.min(1, (e.clientX - rec.startX) / 80));
-      const dyNorm = Math.max(-1, Math.min(1, (e.clientY - rec.startY) / 80));
-      if (Math.abs(dxNorm) > 0.08 || Math.abs(dyNorm) > 0.08) {
-        onAftertouchMove(rec.noteId, dxNorm, dyNorm);
-        let dir = '';
-        if (Math.abs(dyNorm) >= Math.abs(dxNorm)) {
-          dir =
-            dyNorm < 0
-              ? `↑ Vibrato ${Math.round(Math.abs(dyNorm) * 100)}%`
-              : `↓ Volume ${Math.round((1 - dyNorm * 0.72) * 100)}%`;
-        } else {
-          dir =
-            dxNorm < 0
-              ? `← Cutoff ${Math.round((1 - Math.abs(dxNorm)) * 100)}%`
-              : `→ Drive +${Math.round(dxNorm * 100)}%`;
-        }
-        setAftertouchFeedback(dir);
-      }
-    },
-    [onAftertouchMove]
-  );
+  const handleKeyContextMenu = useCallback((e: React.MouseEvent, key: KeyDef) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-  const handleKeyPointerUp = useCallback(
-    (e: React.PointerEvent) => {
-      const rec = pointerNotesRef.current.get(e.pointerId);
-      if (!rec) return;
-      pointerNotesRef.current.delete(e.pointerId);
-      if (pointerNotesRef.current.size === 0) {
-        setAftertouchFeedback(null);
+    // Never latch on touch/pen long-press contextmenu (prevents stuck keys when holding a finger)
+    const nativePointerType = (e.nativeEvent as unknown as { pointerType?: string })?.pointerType;
+    let hasActiveTouchOrPen = false;
+    pointerNotesRef.current.forEach((p) => {
+      if (p.pointerType !== 'mouse') {
+        hasActiveTouchOrPen = true;
       }
-      if (!latchedMap.has(rec.midiNote)) {
-        onNoteOff(rec.noteId, false);
-      }
-    },
-    [onNoteOff, latchedMap]
-  );
+    });
+    if (
+      nativePointerType === 'touch' ||
+      nativePointerType === 'pen' ||
+      lastPointerInputRef.current.pointerType !== 'mouse' ||
+      hasActiveTouchOrPen
+    ) {
+      return;
+    }
+
+    if (lastPointerInputRef.current.button === 2 || e.ctrlKey) {
+      callbacksRef.current.onToggleLatch(`key-${key.midi}`, key.midi, key.label);
+    }
+  }, []);
 
   const blackWidth = Math.round(whiteKeyPx * 0.62);
 
@@ -300,7 +446,10 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
         className="piano-keybed-shell w-full h-full overflow-x-auto scrollbar-hide relative"
         onContextMenu={(e) => e.preventDefault()}
       >
-        <div className="relative h-full" style={{ width: `${totalWidth}px` }}>
+        <div
+          className="relative h-full touch-none"
+          style={{ width: `${totalWidth}px`, touchAction: 'none', WebkitTouchCallout: 'none' }}
+        >
           {/* Floating Octave Instrument Pills matching Screenshot 1 & 7 */}
           {!hideFloatingOctaves &&
             [1, 2, 3, 4, 5, 6, 7].map((oct) => {
@@ -337,7 +486,7 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
             })}
 
           {/* White Keys */}
-          <div className="flex h-full">
+          <div className="flex h-full touch-none" style={{ touchAction: 'none' }}>
             {whiteKeys.map((k) => {
               const noteId = `key-${k.midi}`;
               const isActive = activeNotes.has(noteId);
@@ -347,27 +496,26 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
                 <button
                   key={k.midi}
                   type="button"
+                  data-piano-key="true"
                   data-midi={k.midi}
                   data-note={k.label}
                   data-cents={k.cents}
                   aria-label={k.label}
                   onPointerDown={(e) => handleKeyPointerDown(e, k)}
-                  onPointerMove={handleKeyPointerMove}
-                  onPointerUp={handleKeyPointerUp}
-                  onPointerCancel={handleKeyPointerUp}
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    onToggleLatch(noteId, k.midi, k.label);
+                  onContextMenu={(e) => handleKeyContextMenu(e, k)}
+                  style={{
+                    width: `${whiteKeyPx}px`,
+                    touchAction: 'none',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
                   }}
-                  style={{ width: `${whiteKeyPx}px` }}
-                  className={`piano-key-base-white relative h-full shrink-0 border-r border-black/25 rounded-b-md transition-transform duration-75 cursor-pointer flex flex-col justify-end items-center pb-2 ${
+                  className={`piano-key-base-white relative h-full shrink-0 border-r border-black/25 rounded-b-md transition-transform duration-75 cursor-pointer flex flex-col justify-end items-center pb-2 touch-none select-none ${
                     isActive || isLatched
                       ? 'piano-key-pressed-white translate-y-[2px]'
                       : 'piano-key-idle-white'
                   }`}
                 >
-                  <span className="piano-key-finish piano-key-finish--white piano-key-finish--premium" />
+                  <span className="piano-key-finish piano-key-finish--white piano-key-finish--premium pointer-events-none" />
                   <span className="piano-key-tint-overlay absolute inset-0 pointer-events-none opacity-0 rounded-b-md" />
 
                   {(isActive || isLatched) && (
@@ -411,27 +559,27 @@ export const PianoKeyboardStage: React.FC<PianoKeyboardStageProps> = ({
               <button
                 key={k.midi}
                 type="button"
+                data-piano-key="true"
                 data-midi={k.midi}
                 data-note={k.label}
                 data-cents={k.cents}
                 aria-label={k.label}
                 onPointerDown={(e) => handleKeyPointerDown(e, k)}
-                onPointerMove={handleKeyPointerMove}
-                onPointerUp={handleKeyPointerUp}
-                onPointerCancel={handleKeyPointerUp}
-                onContextMenu={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onToggleLatch(noteId, k.midi, k.label);
+                onContextMenu={(e) => handleKeyContextMenu(e, k)}
+                style={{
+                  left: `${leftPx}px`,
+                  width: `${blackWidth}px`,
+                  touchAction: 'none',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
                 }}
-                style={{ left: `${leftPx}px`, width: `${blackWidth}px` }}
-                className={`piano-key-base-black absolute top-0 h-[62%] z-10 rounded-b-md transition-transform duration-75 cursor-pointer flex flex-col justify-end items-center pb-1.5 ${
+                className={`piano-key-base-black absolute top-0 h-[62%] z-10 rounded-b-md transition-transform duration-75 cursor-pointer flex flex-col justify-end items-center pb-1.5 touch-none select-none ${
                   isActive || isLatched
                     ? 'piano-key-pressed-black translate-y-[2px]'
                     : 'piano-key-idle-black'
                 }`}
               >
-                <span className="piano-key-finish piano-key-finish--black piano-key-finish--premium" />
+                <span className="piano-key-finish piano-key-finish--black piano-key-finish--premium pointer-events-none" />
                 <span className="piano-key-tint-overlay absolute inset-0 pointer-events-none opacity-0 rounded-b-md" />
                 {(isActive || isLatched) && (
                   <span className="piano-key-pressed-overlay-black absolute inset-0 rounded-b-md bg-[#D4AF37]/30 pointer-events-none" />
